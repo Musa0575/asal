@@ -28,7 +28,6 @@
             background: radial-gradient(circle at 20% 20%, #0f172a 0%, #020617 50%, #090d16 100%);
             color: #f8fafc;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
         }
 
         .glow-1 {
@@ -60,23 +59,21 @@
         .glass-btn {
             background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
             border: 1px solid rgba(56, 189, 248, 0.2);
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s ease;
         }
 
         .glass-btn:hover:not(:disabled) {
             background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(30, 41, 59, 0.9) 100%);
             border-color: rgba(56, 189, 248, 0.6);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
-            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
         }
 
         .glass-btn.selected {
             background: linear-gradient(135deg, rgba(56, 189, 248, 0.4) 0%, rgba(14, 165, 233, 0.6) 100%) !important;
             border-color: #38bdf8 !important;
-            box-shadow: 0 0 25px rgba(56, 189, 248, 0.5) !important;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.5) !important;
         }
 
-        /* Styling Efek Lingkaran Pilihan saat Terpilih */
         .glass-btn.selected .opt-circle {
             border-color: #38bdf8 !important;
             box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
@@ -95,7 +92,7 @@
         .ladder-badge.passed { color: #10b981; background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.2); }
     </style>
 </head>
-<body class="h-full flex flex-col justify-between p-3 md:p-5 select-none relative">
+<body class="h-screen w-screen overflow-hidden flex flex-col p-2 md:p-4 select-none relative box-border">
 
     <div class="glow-1"></div>
     <div class="glow-2"></div>
@@ -111,10 +108,10 @@
 
             <form onSubmit="startGameWithPlayer(event)" class="space-y-3">
                 <input type="text" id="input-player-name" maxlength="25" placeholder="Nama Lengkap Siswa..." required
-                    class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-2.5 text-center text-sky-300 font-tech text-sm focus:outline-none focus:border-sky-400 transition placeholder:text-slate-600">
+                    class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-2 text-center text-sky-300 font-tech text-xs md:text-sm focus:outline-none focus:border-sky-400 transition placeholder:text-slate-600">
                 
                 <input type="text" id="input-player-class" maxlength="15" placeholder="Kelas (Contoh: X RPL 1)..." required
-                    class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-2.5 text-center text-sky-300 font-tech text-sm focus:outline-none focus:border-sky-400 transition placeholder:text-slate-600">
+                    class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-2 text-center text-sky-300 font-tech text-xs md:text-sm focus:outline-none focus:border-sky-400 transition placeholder:text-slate-600">
 
                 <button type="submit" id="btn-start" class="w-full py-2.5 bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-tech font-bold rounded-xl shadow-lg transition text-xs tracking-wider">
                     MULAI KUIS
@@ -124,141 +121,131 @@
     </div>
 
     <!-- HEADER TOP BAR -->
-    <header class="w-full max-w-7xl mx-auto flex justify-between items-center glass-panel px-4 py-2.5 rounded-2xl mb-3">
-        <div class="flex items-center space-x-3">
-            <div class="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-400/40 flex items-center justify-center">
-                <i class="fa-solid fa-layer-group text-sky-400 text-sm"></i>
+    <header class="w-full max-w-7xl mx-auto flex justify-between items-center glass-panel px-3 py-2 rounded-xl mb-2 shrink-0">
+        <div class="flex items-center space-x-2.5">
+            <div class="w-7 h-7 rounded-lg bg-sky-500/20 border border-sky-400/40 flex items-center justify-center">
+                <i class="fa-solid fa-layer-group text-sky-400 text-xs"></i>
             </div>
-            <div>
-                <h1 class="font-tech font-bold text-base text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-purple-200 to-emerald-300">
-                    SISTEM KOMPUTER
-                </h1>
-            </div>
+            <h1 class="font-tech font-bold text-xs md:text-sm text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-purple-200 to-emerald-300">
+                SISTEM KOMPUTER
+            </h1>
         </div>
 
-        <div class="flex items-center space-x-4 bg-slate-900/80 px-3.5 py-1.5 rounded-xl border border-slate-800 text-xs font-tech">
+        <div class="flex items-center space-x-3 bg-slate-900/80 px-3 py-1 rounded-lg border border-slate-800 text-[11px] font-tech">
             <div><span class="text-slate-500">SISWA:</span> <span id="display-player" class="text-sky-400 font-bold">Guest</span></div>
         </div>
 
         <div class="flex items-center space-x-2">
-            <button onClick="restartGameDirect()" class="w-8 h-8 rounded-lg glass-btn text-slate-300 flex items-center justify-center transition" title="Reset Game">
+            <button onClick="restartGameDirect()" class="w-7 h-7 rounded-lg glass-btn text-slate-300 flex items-center justify-center transition" title="Reset Game">
                 <i class="fa-solid fa-arrows-rotate text-xs"></i>
             </button>
         </div>
     </header>
 
     <!-- MAIN CONTAINER -->
-    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-3 flex-1 items-stretch mb-2">
-        <section class="lg:col-span-8 flex flex-col justify-between glass-panel p-4 md:p-6 rounded-2xl">
-            <div class="flex justify-between items-center pb-3 border-b border-slate-800">
+    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-2 md:gap-3 flex-1 min-h-0 overflow-hidden">
+        
+        <!-- UTAMA: SOAL & OPSI JAWABAN -->
+        <section class="lg:col-span-8 flex flex-col justify-between glass-panel p-3 md:p-4 rounded-xl overflow-y-auto">
+            
+            <!-- HEADER SOAL -->
+            <div class="flex justify-between items-center pb-2 border-b border-slate-800 shrink-0">
                 <div class="flex items-baseline gap-1">
-                    <span class="text-xs font-tech text-slate-400">SOAL</span>
-                    <span id="question-number" class="text-xl font-tech font-bold text-amber-400">1</span>
-                    <span id="total-questions-count" class="text-xs font-tech text-slate-500">/25</span>
+                    <span class="text-[10px] font-tech text-slate-400">SOAL</span>
+                    <span id="question-number" class="text-lg font-tech font-bold text-amber-400">1</span>
+                    <span id="total-questions-count" class="text-[10px] font-tech text-slate-500">/25</span>
                 </div>
 
-                <div class="flex items-center space-x-2 bg-slate-900/90 px-3 py-1 rounded-full border border-slate-800">
-                    <i class="fa-regular fa-clock text-sky-400 text-xs"></i>
-                    <span id="timer-text" class="font-tech font-bold text-xs text-sky-300 min-w-[24px]">30s</span>
-                    <div class="w-20 bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div class="flex items-center space-x-2 bg-slate-900/90 px-2.5 py-1 rounded-full border border-slate-800">
+                    <i class="fa-regular fa-clock text-sky-400 text-[10px]"></i>
+                    <span id="timer-text" class="font-tech font-bold text-[11px] text-sky-300 min-w-[20px]">30s</span>
+                    <div class="w-16 bg-slate-800 h-1 rounded-full overflow-hidden">
                         <div id="timer-bar" class="bg-gradient-to-r from-sky-400 to-emerald-400 h-full w-full transition-all duration-1000"></div>
                     </div>
                 </div>
 
                 <div>
-                    <span class="text-xs font-tech text-slate-400">STATUS:</span> 
-                    <span id="current-score-text" class="text-sm font-tech font-bold text-emerald-400">0 Benar</span>
+                    <span class="text-[10px] font-tech text-slate-400">STATUS:</span> 
+                    <span id="current-score-text" class="text-xs font-tech font-bold text-emerald-400">0 Benar</span>
                 </div>
             </div>
 
-            <!-- TEKS & GAMBAR PERTANYAAN (STYLE CBT STANDAR: BACKGROUND PUTIH, TEKS HITAM, RATA KIRI, FONT PROPORSIONAL) -->
-            <div class="my-auto py-3">
-                <div class="bg-white border border-slate-300 p-4 md:p-5 rounded-xl shadow-sm min-h-[120px] flex flex-col justify-center gap-3">
+            <!-- KOTAK SOAL (WHITE CBT BG) -->
+            <div class="my-auto py-2 flex-1 flex flex-col justify-center min-h-0">
+                <div class="bg-white border border-slate-300 p-3 md:p-4 rounded-lg shadow-sm flex flex-col justify-center gap-2 max-h-full overflow-y-auto">
                     
-                    <!-- ELEMEN GAMBAR PERTANYAAN -->
+                    <!-- GAMBAR SOAL -->
                     <div class="flex justify-start w-full">
-                        <img id="question-image" src="" alt="Gambar Soal" class="max-h-44 max-w-full rounded-lg object-contain border border-slate-200 shadow-sm hidden">
+                        <img id="question-image" src="" alt="Gambar Soal" class="max-h-32 max-w-full rounded object-contain border border-slate-200 shadow-sm hidden">
                     </div>
                     
-                    <!-- TEKS PERTANYAAN -->
+                    <!-- TEKS SOAL -->
                     <div id="question-text" class="text-xs md:text-sm font-sans font-normal leading-relaxed text-slate-800 tracking-normal text-left">
                         Memuat Pertanyaan...
                     </div>
                 </div>
             </div>
 
-            <!-- OPSI JAWABAN (A - E) DENGAN LINGKARAN PILIHAN -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                <!-- OPTION A -->
-                <button onClick="selectOption(0)" id="opt-0" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center justify-between text-xs md:text-sm font-medium group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">A</span>
+            <!-- OPSI JAWABAN (A - E) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 shrink-0">
+                <button onClick="selectOption(0)" id="opt-0" class="glass-btn p-2.5 rounded-lg text-left flex items-center justify-between text-xs font-medium group">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-[10px] flex items-center justify-center shrink-0">A</span>
                         <span id="opt-text-0" class="text-slate-200 group-hover:text-white leading-snug">Pilihan A</span>
                     </div>
-                    <!-- LINGKARAN PILIHAN -->
-                    <div class="opt-circle w-5 h-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
-                        <div class="dot w-2.5 h-2.5 rounded-full bg-transparent transition-all duration-200"></div>
+                    <div class="opt-circle w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
+                        <div class="dot w-2 h-2 rounded-full bg-transparent transition-all duration-200"></div>
                     </div>
                 </button>
 
-                <!-- OPTION B -->
-                <button onClick="selectOption(1)" id="opt-1" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center justify-between text-xs md:text-sm font-medium group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">B</span>
+                <button onClick="selectOption(1)" id="opt-1" class="glass-btn p-2.5 rounded-lg text-left flex items-center justify-between text-xs font-medium group">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-[10px] flex items-center justify-center shrink-0">B</span>
                         <span id="opt-text-1" class="text-slate-200 group-hover:text-white leading-snug">Pilihan B</span>
                     </div>
-                    <!-- LINGKARAN PILIHAN -->
-                    <div class="opt-circle w-5 h-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
-                        <div class="dot w-2.5 h-2.5 rounded-full bg-transparent transition-all duration-200"></div>
+                    <div class="opt-circle w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
+                        <div class="dot w-2 h-2 rounded-full bg-transparent transition-all duration-200"></div>
                     </div>
                 </button>
 
-                <!-- OPTION C -->
-                <button onClick="selectOption(2)" id="opt-2" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center justify-between text-xs md:text-sm font-medium group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">C</span>
+                <button onClick="selectOption(2)" id="opt-2" class="glass-btn p-2.5 rounded-lg text-left flex items-center justify-between text-xs font-medium group">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-[10px] flex items-center justify-center shrink-0">C</span>
                         <span id="opt-text-2" class="text-slate-200 group-hover:text-white leading-snug">Pilihan C</span>
                     </div>
-                    <!-- LINGKARAN PILIHAN -->
-                    <div class="opt-circle w-5 h-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
-                        <div class="dot w-2.5 h-2.5 rounded-full bg-transparent transition-all duration-200"></div>
+                    <div class="opt-circle w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
+                        <div class="dot w-2 h-2 rounded-full bg-transparent transition-all duration-200"></div>
                     </div>
                 </button>
 
-                <!-- OPTION D -->
-                <button onClick="selectOption(3)" id="opt-3" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center justify-between text-xs md:text-sm font-medium group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">D</span>
+                <button onClick="selectOption(3)" id="opt-3" class="glass-btn p-2.5 rounded-lg text-left flex items-center justify-between text-xs font-medium group">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-[10px] flex items-center justify-center shrink-0">D</span>
                         <span id="opt-text-3" class="text-slate-200 group-hover:text-white leading-snug">Pilihan D</span>
                     </div>
-                    <!-- LINGKARAN PILIHAN -->
-                    <div class="opt-circle w-5 h-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
-                        <div class="dot w-2.5 h-2.5 rounded-full bg-transparent transition-all duration-200"></div>
+                    <div class="opt-circle w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
+                        <div class="dot w-2 h-2 rounded-full bg-transparent transition-all duration-200"></div>
                     </div>
                 </button>
 
-                <!-- OPTION E -->
-                <button onClick="selectOption(4)" id="opt-4" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center justify-between text-xs md:text-sm font-medium group md:col-span-2">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">E</span>
+                <button onClick="selectOption(4)" id="opt-4" class="glass-btn p-2.5 rounded-lg text-left flex items-center justify-between text-xs font-medium group md:col-span-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-5 h-5 rounded bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-[10px] flex items-center justify-center shrink-0">E</span>
                         <span id="opt-text-4" class="text-slate-200 group-hover:text-white leading-snug">Pilihan E</span>
                     </div>
-                    <!-- LINGKARAN PILIHAN -->
-                    <div class="opt-circle w-5 h-5 rounded-full border-2 border-slate-600 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
-                        <div class="dot w-2.5 h-2.5 rounded-full bg-transparent transition-all duration-200"></div>
+                    <div class="opt-circle w-4 h-4 rounded-full border border-slate-500 flex items-center justify-center shrink-0 transition-all duration-200 group-hover:border-sky-400">
+                        <div class="dot w-2 h-2 rounded-full bg-transparent transition-all duration-200"></div>
                     </div>
                 </button>
             </div>
         </section>
 
         <!-- SIDEBAR KANAN -->
-        <section class="lg:col-span-4 flex flex-col justify-between gap-3">
-            <div class="glass-panel p-3.5 rounded-2xl flex-1 flex flex-col justify-between">
-                <h3 class="text-center font-tech font-bold text-[11px] tracking-wider text-slate-400 uppercase mb-2">
-                    Progres Soal
-                </h3>
-                <div id="ladder-container" class="grid grid-cols-2 gap-x-2 gap-y-1 flex-1 items-center text-xs overflow-y-auto max-h-[350px]">
-                </div>
+        <section class="lg:col-span-4 flex flex-col glass-panel p-3 rounded-xl overflow-hidden min-h-0">
+            <h3 class="text-center font-tech font-bold text-[10px] tracking-wider text-slate-400 uppercase mb-2 shrink-0">
+                Progres Soal
+            </h3>
+            <div id="ladder-container" class="grid grid-cols-2 gap-1.5 flex-1 items-start text-xs overflow-y-auto pr-1">
             </div>
         </section>
     </main>
@@ -360,10 +347,10 @@
             container.innerHTML = '';
             for(let i = 0; i < questions.length; i++) {
                 const item = document.createElement('div');
-                let statusClass = "ladder-badge text-[10px] p-1.5 rounded-lg flex justify-between bg-slate-900/60 text-slate-400";
+                let statusClass = "ladder-badge text-[10px] p-1 rounded border bg-slate-900/60 text-slate-400 flex justify-between";
                 
-                if (i === currentQuestionIdx) statusClass = "ladder-badge active text-[10px] p-1.5 rounded-lg flex justify-between";
-                else if (i < currentQuestionIdx) statusClass = "ladder-badge passed text-[10px] p-1.5 rounded-lg flex justify-between";
+                if (i === currentQuestionIdx) statusClass = "ladder-badge active text-[10px] p-1 rounded flex justify-between";
+                else if (i < currentQuestionIdx) statusClass = "ladder-badge passed text-[10px] p-1 rounded flex justify-between";
 
                 item.className = statusClass;
                 item.innerHTML = `<span>Soal ${i+1}</span>`;
@@ -385,7 +372,6 @@
             document.getElementById('question-text').innerText = qData.q;
             document.getElementById('current-score-text').innerText = `${correctAnswersCount} Benar`;
 
-            // TAMPILKAN ATAU SEMBUNYIKAN GAMBAR
             const imgElement = document.getElementById('question-image');
             if (qData.image && qData.image.trim() !== "") {
                 imgElement.src = qData.image;
@@ -395,7 +381,6 @@
                 imgElement.classList.add('hidden');
             }
 
-            // SETTING OPSI JAWABAN (Dinamis A - E)
             const optionCount = qData.options.length;
             for (let i = 0; i < 5; i++) {
                 const btn = document.getElementById(`opt-${i}`);
@@ -405,7 +390,7 @@
 
                 if (i < optionCount) {
                     btn.classList.remove('hidden');
-                    btn.className = `glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center justify-between text-xs md:text-sm font-medium group ${i === 4 ? 'md:col-span-2' : ''}`;
+                    btn.className = `glass-btn p-2.5 rounded-lg text-left flex items-center justify-between text-xs font-medium group ${i === 4 ? 'md:col-span-2' : ''}`;
                     btn.disabled = false;
                     textSpan.innerText = qData.options[i];
                 } else {
@@ -474,7 +459,6 @@
                 confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
             }
 
-            // Kirim Nilai ke Google Sheets
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
