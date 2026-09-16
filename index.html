@@ -133,9 +133,6 @@
             <button onClick="restartGameDirect()" class="w-8 h-8 rounded-lg glass-btn text-slate-300 flex items-center justify-center transition" title="Reset Game">
                 <i class="fa-solid fa-arrows-rotate text-xs"></i>
             </button>
-            <button onClick="toggleAudio()" id="btn-audio" class="w-8 h-8 rounded-lg glass-btn text-sky-400 flex items-center justify-center transition" title="Toggle Sound">
-                <i id="audio-icon" class="fa-solid fa-volume-high text-xs"></i>
-            </button>
         </div>
     </header>
 
@@ -163,15 +160,20 @@
                 </div>
             </div>
 
+            <!-- TEKS & GAMBAR PERTANYAAN -->
             <div class="my-auto py-4">
-                <div class="bg-slate-900/60 border border-slate-800/80 p-5 md:p-7 text-center rounded-2xl shadow-inner min-h-[150px] flex items-center justify-center">
+                <div class="bg-slate-900/60 border border-slate-800/80 p-5 md:p-7 text-center rounded-2xl shadow-inner min-h-[150px] flex flex-col items-center justify-center gap-4">
+                    
+                    <!-- ELEMEN GAMBAR PERTANYAAN -->
+                    <img id="question-image" src="" alt="Gambar Soal" class="max-h-56 max-w-full rounded-xl object-contain border border-slate-700/50 shadow-md hidden">
+                    
                     <h2 id="question-text" class="text-sm md:text-base lg:text-lg font-medium leading-relaxed text-slate-100 tracking-wide">
                         Memuat Pertanyaan...
                     </h2>
                 </div>
             </div>
 
-            <!-- CONTAINER OPTION DIPERBARUI (MENDUKUNG HINGGA OPSI E) -->
+            <!-- OPSI JAWABAN (A - E) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <button onClick="selectOption(0)" id="opt-0" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group">
                     <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">A</span>
@@ -189,7 +191,6 @@
                     <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">D</span>
                     <span id="opt-text-3" class="text-slate-200 group-hover:text-white leading-snug">Pilihan D</span>
                 </button>
-                <!-- DITAMBAHKAN OPSI E DISINI (md:col-span-2 agar rapi penuh di desktop) -->
                 <button onClick="selectOption(4)" id="opt-4" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group md:col-span-2">
                     <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">E</span>
                     <span id="opt-text-4" class="text-slate-200 group-hover:text-white leading-snug">Pilihan E</span>
@@ -197,7 +198,7 @@
             </div>
         </section>
 
-        <!-- KOLOM KANAN -->
+        <!-- SIDEBAR KANAN -->
         <section class="lg:col-span-4 flex flex-col justify-between gap-3">
             <div class="glass-panel p-3.5 rounded-2xl flex-1 flex flex-col justify-between">
                 <h3 class="text-center font-tech font-bold text-[11px] tracking-wider text-slate-400 uppercase mb-2">
@@ -228,7 +229,7 @@
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJOkm7CG-A9g86aBdREvJZup6ndbj3InrCyKiccNfsc9MfnPOI29AReRMY-qU06lCd/exec";
         
-        let rawQuestions = []; // Dimuat dinamis dari soal.json
+        let rawQuestions = [];
         let questions = [];
         let currentQuestionIdx = 0;
         let timerInterval = null;
@@ -238,7 +239,6 @@
         let playerName = "Player";
         let playerClass = "-";
 
-        // MEMUAT SOAL OTOMATIS DARI FILE JSON
         async function fetchQuestions() {
             try {
                 const response = await fetch('soal.json');
@@ -265,6 +265,7 @@
                 const newCorrectIdx = mappedOptions.findIndex(o => o.isCorrect);
                 return {
                     q: q.q,
+                    image: q.image || "",
                     options: mappedOptions.map(o => o.text),
                     answer: newCorrectIdx
                 };
@@ -331,7 +332,17 @@
             document.getElementById('question-text').innerText = qData.q;
             document.getElementById('current-score-text').innerText = `${correctAnswersCount} Benar`;
 
-            // PERUBAHAN: Loop diubah dari 4 menjadi total opsi yang tersedia di soal (dinamis hingga 5)
+            // TAMPILKAN ATAU SEMBUNYIKAN GAMBAR
+            const imgElement = document.getElementById('question-image');
+            if (qData.image && qData.image.trim() !== "") {
+                imgElement.src = qData.image;
+                imgElement.classList.remove('hidden');
+            } else {
+                imgElement.src = "";
+                imgElement.classList.add('hidden');
+            }
+
+            // SETTING OPSI JAWABAN (Dinamis A - E)
             const optionCount = qData.options.length;
             for (let i = 0; i < 5; i++) {
                 const btn = document.getElementById(`opt-${i}`);
@@ -343,7 +354,6 @@
                     btn.disabled = false;
                     textSpan.innerText = qData.options[i];
                 } else {
-                    // Sembunyikan tombol jika soal tersebut ternyata hanya punya 4 opsi
                     btn.classList.add('hidden');
                 }
             }
@@ -409,7 +419,7 @@
                 confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
             }
 
-            // Kirim ke Google Sheets
+            // Kirim Nilai ke Google Sheets
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
