@@ -2,125 +2,41 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Editor Soal - Import .DOCM / .DOCX</title>
-  
-  <!-- 1. Library Mammoth JS untuk membaca file Word/XML -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
-  
+  <title>Halaman Utama Editor Soal</title>
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      margin: 30px; 
-      background-color: #f9f9f9;
-    }
-    
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .toolbar {
-      margin-bottom: 15px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid #eee;
-    }
-
-    #fileInput {
-      display: none; /* Sembunyikan input file standar agar bisa diganti tombol bagus */
-    }
-
-    .btn-import {
-      background-color: #2b579a; /* Warna khas Word */
-      color: white;
-      padding: 10px 18px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .btn-import:hover {
-      background-color: #1e3c6e;
-    }
-
-    /* Area Editor Soal */
     #editor {
       width: 100%;
-      min-height: 450px;
+      min-height: 400px;
       border: 1px solid #ccc;
-      padding: 20px;
-      border-radius: 6px;
-      box-sizing: border-box;
-      background-color: #fff;
-      outline: none;
-      overflow-y: auto;
-    }
-
-    #editor:focus {
-      border-color: #2b579a;
-      box-shadow: 0 0 5px rgba(43, 87, 154, 0.3);
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>Editor Soal</h2>
+  <h2>Editor Soal (index.html)</h2>
 
-    <!-- Toolbar / Tombol Import -->
-    <div class="toolbar">
-      <!-- Input file tersembunyi -->
-      <input type="file" id="fileInput" accept=".docm, .docx" />
-      
-      <!-- Tombol kustom untuk memicu input file -->
-      <button class="btn-import" onclick="document.getElementById('fileInput').click()">
-        📁 Import Soal dari Word (.docm / .docx)
-      </button>
-    </div>
-
-    <!-- Area Editor Utama -->
-    <div id="editor" contenteditable="true">
-      <p style="color: #888;"><i>Klik tombol di atas untuk mengimpor soal dari file .docm / .docx, atau langsung mengetik di sini...</i></p>
-    </div>
+  <!-- Area untuk menampilkan atau mengedit soal -->
+  <div id="editor" contenteditable="true">
+    <i>Belum ada soal yang di-import. Silakan import file .docm terlebih dahulu.</i>
   </div>
 
   <script>
-    // Event listener saat pengguna memilih file
-    document.getElementById('fileInput').addEventListener('change', handleFileSelect, false);
+    // Jalankan kode saat halaman index.html selesai dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+      // 1. Ambil data soal dari localStorage
+      const dataSoal = localStorage.getItem('soalImported');
 
-    function handleFileSelect(event) {
-      const file = event.target.files[0];
-      if (!file) return;
+      if (dataSoal) {
+        // 2. Masukkan data soal ke dalam elemen #editor
+        document.getElementById('editor').innerHTML = dataSoal;
 
-      const reader = new FileReader();
-
-      reader.onload = function(loadEvent) {
-        const arrayBuffer = loadEvent.target.result;
-
-        // Proses membaca file .docm / .docx
-        mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
-          .then(function(result) {
-            // Langsung masukkan hasilnya ke dalam #editor di halaman ini juga
-            document.getElementById('editor').innerHTML = result.value;
-
-            // Log jika ada pesan/peringatan (misal: format tabel tertentu)
-            if (result.messages.length > 0) {
-              console.log("Peringatan konversi:", result.messages);
-            }
-          })
-          .catch(function(err) {
-            console.error("Gagal mengimpor file:", err);
-            alert("Terjadi kesalahan saat mengimpor file .docm!");
-          });
-      };
-
-      reader.readAsArrayBuffer(file);
-    }
+        // 3. (Opsional) Hapus dari localStorage jika hanya ingin dipakai sekali
+        // localStorage.removeItem('soalImported');
+      }
+    });
   </script>
 </body>
 </html>
