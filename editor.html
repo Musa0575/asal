@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Soal (A-E) - Cyber Quiz</title>
+    <title>Editor Soal - Cyber Quiz</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,8 +17,8 @@
     <!-- HEADER -->
     <div class="flex flex-col md:flex-row justify-between items-center glass-panel p-6 rounded-2xl mb-6 gap-4">
         <div>
-            <h1 class="text-2xl font-bold text-sky-400"><i class="fa-solid fa-file-pen mr-2"></i>Editor Soal Cyber Quiz (5 Pilihan)</h1>
-            <p class="text-xs text-slate-400 mt-1">Kelola bank soal pilihan ganda A s.d. E tanpa mengedit kodingan.</p>
+            <h1 class="text-2xl font-bold text-sky-400"><i class="fa-solid fa-file-pen mr-2"></i>Editor Soal Cyber Quiz</h1>
+            <p class="text-xs text-slate-400 mt-1">Kelola bank soal Anda dengan mudah tanpa perlu mengedit kode HTML.</p>
         </div>
         <div class="flex gap-2">
             <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-sky-300 px-4 py-2 rounded-xl text-xs font-bold border border-sky-500/30 flex items-center gap-2">
@@ -42,7 +42,6 @@
                 <textarea id="input-q" required rows="2" placeholder="Tuliskan pertanyaan di sini..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200 focus:outline-none focus:border-sky-500"></textarea>
             </div>
 
-            <!-- PILIHAN JAWABAN A SAMPAI E -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                     <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan A:</label>
@@ -60,10 +59,6 @@
                     <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan D:</label>
                     <input type="text" id="input-opt-3" required placeholder="Jawaban D" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-500">
                 </div>
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan E:</label>
-                    <input type="text" id="input-opt-4" required placeholder="Jawaban E" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-500">
-                </div>
             </div>
 
             <div class="flex items-center justify-between pt-2">
@@ -74,7 +69,6 @@
                         <option value="1">B</option>
                         <option value="2">C</option>
                         <option value="3">D</option>
-                        <option value="4">E</option>
                     </select>
                 </div>
 
@@ -97,33 +91,56 @@
             <button onclick="clearAll()" class="text-xs text-rose-400 hover:text-rose-300"><i class="fa-solid fa-trash mr-1"></i> Kosongkan Semua</button>
         </div>
         <div id="questions-list" class="space-y-3">
-            <!-- Soal di-render di sini -->
+            <!-- Soal akan di-render di sini via JS -->
         </div>
     </div>
 
     <script>
-        let questionsData = [];
+        // Data awal default 25 soal
+        let questionsData = [
+            { q: "Elemen fisik komputer yang dapat disentuh dan dilihat secara langsung dinamakan...", options: ["Software", "Hardware", "Brainware", "Malware"], answer: 1 },
+            { q: "Perangkat berikut yang dikategori sebagai Perangkat Masukan (Input) adalah...", options: ["Keyboard & Mouse", "Monitor & Printer", "CPU & RAM", "Speaker & Plotter"], answer: 0 },
+            { q: "Komponen fisik yang bertindak sebagai pemproses utama / otak komputer adalah...", options: ["RAM", "Harddisk", "CPU (Prosesor)", "Power Supply"], answer: 2 },
+            { q: "Memori utama yang bersifat Volatile (hilang saat mati listrik) adalah...", options: ["ROM", "RAM", "SSD", "Flashdisk"], answer: 1 },
+            { q: "Contoh dari Sistem Operasi (Operating System) berikut ini adalah...", options: ["MS Word", "Google Chrome", "Windows & Linux", "Photoshop"], answer: 2 },
+            { q: "Software yang dibuat untuk membantu pekerjaan spesifik pengguna disebut...", options: ["Software Aplikasi", "System Firmware", "BIOS", "Driver"], answer: 0 },
+            { q: "Perangkat keras yang menampilkan hasil keluaran grafis secara visual adalah...", options: ["Scanner", "Monitor", "Microphone", "Motherboard"], answer: 1 },
+            { q: "Papan sirkuit utama tempat menghubungkan seluruh perangkat keras dinamakan...", options: ["Motherboard", "VGA Card", "Sound Card", "Power Supply"], answer: 0 },
+            { q: "Program kecil penyambung komunikasi OS dengan perangkat keras fisik adalah...", options: ["Antivirus", "Device Driver", "Web Browser", "Firmware"], answer: 1 },
+            { q: "Perangkat yang mengubah arus AC dari listrik rumah menjadi DC untuk komputer adalah...", options: ["UPS", "Power Supply (PSU)", "Stabilizer", "Inverter"], answer: 1 },
+            { q: "Storage sekunder berbasis chip flash tanpa komponen bergerak mekanis adalah...", options: ["HDD", "Floppy Disk", "SSD", "CD-ROM"], answer: 2 },
+            { q: "Manusia yang mengoperasikan, mengelola, atau memrogram komputer disebut...", options: ["Hardware", "Software", "Brainware", "Netware"], answer: 2 },
+            { q: "Sistem bilangan digital basis 2 (0 dan 1) yang dipahami oleh komputer dinamakan...", options: ["Desimal", "Biner", "Oktal", "Hexadesimal"], answer: 1 },
+            { q: "Bagian CPU yang khusus mengeksekusi operasi matematika dan perbandingan logika adalah...", options: ["Control Unit", "ALU", "Register", "Cache"], answer: 1 },
+            { q: "Firmware dasar tersimpan di ROM motherboard untuk pengecekan hardware awal adalah...", options: ["BIOS / UEFI", "Kernel", "Bootloader", "Cmd"], answer: 0 },
+            { q: "Komponen yang memproses instruksi grafis untuk ditampilkan di monitor adalah...", options: ["Sound Card", "NIC", "GPU / VGA", "Capture Card"], answer: 2 },
+            { q: "Perangkat lunak yang dapat digunakan gratis tanpa batasan waktu tetapi sumber tertutup adalah...", options: ["Open Source", "Freeware", "Shareware", "Commercial"], answer: 1 },
+            { q: "Software yang kode sumbernya terbuka untuk dipelajari dan dimodifikasi bersama adalah...", options: ["Proprietary", "Open Source", "Adware", "Trialware"], answer: 1 },
+            { q: "Memori ultra cepat berukuran kecil yang berada paling dekat dengan CPU adalah...", options: ["Harddisk", "ROM", "Cache Memory", "Virtual Memory"], answer: 2 },
+            { q: "Perangkat jaringan yang berfungsi menghubungkan banyak komputer dalam jaringan LAN adalah...", options: ["Switch / Hub", "Plotter", "Digitizer", "Projector"], answer: 0 },
+            { q: "Fungsi utama dari perangkat UPS (Uninterruptible Power Supply) adalah...", options: ["Internet Cepat", "Cadangan Daya Listrik Sementara", "Pendingin CPU", "Tambah RAM"], answer: 1 },
+            { q: "Perangkat keras yang berfungsi gabungan sebagai Input sekaligus Output adalah...", options: ["Touchscreen", "Keyboard", "Mouse", "Scanner"], answer: 0 },
+            { q: "Hirarki memori dari yang kapasitas kecil tapi KECEPATAN PALING TINGGI adalah...", options: ["HDD -> RAM -> Cache -> Register", "Register -> Cache -> RAM -> Storage", "RAM -> Register -> HDD -> Cache", "SSD -> RAM -> Cache -> Register"], answer: 1 },
+            { q: "Program jahat yang dibuat untuk merusak, mengganggu, atau mencuri data komputer dinamakan...", options: ["Firmware", "Shareware", "Malware", "Middleware"], answer: 2 },
+            { q: "Inti utama Sistem Operasi yang mengatur langsung akses hardware dan memori adalah...", options: ["GUI", "Kernel", "Shell", "API"], answer: 1 }
+        ];
 
         function renderList() {
             const container = document.getElementById('questions-list');
             document.getElementById('total-soal').innerText = questionsData.length;
             container.innerHTML = '';
 
-            const optionLabels = ['A', 'B', 'C', 'D', 'E'];
-
             questionsData.forEach((item, index) => {
                 const el = document.createElement('div');
                 el.className = 'bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex justify-between items-start gap-4';
-                
-                let optionsHtml = item.options.map((opt, optIdx) => `
-                    <span class="${item.answer === optIdx ? 'text-emerald-400 font-bold' : ''}">${optionLabels[optIdx]}. ${opt}</span>
-                `).join('');
-
                 el.innerHTML = `
                     <div class="flex-1">
                         <p class="text-sm font-semibold text-slate-100 mb-2">${index + 1}. ${item.q}</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-1.5 text-xs text-slate-400">
-                            ${optionsHtml}
+                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-400">
+                            <span class="${item.answer === 0 ? 'text-emerald-400 font-bold' : ''}">A. ${item.options[0]}</span>
+                            <span class="${item.answer === 1 ? 'text-emerald-400 font-bold' : ''}">B. ${item.options[1]}</span>
+                            <span class="${item.answer === 2 ? 'text-emerald-400 font-bold' : ''}">C. ${item.options[2]}</span>
+                            <span class="${item.answer === 3 ? 'text-emerald-400 font-bold' : ''}">D. ${item.options[3]}</span>
                         </div>
                     </div>
                     <div class="flex gap-2">
@@ -143,8 +160,7 @@
                 document.getElementById('input-opt-0').value.trim(),
                 document.getElementById('input-opt-1').value.trim(),
                 document.getElementById('input-opt-2').value.trim(),
-                document.getElementById('input-opt-3').value.trim(),
-                document.getElementById('input-opt-4').value.trim()
+                document.getElementById('input-opt-3').value.trim()
             ];
             const ans = parseInt(document.getElementById('input-answer').value);
 
@@ -164,11 +180,10 @@
             const item = questionsData[index];
             document.getElementById('edit-index').value = index;
             document.getElementById('input-q').value = item.q;
-            document.getElementById('input-opt-0').value = item.options[0] || '';
-            document.getElementById('input-opt-1').value = item.options[1] || '';
-            document.getElementById('input-opt-2').value = item.options[2] || '';
-            document.getElementById('input-opt-3').value = item.options[3] || '';
-            document.getElementById('input-opt-4').value = item.options[4] || '';
+            document.getElementById('input-opt-0').value = item.options[0];
+            document.getElementById('input-opt-1').value = item.options[1];
+            document.getElementById('input-opt-2').value = item.options[2];
+            document.getElementById('input-opt-3').value = item.options[3];
             document.getElementById('input-answer').value = item.answer;
 
             document.getElementById('form-title').innerText = `Edit Soal #${index + 1}`;
@@ -200,10 +215,6 @@
         }
 
         function downloadJSON() {
-            if(questionsData.length === 0) {
-                alert("Belum ada soal untuk didownload!");
-                return;
-            }
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questionsData, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
@@ -235,6 +246,7 @@
             reader.readAsText(file);
         }
 
+        // Initialize awal
         renderList();
     </script>
 </body>
