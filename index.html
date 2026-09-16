@@ -171,6 +171,7 @@
                 </div>
             </div>
 
+            <!-- CONTAINER OPTION DIPERBARUI (MENDUKUNG HINGGA OPSI E) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <button onClick="selectOption(0)" id="opt-0" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group">
                     <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">A</span>
@@ -187,6 +188,11 @@
                 <button onClick="selectOption(3)" id="opt-3" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group">
                     <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">D</span>
                     <span id="opt-text-3" class="text-slate-200 group-hover:text-white leading-snug">Pilihan D</span>
+                </button>
+                <!-- DITAMBAHKAN OPSI E DISINI (md:col-span-2 agar rapi penuh di desktop) -->
+                <button onClick="selectOption(4)" id="opt-4" class="glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group md:col-span-2">
+                    <span class="w-6 h-6 rounded-lg bg-sky-500/10 border border-sky-400/30 text-sky-400 font-tech font-bold text-xs flex items-center justify-center shrink-0">E</span>
+                    <span id="opt-text-4" class="text-slate-200 group-hover:text-white leading-snug">Pilihan E</span>
                 </button>
             </div>
         </section>
@@ -222,7 +228,7 @@
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyJOkm7CG-A9g86aBdREvJZup6ndbj3InrCyKiccNfsc9MfnPOI29AReRMY-qU06lCd/exec";
         
-        let rawQuestions = []; // Akan dimuat dinamis dari soal.json
+        let rawQuestions = []; // Dimuat dinamis dari soal.json
         let questions = [];
         let currentQuestionIdx = 0;
         let timerInterval = null;
@@ -247,7 +253,6 @@
             }
         }
 
-        // Panggil fetch saat halaman selesai load
         window.addEventListener('DOMContentLoaded', fetchQuestions);
 
         function prepareShuffledQuestions() {
@@ -326,12 +331,21 @@
             document.getElementById('question-text').innerText = qData.q;
             document.getElementById('current-score-text').innerText = `${correctAnswersCount} Benar`;
 
-            for (let i = 0; i < 4; i++) {
+            // PERUBAHAN: Loop diubah dari 4 menjadi total opsi yang tersedia di soal (dinamis hingga 5)
+            const optionCount = qData.options.length;
+            for (let i = 0; i < 5; i++) {
                 const btn = document.getElementById(`opt-${i}`);
                 const textSpan = document.getElementById(`opt-text-${i}`);
-                btn.className = "glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group";
-                btn.disabled = false;
-                textSpan.innerText = qData.options[i];
+
+                if (i < optionCount) {
+                    btn.classList.remove('hidden');
+                    btn.className = `glass-btn p-3.5 md:p-4 rounded-xl text-left flex items-center space-x-3 text-xs md:text-sm font-medium group ${i === 4 ? 'md:col-span-2' : ''}`;
+                    btn.disabled = false;
+                    textSpan.innerText = qData.options[i];
+                } else {
+                    // Sembunyikan tombol jika soal tersebut ternyata hanya punya 4 opsi
+                    btn.classList.add('hidden');
+                }
             }
 
             resetTimer();
