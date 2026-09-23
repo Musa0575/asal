@@ -1,0 +1,38 @@
+[
+  {
+    "q": "Sebuah perusahaan mengembangkan sistem monitoring detak jantung portable berbasis mikrokontroler. Sistem ini harus bekerja terus-menerus selama 48 jam dengan baterai kecil, memproses data sensor secara real-time, dan mengirim peringatan via Bluetooth jika detak jantung tidak normal. Namun, pengujian menunjukkan konsumsi daya terlalu tinggi sehingga baterai cepat habis.Bagaimana pendekatan terbaik untuk mengoptimalkan konsumsi daya tanpa mengorbankan akurasi deteksi?",
+    "embed_html": "<iframe src=\"https://drive.google.com/file/d/1zjaPBB3Ar-gtBl0HBZ1cpLkRpQS1qn88/preview\" width=\"640\" height=\"480\"></iframe>",
+    "options": [
+      "Meningkatkan frekuensi sampling sensor dan menonaktifkan Bluetooth",
+      "Menggunakan mode sleep pada mikrokontroler serta menurunkan clock speed saat idle",
+      "Mengganti seluruh sensor dengan versi digital yang lebih mahal",
+      "Menambah kapasitas baterai tanpa mengubah algoritma",
+      "Memproses semua data di cloud untuk mengurangi beban lokal"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Dalam pengembangan sistem kendali otomatis pintu gerbang berbasis embedded system, tim menemukan bahwa sistem sering gagal merespons perintah remote control saat ada interferensi sinyal radio dari perangkat lain di sekitarnya. Sistem menggunakan protokol komunikasi nirkabel sederhana tanpa enkripsi dan tanpa mekanisme error detection yang kuat.\nManakah solusi paling tepat untuk meningkatkan keandalan sistem terhadap interferensi?",
+    "embed_html": "<iframe src=\"https://drive.google.com/file/d/1oCkyI-wHHRuZaKhctn9AX-avYNVtP9xh/preview\" width=\"640\" height=\"480\"></iframe>",
+    "options": [
+      "Meningkatkan daya transmisi remote control saja",
+      "Mengimplementasikan protokol komunikasi dengan CRC dan mekanisme retransmit",
+      "Mengganti mikrokontroler dengan yang memiliki clock lebih tinggi",
+      "Menambah jumlah sensor infrared tanpa mengubah komunikasi",
+      "Memindahkan seluruh proses ke server cloud"
+    ],
+    "answer": 1
+  },
+  {
+    "q": "Sebuah tim merancang sistem monitoring suhu dan kelembaban gudang farmasi menggunakan beberapa node sensor berbasis mikrokontroler yang saling terhubung. Data harus dikirim secara periodik ke gateway, namun beberapa node mengalami packet loss tinggi ketika jarak bertambah dan ada penghalang. Tim diminta memilih arsitektur komunikasi yang paling efisien dan andal.\nPendekatan manakah yang paling sesuai untuk kondisi tersebut?",
+    "embed_html": "<iframe src=\"https://drive.google.com/file/d/19QRHhRDv-CVGpEJUCJTvZv2bGRD0Ujlf/preview\" width=\"640\" height=\"480\"></iframe>",
+    "options": [
+      "Menggunakan topologi star dengan WiFi berdaya tinggi",
+      "Menerapkan mesh network dengan protokol low-power seperti Zigbee atau LoRa",
+      "Menghubungkan semua node langsung ke internet via 4G",
+      "Menggunakan kabel Ethernet untuk seluruh node",
+      "Menyimpan data lokal di setiap node tanpa pengiriman real-time"
+    ],
+    "answer": 1
+  }
+]
