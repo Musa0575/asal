@@ -1,220 +1,252 @@
 <!DOCTYPE html>
-<html lang="id" class="dark h-full">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor Soal - Cyber Quiz</title>
+    <title>Editor Soal Kuis (Dengan Gambar)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); }
-    </style>
 </head>
-<body class="p-4 md:p-8 max-w-5xl mx-auto">
+<body class="bg-slate-900 text-slate-100 min-h-screen p-4 md:p-8 font-sans">
 
-    <!-- HEADER -->
-    <div class="flex flex-col md:flex-row justify-between items-center glass-panel p-6 rounded-2xl mb-6 gap-4">
-        <div>
-            <h1 class="text-2xl font-bold text-sky-400"><i class="fa-solid fa-file-pen mr-2"></i>Editor Soal Cyber Quiz</h1>
-            <p class="text-xs text-slate-400 mt-1">Kelola bank soal Anda dengan mudah tanpa perlu mengedit kode HTML.</p>
-        </div>
-        <div class="flex gap-2">
-            <label class="cursor-pointer bg-slate-800 hover:bg-slate-700 text-sky-300 px-4 py-2 rounded-xl text-xs font-bold border border-sky-500/30 flex items-center gap-2">
-                <i class="fa-solid fa-upload"></i> Impor soal.json
-                <input type="file" id="import-file" accept=".json" class="hidden" onchange="importJSON(event)">
-            </label>
-            <button onclick="downloadJSON()" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 shadow-lg shadow-emerald-900/30">
-                <i class="fa-solid fa-download"></i> Download soal.json
-            </button>
-        </div>
-    </div>
-
-    <!-- FORM TAMBAH / EDIT SOAL -->
-    <div class="glass-panel p-6 rounded-2xl mb-8 border-l-4 border-sky-500">
-        <h2 id="form-title" class="text-lg font-bold text-white mb-4">Tambah Soal Baru</h2>
-        <form id="question-form" onsubmit="saveQuestion(event)" class="space-y-4">
-            <input type="hidden" id="edit-index" value="-1">
-            
+    <div class="max-w-4xl mx-auto">
+        <header class="flex justify-between items-center mb-6 pb-4 border-b border-slate-700">
             <div>
-                <label class="block text-xs font-bold text-slate-300 mb-1">Pertanyaan / Soal:</label>
-                <textarea id="input-q" required rows="2" placeholder="Tuliskan pertanyaan di sini..." class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm text-slate-200 focus:outline-none focus:border-sky-500"></textarea>
+                <h1 class="text-2xl font-bold text-sky-400">Editor Soal Kuis</h1>
+                <p class="text-xs text-slate-400">Buat, tambah gambar, dan unduh file soal.json</p>
+            </div>
+            <button onClick="downloadJSON()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2 rounded-xl text-sm flex items-center gap-2 shadow-lg transition">
+                <i class="fa-solid fa-download"></i> Unduh soal.json
+            </button>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- FORM INPUT SOAL -->
+            <div class="lg:col-span-7 bg-slate-800 p-5 rounded-2xl border border-slate-700 shadow-xl space-y-4">
+                <h2 class="text-lg font-bold text-slate-200 border-b border-slate-700 pb-2">Tambah / Edit Soal</h2>
+
+                <!-- Input Pertanyaan -->
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1">Pertanyaan / Soal:</label>
+                    <textarea id="input-q" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm focus:outline-none focus:border-sky-400 text-slate-100" placeholder="Tuliskan pertanyaan di sini..."></textarea>
+                </div>
+
+                <!-- INPUT GAMBAR (FILE & URL) -->
+                <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-700 space-y-3">
+                    <label class="block text-xs font-semibold text-sky-400">
+                        <i class="fa-solid fa-image"></i> Gambar Soal (Opsional)
+                    </label>
+                    
+                    <!-- Opsi A: Upload File -->
+                    <div>
+                        <span class="text-[11px] text-slate-400 block mb-1">Pilihan 1: Upload File Gambar dari Komputer</span>
+                        <input type="file" id="input-img-file" accept="image/*" onChange="handleFileUpload(event)" class="text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-sky-600 file:text-white hover:file:bg-sky-500 cursor-pointer">
+                    </div>
+
+                    <div class="text-center text-xs text-slate-500 font-bold">- ATAU -</div>
+
+                    <!-- Opsi B: Link URL -->
+                    <div>
+                        <span class="text-[11px] text-slate-400 block mb-1">Pilihan 2: Link URL Gambar</span>
+                        <input type="text" id="input-img-url" oninput="handleUrlInput()" placeholder="https://example.com/gambar.jpg" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs focus:outline-none focus:border-sky-400 text-slate-200">
+                    </div>
+
+                    <!-- Preview Gambar Saat Ini -->
+                    <div id="preview-box" class="hidden text-center pt-2">
+                        <span class="text-[10px] text-slate-400 block mb-1">Preview Gambar:</span>
+                        <img id="img-preview" src="" class="max-h-36 mx-auto rounded-lg border border-slate-600 shadow-md object-contain">
+                        <button onClick="clearImage()" class="mt-2 text-[10px] text-red-400 hover:underline">Hapus Gambar</button>
+                    </div>
+                </div>
+
+                <!-- Input Opsi A - E -->
+                <div class="space-y-2">
+                    <label class="block text-xs font-semibold text-slate-300">Pilihan Jawaban (Tandai Jawaban Benar):</label>
+
+                    <div class="flex items-center gap-2">
+                        <input type="radio" name="correct-opt" value="0" checked class="accent-emerald-500">
+                        <span class="text-xs font-bold w-4">A.</span>
+                        <input type="text" id="opt-0" placeholder="Jawaban A" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="radio" name="correct-opt" value="1" class="accent-emerald-500">
+                        <span class="text-xs font-bold w-4">B.</span>
+                        <input type="text" id="opt-1" placeholder="Jawaban B" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="radio" name="correct-opt" value="2" class="accent-emerald-500">
+                        <span class="text-xs font-bold w-4">C.</span>
+                        <input type="text" id="opt-2" placeholder="Jawaban C" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="radio" name="correct-opt" value="3" class="accent-emerald-500">
+                        <span class="text-xs font-bold w-4">D.</span>
+                        <input type="text" id="opt-3" placeholder="Jawaban D" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <input type="radio" name="correct-opt" value="4" class="accent-emerald-500">
+                        <span class="text-xs font-bold w-4">E.</span>
+                        <input type="text" id="opt-4" placeholder="Jawaban E (Opsional)" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-2 text-xs text-slate-200">
+                    </div>
+                </div>
+
+                <button onClick="addQuestion()" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-2.5 rounded-xl text-xs transition">
+                    + Tambahkan Soal ke Daftar
+                </button>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <!-- DAFTAR SOAL YANG TERBUAT -->
+            <div class="lg:col-span-5 bg-slate-800 p-5 rounded-2xl border border-slate-700 shadow-xl flex flex-col justify-between">
                 <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan A:</label>
-                    <input type="text" id="input-opt-0" required placeholder="Jawaban A" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan B:</label>
-                    <input type="text" id="input-opt-1" required placeholder="Jawaban B" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan C:</label>
-                    <input type="text" id="input-opt-2" required placeholder="Jawaban C" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-500">
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-400 mb-1">Pilihan D:</label>
-                    <input type="text" id="input-opt-3" required placeholder="Jawaban D" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-2.5 text-sm text-slate-200 focus:outline-none focus:border-sky-500">
+                    <h2 class="text-lg font-bold text-slate-200 border-b border-slate-700 pb-2 mb-3">
+                        Daftar Soal (<span id="count-soal">0</span>)
+                    </h2>
+                    <div id="soal-list" class="space-y-3 max-h-[500px] overflow-y-auto pr-1">
+                        <p class="text-xs text-slate-500 text-center py-8">Belum ada soal yang ditambahkan.</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="flex items-center justify-between pt-2">
-                <div>
-                    <label class="block text-xs font-bold text-amber-400 mb-1">Kunci Jawaban Benar:</label>
-                    <select id="input-answer" class="bg-slate-900 border border-amber-500/50 rounded-xl p-2 text-sm text-amber-300 focus:outline-none">
-                        <option value="0">A</option>
-                        <option value="1">B</option>
-                        <option value="2">C</option>
-                        <option value="3">D</option>
-                    </select>
-                </div>
-
-                <div class="flex gap-2">
-                    <button type="button" id="btn-cancel" onclick="resetForm()" class="hidden bg-slate-800 hover:bg-slate-700 text-slate-300 px-4 py-2 rounded-xl text-xs font-bold">
-                        Batal Edit
-                    </button>
-                    <button type="submit" id="btn-submit" class="bg-sky-600 hover:bg-sky-500 text-white px-6 py-2 rounded-xl text-xs font-bold shadow-lg shadow-sky-900/40">
-                        <i class="fa-solid fa-plus mr-1"></i> Tambahkan Soal
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- DAFTAR SOAL SEMENTARA -->
-    <div class="glass-panel p-6 rounded-2xl">
-        <div class="flex justify-between items-center mb-4">
-            <h2 class="text-lg font-bold text-white">Daftar Bank Soal (<span id="total-soal">0</span> Soal)</h2>
-            <button onclick="clearAll()" class="text-xs text-rose-400 hover:text-rose-300"><i class="fa-solid fa-trash mr-1"></i> Kosongkan Semua</button>
-        </div>
-        <div id="questions-list" class="space-y-3">
-            <!-- Soal akan di-render di sini via JS -->
         </div>
     </div>
 
     <script>
-        // Data awal default 25 soal
-        let questionsData = [
-            { q: "Elemen fisik komputer yang dapat disentuh dan dilihat secara langsung dinamakan...", options: ["Software", "Hardware", "Brainware", "Malware"], answer: 1 },
-            { q: "Perangkat berikut yang dikategori sebagai Perangkat Masukan (Input) adalah...", options: ["Keyboard & Mouse", "Monitor & Printer", "CPU & RAM", "Speaker & Plotter"], answer: 0 },
-            { q: "Komponen fisik yang bertindak sebagai pemproses utama / otak komputer adalah...", options: ["RAM", "Harddisk", "CPU (Prosesor)", "Power Supply"], answer: 2 },
-            { q: "Memori utama yang bersifat Volatile (hilang saat mati listrik) adalah...", options: ["ROM", "RAM", "SSD", "Flashdisk"], answer: 1 },
-            { q: "Contoh dari Sistem Operasi (Operating System) berikut ini adalah...", options: ["MS Word", "Google Chrome", "Windows & Linux", "Photoshop"], answer: 2 },
-            { q: "Software yang dibuat untuk membantu pekerjaan spesifik pengguna disebut...", options: ["Software Aplikasi", "System Firmware", "BIOS", "Driver"], answer: 0 },
-            { q: "Perangkat keras yang menampilkan hasil keluaran grafis secara visual adalah...", options: ["Scanner", "Monitor", "Microphone", "Motherboard"], answer: 1 },
-            { q: "Papan sirkuit utama tempat menghubungkan seluruh perangkat keras dinamakan...", options: ["Motherboard", "VGA Card", "Sound Card", "Power Supply"], answer: 0 },
-            { q: "Program kecil penyambung komunikasi OS dengan perangkat keras fisik adalah...", options: ["Antivirus", "Device Driver", "Web Browser", "Firmware"], answer: 1 },
-            { q: "Perangkat yang mengubah arus AC dari listrik rumah menjadi DC untuk komputer adalah...", options: ["UPS", "Power Supply (PSU)", "Stabilizer", "Inverter"], answer: 1 },
-            { q: "Storage sekunder berbasis chip flash tanpa komponen bergerak mekanis adalah...", options: ["HDD", "Floppy Disk", "SSD", "CD-ROM"], answer: 2 },
-            { q: "Manusia yang mengoperasikan, mengelola, atau memrogram komputer disebut...", options: ["Hardware", "Software", "Brainware", "Netware"], answer: 2 },
-            { q: "Sistem bilangan digital basis 2 (0 dan 1) yang dipahami oleh komputer dinamakan...", options: ["Desimal", "Biner", "Oktal", "Hexadesimal"], answer: 1 },
-            { q: "Bagian CPU yang khusus mengeksekusi operasi matematika dan perbandingan logika adalah...", options: ["Control Unit", "ALU", "Register", "Cache"], answer: 1 },
-            { q: "Firmware dasar tersimpan di ROM motherboard untuk pengecekan hardware awal adalah...", options: ["BIOS / UEFI", "Kernel", "Bootloader", "Cmd"], answer: 0 },
-            { q: "Komponen yang memproses instruksi grafis untuk ditampilkan di monitor adalah...", options: ["Sound Card", "NIC", "GPU / VGA", "Capture Card"], answer: 2 },
-            { q: "Perangkat lunak yang dapat digunakan gratis tanpa batasan waktu tetapi sumber tertutup adalah...", options: ["Open Source", "Freeware", "Shareware", "Commercial"], answer: 1 },
-            { q: "Software yang kode sumbernya terbuka untuk dipelajari dan dimodifikasi bersama adalah...", options: ["Proprietary", "Open Source", "Adware", "Trialware"], answer: 1 },
-            { q: "Memori ultra cepat berukuran kecil yang berada paling dekat dengan CPU adalah...", options: ["Harddisk", "ROM", "Cache Memory", "Virtual Memory"], answer: 2 },
-            { q: "Perangkat jaringan yang berfungsi menghubungkan banyak komputer dalam jaringan LAN adalah...", options: ["Switch / Hub", "Plotter", "Digitizer", "Projector"], answer: 0 },
-            { q: "Fungsi utama dari perangkat UPS (Uninterruptible Power Supply) adalah...", options: ["Internet Cepat", "Cadangan Daya Listrik Sementara", "Pendingin CPU", "Tambah RAM"], answer: 1 },
-            { q: "Perangkat keras yang berfungsi gabungan sebagai Input sekaligus Output adalah...", options: ["Touchscreen", "Keyboard", "Mouse", "Scanner"], answer: 0 },
-            { q: "Hirarki memori dari yang kapasitas kecil tapi KECEPATAN PALING TINGGI adalah...", options: ["HDD -> RAM -> Cache -> Register", "Register -> Cache -> RAM -> Storage", "RAM -> Register -> HDD -> Cache", "SSD -> RAM -> Cache -> Register"], answer: 1 },
-            { q: "Program jahat yang dibuat untuk merusak, mengganggu, atau mencuri data komputer dinamakan...", options: ["Firmware", "Shareware", "Malware", "Middleware"], answer: 2 },
-            { q: "Inti utama Sistem Operasi yang mengatur langsung akses hardware dan memori adalah...", options: ["GUI", "Kernel", "Shell", "API"], answer: 1 }
-        ];
+        let questionsData = [];
+        let currentImageData = ""; // Menyimpan string gambar (Base64 atau URL)
 
-        function renderList() {
-            const container = document.getElementById('questions-list');
-            document.getElementById('total-soal').innerText = questionsData.length;
-            container.innerHTML = '';
+        // 1. Membaca Upload File Gambar dari Komputer (Convert ke Base64)
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    currentImageData = e.target.result; // Data Base64 Gambar
+                    showPreview(currentImageData);
+                    document.getElementById('input-img-url').value = ""; // Clear input URL
+                };
+                reader.readAsDataURL(file);
+            }
+        }
 
-            questionsData.forEach((item, index) => {
-                const el = document.createElement('div');
-                el.className = 'bg-slate-900/80 p-4 rounded-xl border border-slate-800 flex justify-between items-start gap-4';
-                el.innerHTML = `
-                    <div class="flex-1">
-                        <p class="text-sm font-semibold text-slate-100 mb-2">${index + 1}. ${item.q}</p>
-                        <div class="grid grid-cols-2 gap-2 text-xs text-slate-400">
-                            <span class="${item.answer === 0 ? 'text-emerald-400 font-bold' : ''}">A. ${item.options[0]}</span>
-                            <span class="${item.answer === 1 ? 'text-emerald-400 font-bold' : ''}">B. ${item.options[1]}</span>
-                            <span class="${item.answer === 2 ? 'text-emerald-400 font-bold' : ''}">C. ${item.options[2]}</span>
-                            <span class="${item.answer === 3 ? 'text-emerald-400 font-bold' : ''}">D. ${item.options[3]}</span>
-                        </div>
+        // 2. Membaca Input Link URL Gambar
+        function handleUrlInput() {
+            const url = document.getElementById('input-img-url').value.trim();
+            if (url !== "") {
+                currentImageData = url;
+                showPreview(currentImageData);
+                document.getElementById('input-img-file').value = ""; // Clear input File
+            } else {
+                clearImage();
+            }
+        }
+
+        // Tampilkan Preview Gambar
+        function showPreview(src) {
+            const previewBox = document.getElementById('preview-box');
+            const imgPreview = document.getElementById('img-preview');
+            imgPreview.src = src;
+            previewBox.classList.remove('hidden');
+        }
+
+        // Hapus Gambar
+        function clearImage() {
+            currentImageData = "";
+            document.getElementById('input-img-file').value = "";
+            document.getElementById('input-img-url').value = "";
+            document.getElementById('img-preview').src = "";
+            document.getElementById('preview-box').classList.add('hidden');
+        }
+
+        // Tambahkan Soal ke Array JavaScript
+        function addQuestion() {
+            const qText = document.getElementById('input-q').value.trim();
+            if (!qText) {
+                alert("Pertanyaan tidak boleh kosong!");
+                return;
+            }
+
+            // Ambil Opsi Jawaban
+            const options = [];
+            for (let i = 0; i < 5; i++) {
+                const val = document.getElementById(`opt-${i}`).value.trim();
+                if (val !== "") options.push(val);
+            }
+
+            if (options.length < 2) {
+                alert("Minimal isi 2 opsi jawaban!");
+                return;
+            }
+
+            const answerIdx = parseInt(document.querySelector('input[name="correct-opt"]:checked').value);
+
+            // Objek Soal Baru
+            const newQuestion = {
+                q: qText,
+                image: currentImageData, // Gambar berupa URL atau Base64
+                options: options,
+                answer: answerIdx
+            };
+
+            questionsData.push(newQuestion);
+            renderSoalList();
+            resetForm();
+        }
+
+        // Reset Form setelah tambah soal
+        function resetForm() {
+            document.getElementById('input-q').value = "";
+            for (let i = 0; i < 5; i++) {
+                document.getElementById(`opt-${i}`).value = "";
+            }
+            clearImage();
+        }
+
+        // Tampilkan Daftar Soal di Kolom Kanan Editor
+        function renderSoalList() {
+            const container = document.getElementById('soal-list');
+            document.getElementById('count-soal').innerText = questionsData.length;
+
+            if (questionsData.length === 0) {
+                container.innerHTML = `<p class="text-xs text-slate-500 text-center py-8">Belum ada soal yang ditambahkan.</p>`;
+                return;
+            }
+
+            container.innerHTML = "";
+            questionsData.forEach((item, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-900 border border-slate-700 p-3 rounded-xl text-xs space-y-2 relative group";
+                
+                let imgTag = item.image ? `<img src="${item.image}" class="h-16 rounded border border-slate-700 object-contain my-1">` : '';
+
+                card.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="font-bold text-sky-400">Soal #${idx + 1}</span>
+                        <button onclick="deleteQuestion(${idx})" class="text-red-400 hover:text-red-300">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
                     </div>
-                    <div class="flex gap-2">
-                        <button onclick="editQuestion(${index})" class="p-2 text-sky-400 hover:bg-slate-800 rounded-lg text-xs" title="Edit"><i class="fa-solid fa-pen"></i></button>
-                        <button onclick="deleteQuestion(${index})" class="p-2 text-rose-400 hover:bg-slate-800 rounded-lg text-xs" title="Hapus"><i class="fa-solid fa-trash"></i></button>
+                    <p class="text-slate-200 font-medium">${item.q}</p>
+                    ${imgTag}
+                    <div class="text-[11px] text-slate-400">
+                        Jawaban Benar: <span class="text-emerald-400 font-bold">${String.fromCharCode(65 + item.answer)} (${item.options[item.answer]})</span>
                     </div>
                 `;
-                container.appendChild(el);
+                container.appendChild(card);
             });
         }
 
-        function saveQuestion(e) {
-            e.preventDefault();
-            const editIdx = parseInt(document.getElementById('edit-index').value);
-            const qText = document.getElementById('input-q').value.trim();
-            const opts = [
-                document.getElementById('input-opt-0').value.trim(),
-                document.getElementById('input-opt-1').value.trim(),
-                document.getElementById('input-opt-2').value.trim(),
-                document.getElementById('input-opt-3').value.trim()
-            ];
-            const ans = parseInt(document.getElementById('input-answer').value);
-
-            const newItem = { q: qText, options: opts, answer: ans };
-
-            if (editIdx >= 0) {
-                questionsData[editIdx] = newItem;
-            } else {
-                questionsData.push(newItem);
-            }
-
-            resetForm();
-            renderList();
-        }
-
-        function editQuestion(index) {
-            const item = questionsData[index];
-            document.getElementById('edit-index').value = index;
-            document.getElementById('input-q').value = item.q;
-            document.getElementById('input-opt-0').value = item.options[0];
-            document.getElementById('input-opt-1').value = item.options[1];
-            document.getElementById('input-opt-2').value = item.options[2];
-            document.getElementById('input-opt-3').value = item.options[3];
-            document.getElementById('input-answer').value = item.answer;
-
-            document.getElementById('form-title').innerText = `Edit Soal #${index + 1}`;
-            document.getElementById('btn-submit').innerHTML = '<i class="fa-solid fa-check mr-1"></i> Simpan Perubahan';
-            document.getElementById('btn-cancel').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
         function deleteQuestion(index) {
-            if (confirm("Yakin ingin menghapus soal ini?")) {
-                questionsData.splice(index, 1);
-                renderList();
-            }
+            questionsData.splice(index, 1);
+            renderSoalList();
         }
 
-        function resetForm() {
-            document.getElementById('question-form').reset();
-            document.getElementById('edit-index').value = "-1";
-            document.getElementById('form-title').innerText = "Tambah Soal Baru";
-            document.getElementById('btn-submit').innerHTML = '<i class="fa-solid fa-plus mr-1"></i> Tambahkan Soal';
-            document.getElementById('btn-cancel').classList.add('hidden');
-        }
-
-        function clearAll() {
-            if (confirm("Hapus seluruh daftar soal?")) {
-                questionsData = [];
-                renderList();
-            }
-        }
-
+        // Unduh File soal.json
         function downloadJSON() {
+            if (questionsData.length === 0) {
+                alert("Belum ada soal untuk diunduh!");
+                return;
+            }
             const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questionsData, null, 2));
             const downloadAnchor = document.createElement('a');
             downloadAnchor.setAttribute("href", dataStr);
@@ -223,31 +255,6 @@
             downloadAnchor.click();
             downloadAnchor.remove();
         }
-
-        function importJSON(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-
-            const reader = new FileReader();
-            reader.onload = function(evt) {
-                try {
-                    const parsed = JSON.parse(evt.target.result);
-                    if (Array.isArray(parsed)) {
-                        questionsData = parsed;
-                        renderList();
-                        alert("Berhasil mengimpor " + parsed.length + " soal!");
-                    } else {
-                        alert("Format JSON tidak valid!");
-                    }
-                } catch (err) {
-                    alert("Gagal membaca file JSON!");
-                }
-            };
-            reader.readAsText(file);
-        }
-
-        // Initialize awal
-        renderList();
     </script>
 </body>
 </html>
