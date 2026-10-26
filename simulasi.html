@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Coding TIK SMA</title>
+<style>
+:root{--navy:#14213d;--blue:#2563eb;--bg:#f3f6fb;--ink:#172033;--muted:#667085;--line:#dce3ef}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#14213d,#2563eb);color:white;padding:22px clamp(16px,4vw,42px)}
+header h1{margin:0 0 5px;font-size:clamp(1.35rem,3vw,2rem)}header p{margin:0;color:#e2eaff}
+main{max-width:1250px;margin:20px auto;padding:0 16px 28px}
+.toolbar,.panel{background:white;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 16px #14213d0a}
+.toolbar{padding:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+label{font-weight:650;font-size:.9rem}select,button{font:inherit;border-radius:9px;padding:9px 12px;border:1px solid var(--line);background:white;color:var(--ink)}
+button{cursor:pointer;font-weight:650}button.primary{background:var(--blue);color:white;border-color:var(--blue)}button:hover{filter:brightness(.97)}
+.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.panel{overflow:hidden;min-width:0}.panel-head{padding:13px 16px;background:#f8faff;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}.panel-head h2{font-size:1rem;margin:0}
+.tabs{display:flex;gap:5px}.tab{padding:6px 10px;font-size:.85rem}.tab.active{background:#e4edff;border-color:#b7ceff;color:#1747a8}
+.editor-wrap{padding:12px}.hint{font-size:.86rem;color:var(--muted);margin:0 0 10px}
+textarea{width:100%;height:390px;resize:vertical;border:1px solid #27364d;border-radius:9px;background:#101b2d;color:#e7f0ff;padding:14px;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2;white-space:pre;outline:none}
+textarea:focus{border-color:#6da0ff;box-shadow:0 0 0 2px #2563eb22}
+.preview-area{padding:12px}.preview-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;color:var(--muted);font-size:.85rem}
+iframe{display:block;width:100%;height:390px;border:1px solid var(--line);border-radius:9px;background:white}
+.bottom{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;margin-top:16px}
+.info{padding:16px}.info h2{font-size:1rem;margin:0 0 10px}.steps{padding-left:20px;margin:0}.steps li{margin:7px 0}.challenge{background:#eff6ff;border:1px solid #cfe0ff;border-radius:10px;padding:12px;margin-top:12px}
+.status{font-size:.84rem;color:#166534}.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:20px 0 0}
+@media(max-width:800px){.workspace,.bottom{grid-template-columns:1fr}textarea,iframe{height:330px}}
+</style>
+</head>
+<body>
+<header><h1>🧪 Laboratorium Coding TIK</h1><p>Simulasi HTML, CSS, dan JavaScript untuk siswa SMA — tulis kode, jalankan, amati hasilnya.</p></header>
+<main>
+  <section class="toolbar">
+    <label for="lesson">Pilih latihan:</label>
+    <select id="lesson">
+      <option value="hello">1. Halaman perkenalan</option>
+      <option value="style">2. Desain kartu profil</option>
+      <option value="click">3. Tombol interaktif</option>
+      <option value="counter">4. Penghitung angka</option>
+    </select>
+    <button class="primary" id="run">▶ Jalankan kode</button>
+    <button id="reset">↺ Kembalikan contoh</button>
+    <button id="download">⬇ Unduh HTML</button>
+    <span class="status" id="status" aria-live="polite">Siap digunakan.</span>
+  </section>
+  <section class="workspace">
+    <div class="panel">
+      <div class="panel-head"><h2>✍️ Editor kode</h2><div class="tabs" role="tablist">
+        <button class="tab active" data-tab="html">HTML</button><button class="tab" data-tab="css">CSS</button><button class="tab" data-tab="js">JavaScript</button>
+      </div></div>
+      <div class="editor-wrap"><p class="hint" id="editorHint">HTML = struktur halaman. Pilih tab untuk mengedit bagian lain.</p>
+        <textarea id="editor" spellcheck="false" aria-label="Editor kode"></textarea>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>🖥️ Live preview</h2><span style="font-size:.82rem;color:#667085">Hasil website</span></div>
+      <div class="preview-area"><div class="preview-top"><span>Perubahan terlihat setelah kode dijalankan.</span><span>Browser preview</span></div><iframe id="preview" title="Pratinjau hasil website" sandbox="allow-scripts"></iframe></div>
+    </div>
+  </section>
+  <section class="bottom">
+    <div class="panel info"><h2>📘 Panduan singkat siswa</h2><ol class="steps">
+      <li>Pilih salah satu latihan dari menu di atas.</li><li>Pilih tab HTML, CSS, atau JavaScript.</li><li>Ubah kode sedikit demi sedikit, misalnya teks, warna, atau angka.</li><li>Klik <b>Jalankan kode</b> dan amati hasilnya di Live preview.</li><li>Jika kode berantakan, klik <b>Kembalikan contoh</b>.</li>
+    </ol></div>
+    <div class="panel info"><h2>🎯 Tantangan kelas</h2><p id="challengeText">Ubah judul dan paragraf agar halaman memperkenalkan diri kamu.</p><div class="challenge"><b>Diskusi:</b> Bagian mana yang mengatur struktur, tampilan, dan interaksi? Jelaskan dengan contoh dari kode.</div></div>
+  </section>
+  <div class="footer">Laboratorium Coding TIK • Dapat dijalankan langsung di browser tanpa instalasi.</div>
+</main>
+<script>
+const examples={
+hello:{html:`<main class="card">
+  <h1>Halo, dunia!</h1>
+  <p>Ini halaman web pertamaku.</p>
+  <p>HTML membentuk struktur halaman.</p>
+</main>`,css:`body { font-family: Arial, sans-serif; background: #eef4ff; padding: 24px; }
+.card { max-width: 420px; margin: 20px auto; padding: 24px; background: white; border-radius: 14px; box-shadow: 0 4px 16px #1232; }
+h1 { color: #2457c5; }`,js:`// Coba tambahkan interaksi JavaScript di sini
+console.log("Halaman siap!");`,challenge:"Ubah judul dan paragraf agar halaman memperkenalkan diri kamu."},
+style:{html:`<article class="profile">
+  <div class="avatar">👩‍💻</div>
+  <h1>Profil Siswa</h1>
+  <p>Pelajar kreatif, ingin tahu, dan siap belajar teknologi.</p>
+  <p><b>Minat:</b> desain web dan pemrograman</p>
+</article>`,css:`body { font-family: Arial, sans-serif; background: #f0fdfa; padding: 24px; }
+.profile { max-width: 360px; margin: 10px auto; text-align: center; padding: 26px; background: white; border-radius: 18px; border: 2px solid #99f6e4; }
+.avatar { font-size: 48px; }
+h1 { color: #0f766e; }
+p { line-height: 1.6; }`,js:`// Tantangan: tampilkan pesan ketika kartu diklik
+document.querySelector(".profile").addEventListener("click", () => {
+  alert("Semangat belajar coding!");
+});`,challenge:"Ganti warna kartu, emoji, nama profil, dan minat sesuai diri sendiri."},
+click:{html:`<section class="box">
+  <h1>Website Interaktif</h1>
+  <p id="pesan">Klik tombol di bawah.</p>
+  <button id="tombol">Klik saya!</button>
+</section>`,css:`body { font-family: Arial, sans-serif; background: #fff7ed; padding: 24px; }
+.box { max-width: 400px; margin: 25px auto; padding: 24px; background: white; border-radius: 16px; text-align: center; }
+h1 { color: #c2410c; }
+button { padding: 10px 18px; border: 0; border-radius: 8px; background: #ea580c; color: white; cursor: pointer; }`,js:`const tombol = document.getElementById("tombol");
+const pesan = document.getElementById("pesan");
+
+tombol.addEventListener("click", function() {
+  pesan.textContent = "Hebat! JavaScript merespons klik.";
+});`,challenge:"Ubah teks pesan dan warna tombol. Coba buat tombol mengubah warna latar."},
+counter:{html:`<section class="counter">
+  <h1>Penghitung Angka</h1>
+  <p id="angka">0</p>
+  <button id="kurang">− Kurang</button>
+  <button id="tambah">+ Tambah</button>
+  <button id="ulang">Ulangi</button>
+</section>`,css:`body { font-family: Arial, sans-serif; background: #f5f3ff; padding: 24px; }
+.counter { max-width: 400px; margin: 20px auto; text-align: center; padding: 24px; background: white; border-radius: 16px; }
+h1 { color: #6d28d9; }
+#angka { font-size: 54px; font-weight: bold; margin: 18px; color: #4c1d95; }
+button { padding: 10px 14px; margin: 4px; border: 0; border-radius: 8px; background: #6d28d9; color: white; cursor: pointer; }`,js:`let nilai = 0;
+const angka = document.getElementById("angka");
+
+document.getElementById("tambah").onclick = () => {
+  nilai++;
+  angka.textContent = nilai;
+};
+document.getElementById("kurang").onclick = () => {
+  nilai--;
+  angka.textContent = nilai;
+};
+document.getElementById("ulang").onclick = () => {
+  nilai = 0;
+  angka.textContent = nilai;
+};`,challenge:"Tambahkan tombol yang menaikkan angka sebesar 5, bukan 1."}
+};
+let current="hello", active="html";
+const editor=document.getElementById("editor"), hint=document.getElementById("editorHint");
+function getCode(){return {...examples[current],html:document.querySelector('[data-code="html"]')?.value ?? working.html,css:document.querySelector('[data-code="css"]')?.value ?? working.css,js:document.querySelector('[data-code="js"]')?.value ?? working.js}}
+let working={...examples.hello};
+function saveActive(){working[active]=editor.value}
+function showTab(tab){saveActive();active=tab;editor.value=working[tab];document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));hint.textContent=tab==="html"?"HTML = struktur halaman.":tab==="css"?"CSS = warna, tata letak, dan tampilan.":"JavaScript = logika dan interaksi.";editor.setAttribute("aria-label","Editor "+tab)}
+function runCode(){saveActive();const doc=`<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><style>${working.css.replace(/<\/style/gi,"<\\/style")}</style></head><body>${working.html.replace(/<\/script/gi,"<\\/script")}<script>${working.js.replace(/<\/script/gi,"<\\/script")}<\/script></body></html>`;document.getElementById("preview").srcdoc=doc;document.getElementById("status").textContent="✓ Kode dijalankan.";document.getElementById("challengeText").textContent=examples[current].challenge}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>showTab(b.dataset.tab)));
+document.getElementById("lesson").addEventListener("change",e=>{saveActive();current=e.target.value;working={...examples[current]};active="html";editor.value=working.html;showTab("html");runCode();document.getElementById("status").textContent="Contoh latihan dimuat."});
+document.getElementById("run").addEventListener("click",runCode);
+document.getElementById("reset").addEventListener("click",()=>{working={...examples[current]};editor.value=working[active];showTab(active);runCode();document.getElementById("status").textContent="Contoh dikembalikan."});
+document.getElementById("download").addEventListener("click",()=>{saveActive();const out=`<!DOCTYPE html><html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Proyek Coding Siswa</title><style>${working.css}</style></head><body>${working.html}<script>${working.js}<\/script></body></html>`;const blob=new Blob([out],{type:"text/html"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="proyek-coding-siswa.html";a.click();URL.revokeObjectURL(url);document.getElementById("status").textContent="File HTML diunduh."});
+editor.addEventListener("keydown",e=>{if(e.key==="Tab"){e.preventDefault();const s=editor.selectionStart,end=editor.selectionEnd;editor.setRangeText("  ",s,end,"end")}});
+showTab("html");runCode();
+</script>
+</body>
+</html>
