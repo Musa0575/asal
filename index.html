@@ -47,10 +47,21 @@
             background-color: #eff6ff;
         }
 
+        /* UBAH WARNA OPSI SAAT DICLICK (DESAIN BIRU KONTRAS) */
         .option-btn.selected {
-            background-color: #dbeafe !important;
-            border-color: #2563eb !important;
-            color: #1e40af !important;
+            background-color: #2563eb !important;
+            border-color: #1d4ed8 !important;
+            color: #ffffff !important;
+        }
+
+        .option-btn.selected span:first-child {
+            background-color: #ffffff !important;
+            color: #2563eb !important;
+            border-color: #ffffff !important;
+        }
+
+        .option-btn.selected span:last-child {
+            color: #ffffff !important;
         }
 
         .badge-no {
@@ -352,7 +363,6 @@
             
             clearInterval(totalTimeInterval);
             
-            // Sembunyikan seluruh UI dan ganti ke Tampilan Dibatalkan
             document.body.innerHTML = `
                 <div class="fixed inset-0 bg-slate-950 text-white flex flex-col items-center justify-center p-6 text-center z-[9999]">
                     <div class="w-20 h-20 bg-rose-600/20 text-rose-500 rounded-full flex items-center justify-center mb-4 text-4xl border border-rose-500/30">
@@ -371,7 +381,6 @@
                 </div>
             `;
 
-            // Kirim Laporan Pelanggaran ke Server Google Sheet
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
