@@ -37,7 +37,6 @@
             user-select: none;
         }
 
-        /* Tombol Pilihan UTBK Style */
         .option-btn {
             background-color: #ffffff;
             border: 1.5px solid #e5e7eb;
@@ -55,7 +54,6 @@
             color: #1e40af !important;
         }
 
-        /* Badge Navigasi Nomor Soal UTBK */
         .badge-no {
             background-color: #ffffff;
             border: 1px solid #d1d5db;
@@ -93,17 +91,17 @@
             border-radius: 6px;
             margin: 0 auto;
             border: 1px solid #e5e7eb;
-            pointer-events: none; /* Mencegah klik kanan/drag pada media */
+            pointer-events: none;
         }
     </style>
 </head>
 <body class="h-full flex flex-col justify-between relative bg-slate-100 no-select" oncontextmenu="return false;" oncopy="return false;" oncut="return false;" ondragstart="return false;">
 
-    <!-- MODAL INPUT NAMA PLAYER (DESAIN SPLIT KIRI-KANAN) -->
+    <!-- MODAL INPUT NAMA PLAYER -->
     <div id="player-modal" class="fixed inset-0 bg-slate-950/90 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 z-50">
         <div class="max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[500px]">
             
-            <!-- SISI KIRI: BANNER UNGU DENGAN ILUSTRASI -->
+            <!-- BANNER UNGU -->
             <div class="md:w-1/2 bg-[#6c5ce7] p-8 text-white flex flex-col justify-between relative overflow-hidden">
                 <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full blur-2xl pointer-events-none"></div>
                 <div class="absolute -left-10 -bottom-10 w-40 h-40 bg-black/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -114,7 +112,6 @@
                     </h2>
                 </div>
 
-                <!-- Vector Illustration Desk Setup -->
                 <div class="my-6 flex justify-center items-center">
                     <svg class="w-64 h-48 drop-shadow-lg" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="80" y="50" width="240" height="130" rx="10" fill="#0f172a" stroke="#00d2d3" stroke-width="4"/>
@@ -152,11 +149,13 @@
                 </div>
             </div>
 
-            <!-- SISI KANAN: FORM MASUK / LOGIN -->
+            <!-- FORM MASUK / LOGIN -->
             <div class="md:w-1/2 p-8 sm:p-12 flex flex-col justify-center bg-white text-slate-800">
                 <div class="mb-8">
                     <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight">Login Siswa</h3>
-                    <p class="text-xs text-slate-400 mt-1">Silakan masukkan identitas untuk memulai kuis</p>
+                    <p class="text-xs text-rose-500 font-semibold mt-1 flex items-center gap-1">
+                        <i class="fa-solid fa-lock"></i> Mode Ujian Ketat (Full Screen Auto-Lock)
+                    </p>
                 </div>
 
                 <form onSubmit="startGameWithPlayer(event)" class="space-y-6">
@@ -176,37 +175,14 @@
                             class="w-full bg-transparent border-b-2 border-slate-300 focus:border-[#6c5ce7] py-2 text-sm text-slate-800 focus:outline-none transition-colors placeholder:text-slate-300 font-medium select-text">
                     </div>
 
-                    <div class="flex items-center justify-between text-xs text-slate-500 pt-1">
-                        <label class="flex items-center space-x-2 cursor-pointer">
-                            <input type="checkbox" checked class="rounded border-slate-300 text-[#6c5ce7] focus:ring-[#6c5ce7]">
-                            <span>Ingat saya</span>
-                        </label>
-                        <span id="total-questions-info" class="text-slate-400 font-medium">Sistem Komputer</span>
-                    </div>
-
                     <div class="pt-4">
                         <button type="submit" id="btn-start" 
-                            class="w-36 py-3 bg-[#6c5ce7] hover:bg-[#5b4bc4] text-white font-bold rounded-full shadow-lg shadow-[#6c5ce7]/40 transition duration-200 text-sm tracking-wide flex items-center justify-center space-x-2">
-                            <span>Mulai Kuis</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                            class="w-full py-3 bg-[#6c5ce7] hover:bg-[#5b4bc4] text-white font-bold rounded-full shadow-lg shadow-[#6c5ce7]/40 transition duration-200 text-sm tracking-wide flex items-center justify-center space-x-2">
+                            <span>Mulai Kuis (Full Screen)</span>
+                            <i class="fa-solid fa-expand text-xs"></i>
                         </button>
                     </div>
                 </form>
-
-                <div class="mt-10 border-t border-slate-100 pt-4">
-                    <p class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">Sistem Komputer Online</p>
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-sky-500 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-laptop-code"></i>
-                        </div>
-                        <div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
@@ -248,49 +224,40 @@
                     <i class="fa-solid fa-th-large text-blue-700"></i> NAVIGASI SOAL
                 </h3>
                 
-                <!-- TIMER SISTEM -->
                 <div class="flex items-center space-x-1.5 text-xs bg-amber-50 text-amber-900 border border-amber-200 px-2 py-1 rounded font-bold">
                     <i class="fa-regular fa-clock text-amber-600"></i>
                     <span id="total-timer-text">00:00</span>
                 </div>
             </div>
             
-            <!-- Grid Angka Nomor Soal -->
             <div id="ladder-container" class="grid grid-cols-5 gap-2 overflow-y-auto max-h-[220px] lg:max-h-[380px] p-1">
             </div>
 
             <div class="mt-4 pt-3 border-t border-slate-100 flex flex-col gap-1.5 text-[11px] text-slate-500">
                 <div class="flex items-center gap-2"><span class="w-3 h-3 bg-white border-2 border-blue-600 rounded"></span> Soal Aktif</div>
-                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-emerald-500 rounded relative"><i class="fa-solid fa-check text-[8px] text-white absolute bottom-0 right-0 p-0.5"></i></span> Terjawab (Disertai Centang)</div>
+                <div class="flex items-center gap-2"><span class="w-3 h-3 bg-emerald-500 rounded relative"><i class="fa-solid fa-check text-[8px] text-white absolute bottom-0 right-0 p-0.5"></i></span> Terjawab</div>
                 <div class="flex items-center gap-2"><span class="w-3 h-3 bg-amber-500 rounded"></span> Ragu-Ragu</div>
                 <div class="flex items-center gap-2"><span class="w-3 h-3 bg-white border border-slate-300 rounded"></span> Belum Dijawab</div>
             </div>
         </section>
 
-        <!-- KOLOM MAIN: KOTAK SOAL UTBK & OPSI -->
+        <!-- KOLOM MAIN: KOTAK SOAL -->
         <section class="lg:col-span-3 flex flex-col justify-between bg-white border border-slate-300 rounded-lg p-5 shadow-sm">
-            
-            <!-- KOTAK NASKAH SOAL UTBK -->
             <div class="my-auto">
                 <div class="bg-white border-b border-slate-200 pb-4 mb-4 flex flex-col items-start gap-3">
-                    
-                    <!-- Header Nomor Soal -->
                     <div id="question-header-badge" class="flex justify-between items-center w-full">
                         <span class="bg-blue-100 text-blue-900 text-xs font-bold px-3 py-1 rounded border border-blue-200">
                             SOAL NOMOR <span id="question-number" class="text-blue-700">1</span> <span id="total-questions-count" class="text-slate-500 font-normal">/ 25</span>
                         </span>
                     </div>
 
-                    <!-- Media/Gambar Soal -->
                     <div id="media-container" class="w-full flex justify-center py-2 hidden"></div>
 
-                    <!-- Teks Naskah Soal -->
                     <h2 id="question-text" class="text-sm md:text-base font-normal leading-relaxed text-slate-800 text-left w-full pt-2">
                         Memuat Pertanyaan...
                     </h2>
                 </div>
 
-                <!-- OPSI JAWABAN UTBK (A, B, C, D, E) -->
                 <div id="options-container" class="flex flex-col gap-2.5 mt-2">
                     <button onClick="selectOption(0)" id="opt-0" class="option-btn p-3 rounded text-left flex items-start space-x-3 text-xs md:text-sm font-normal group">
                         <span class="w-6 h-6 rounded bg-slate-100 border border-slate-300 text-slate-700 font-bold text-xs flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition">A</span>
@@ -319,7 +286,7 @@
                 </div>
             </div>
 
-            <!-- TOMBOL NAVIGASI BAWAH -->
+            <!-- NAVIGASI BAWAH -->
             <div id="bottom-navigation" class="flex flex-wrap items-center justify-between gap-2 mt-6 pt-4 border-t border-slate-200">
                 <button onClick="prevQuestion()" id="btn-prev" class="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold rounded flex items-center gap-2 transition disabled:opacity-50 disabled:cursor-not-allowed">
                     <i class="fa-solid fa-chevron-left"></i> SEBELUMNYA
@@ -336,7 +303,7 @@
         </section>
     </main>
 
-    <!-- FOOTER UTBK -->
+    <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 py-2.5 text-center text-xs text-slate-500 font-medium">
         Sistem Ujian CAT UTBK SMA ALMUSLIM &copy; 2026 - Hak Cipta Dilindungi Undang-Undang
     </footer>
@@ -355,13 +322,45 @@
         
         let playerName = "Player";
         let playerClass = "-";
+        let isGameStarted = false;
 
-        // Mencegah Tombol Shortcut Copy / Inspect / View Source
+        /* PENGUNCIAN KETAT (STRICT LOCKDOWN CONTROL) */
+        function requestFullScreen() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+        }
+
+        // 1. Deteksi saat Pindah Tab ATAU Keluar Layar Penuh -> LANGSUNG DISKUALIFIKASI / END GAME
+        document.addEventListener('visibilitychange', handleCheatViolation);
+        window.addEventListener('blur', handleCheatViolation);
+        document.addEventListener('fullscreenchange', function() {
+            if (isGameStarted && !document.fullscreenElement) {
+                handleCheatViolation();
+            }
+        });
+
+        function handleCheatViolation() {
+            if (isGameStarted) {
+                isGameStarted = false;
+                alert("PELANGGARAN KETAT!\nAnda terdeteksi meninggalkan layar ujian / berpindah tab.\nUjian Anda telah DIHENTIKAN OTOMATIS.");
+                endGame("Terdeteksi Kecurangan (Berpindah Tab / Keluar Full Screen)");
+            }
+        }
+
+        // Block Shortcut Keyboard
         document.addEventListener('keydown', function (e) {
             if (
                 e.key === 'F12' || 
+                e.key === 'Escape' ||
                 (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
-                (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 's' || e.key === 'S'))
+                (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C' || e.key === 'a' || e.key === 'A' || e.key === 's' || e.key === 'S' || e.key === 'tab' || e.key === 'Tab')) ||
+                (e.altKey && (e.key === 'Tab' || e.key === 'tab'))
             ) {
                 e.preventDefault();
             }
@@ -417,6 +416,11 @@
 
             document.getElementById('display-player').innerText = `${playerName} (${playerClass})`;
             document.getElementById('player-modal').classList.add('hidden');
+            
+            // Aktifkan mode Fullscreen
+            requestFullScreen();
+            
+            // Mulai Game
             initGame();
         }
 
@@ -424,6 +428,9 @@
             prepareShuffledQuestions();
             currentQuestionIdx = 0;
             totalSecondsElapsed = 0;
+            
+            // Aktifkan flag ujian
+            setTimeout(() => { isGameStarted = true; }, 1000);
             
             document.getElementById('question-header-badge').classList.remove('hidden');
             document.getElementById('options-container').classList.remove('hidden');
@@ -438,6 +445,7 @@
         function restartGameDirect() {
             if(confirm("Apakah Anda yakin ingin mereset dan mengulang ujian dari awal?")) {
                 clearInterval(totalTimeInterval);
+                isGameStarted = false;
                 document.getElementById('player-modal').classList.remove('hidden');
             }
         }
@@ -574,13 +582,14 @@
             }
 
             if (confirm(msg)) {
-                endGame();
+                endGame("Ujian Diselesaikan Manual");
             }
         }
 
         /* FUNGSI KETIKA UJIAN SELESAI */
-        function endGame() {
+        function endGame(reason = "Normal Finish") {
             clearInterval(totalTimeInterval);
+            isGameStarted = false;
             
             let correct = 0;
 
@@ -602,9 +611,9 @@
                          class="w-48 h-36 md:w-60 md:h-44 object-cover rounded-lg shadow-md mb-4 border border-slate-200">
                     
                     <h3 class="text-lg md:text-xl font-bold text-slate-800 uppercase tracking-wide">
-                        SELAMAT! ANDA TELAH SELESAI MENGERJAKAN UJIAN
+                        ${reason.includes("Kecurangan") ? "UJIAN DIHENTIKAN AKIBAT KECURANGAN" : "SELAMAT! ANDA TELAH SELESAI MENGERJAKAN UJIAN"}
                     </h3>
-                    <p class="text-xs text-slate-500 mt-1 mb-5">Seluruh lembar jawaban Anda telah berhasil direkam oleh sistem.</p>
+                    <p class="text-xs text-slate-500 mt-1 mb-5">Status Akhir: ${reason}</p>
                     
                     <div class="inline-flex flex-wrap justify-center gap-4 bg-slate-50 p-4 rounded-lg border border-slate-200 text-xs md:text-sm font-semibold shadow-inner">
                         <span class="text-emerald-600 flex items-center gap-1.5"><i class="fa-solid fa-circle-check"></i> Benar: ${correct}</span>
@@ -619,10 +628,11 @@
             document.getElementById('options-container').classList.add('hidden');
             document.getElementById('bottom-navigation').classList.add('hidden');
 
-            if (totalScore >= 70) {
+            if (totalScore >= 70 && !reason.includes("Kecurangan")) {
                 confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
             }
 
+            // Kirim Rekapan Ke Google Sheet
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -633,7 +643,8 @@
                     skor: totalScore,
                     benar: correct,
                     salah: questions.length - correct,
-                    waktu: document.getElementById('total-timer-text').innerText
+                    waktu: document.getElementById('total-timer-text').innerText,
+                    catatan: reason
                 })
             });
         }
