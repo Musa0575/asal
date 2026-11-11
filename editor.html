@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Pustaka Mammoth.js untuk Menganalisis Dokumen Word (.docx / .docm) -->
+    <!-- Pustaka Mammoth.js untuk Import Word Table (.docx/.docm) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
     
     <style>
@@ -17,103 +17,221 @@
             color: #1f2937;
             font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
         }
-        .panel-bg {
-            background-color: #ffffff;
-            border: 1px solid #e5e7eb;
-        }
-        .inner-panel {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-        }
-        .input-light {
-            background-color: #ffffff;
-            border: 1px solid #d1d5db;
-            color: #1f2937;
-        }
-        .input-light:focus {
-            border-color: #2563eb;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
-        }
+        .panel-bg { background-color: #ffffff; border: 1px solid #e5e7eb; }
+        .inner-panel { background-color: #f8fafc; border: 1px solid #e2e8f0; }
+        .input-light { background-color: #ffffff; border: 1px solid #d1d5db; color: #1f2937; }
+        .input-light:focus { border-color: #2563eb; outline: none; box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15); }
+        .preserve-format { white-space: pre-wrap; word-break: break-word; }
     </style>
 </head>
 <body class="p-4 md:p-8 min-h-screen">
 
     <div class="max-w-7xl mx-auto space-y-6">
         
-        <!-- HEADER UTBK STYLE -->
-        <header class="bg-blue-900 text-white p-5 rounded-2xl shadow-md border-b-4 border-blue-600 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-            <div class="flex items-center space-x-3">
-                <div class="bg-blue-800 p-3 rounded-xl text-amber-400 border border-blue-700">
-                    <i class="fa-solid fa-pen-to-square text-xl"></i>
+        <!-- HEADER METADATA NAMA FILE AUTOMATIS & PENGATURAN TOKEN/DURASI -->
+        <header class="bg-blue-900 text-white p-5 rounded-2xl shadow-md border-b-4 border-blue-600 flex flex-col space-y-4">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-blue-800 p-3 rounded-xl text-amber-400 border border-blue-700">
+                        <i class="fa-solid fa-pen-to-square text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl md:text-2xl font-bold tracking-wide uppercase leading-tight">Editor Soal UTBK / TKA</h1>
+                        <p class="text-xs text-blue-200 mt-0.5">Format Paragraf Terjaga, Token Ujian & Penamaan File Otomatis</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="text-xl md:text-2xl font-bold tracking-wide uppercase leading-tight">Editor Soal UTBK / TKA</h1>
-                    <p class="text-xs text-blue-200 mt-0.5">Kelola bank soal, impor dari Tabel Word/JSON, dan unduh soal.json</p>
+                
+                <!-- AKSI JSON & WORD -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <input type="file" id="import-word-file" accept=".docm,.docx" onChange="importWordTable(event)" class="hidden">
+                    <input type="file" id="import-json-file" accept=".json" onChange="importJSON(event)" class="hidden">
+                    
+                    <button onClick="document.getElementById('import-word-file').click()" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg text-xs md:text-sm flex items-center gap-2 transition border border-indigo-500 shadow-sm">
+                        <i class="fa-solid fa-table"></i> Upload Word Tabel (.docx)
+                    </button>
+
+                    <button onClick="document.getElementById('import-json-file').click()" class="px-3.5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg text-xs md:text-sm flex items-center gap-2 transition border border-blue-600 shadow-sm">
+                        <i class="fa-solid fa-file-import"></i> Upload JSON
+                    </button>
+
+                    <button onClick="exportJSON()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg text-xs md:text-sm flex items-center gap-2 transition shadow-sm">
+                        <i class="fa-solid fa-download"></i> Unduh File JSON
+                    </button>
                 </div>
             </div>
-            
-            <!-- Aksi JSON & Word: Impor dan Ekspor -->
-            <div class="flex flex-wrap items-center gap-2">
-                <!-- Input File Tersembunyi -->
-                <input type="file" id="import-word-file" accept=".docm,.docx" onChange="importWordTable(event)" class="hidden">
-                <input type="file" id="import-json-file" accept=".json" onChange="importJSON(event)" class="hidden">
+
+            <!-- SECTION PILIHAN EVALUASI, MAPEL, KELAS, DURASI & TOKEN -->
+            <div class="bg-blue-950/70 p-3.5 rounded-xl border border-blue-800 flex flex-col lg:flex-row items-center gap-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-tag"></i> Target File:
+                </span>
                 
-                <!-- Tombol Upload Word Tabel -->
-                <button onClick="document.getElementById('import-word-file').click()" class="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg text-xs md:text-sm flex items-center gap-2 transition border border-indigo-500 shadow-sm">
-                    <i class="fa-solid fa-table"></i> Upload Word Tabel (.docm)
-                </button>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 w-full">
+                    <!-- Dropdown Jenis Evaluasi -->
+                    <select id="export-evaluasi" onChange="updateDownloadPreview()" class="bg-slate-900 border border-blue-700 text-white rounded-lg px-3 py-1.5 text-xs font-medium focus:outline-none focus:border-amber-400">
+                        <option value="">-- Jenis Ujian --</option>
+                        <optgroup label="Try Out (TO)">
+                            <option value="to1">Try Out 1 (TO 1)</option>
+                            <option value="to2">Try Out 2 (TO 2)</option>
+                            <option value="to3">Try Out 3 (TO 3)</option>
+                        </optgroup>
+                        <optgroup label="Penilaian Harian">
+                            <option value="ph1">Penilaian Harian 1 (PH 1)</option>
+                            <option value="ph2">Penilaian Harian 2 (PH 2)</option>
+                            <option value="ph3">Penilaian Harian 3 (PH 3)</option>
+                        </optgroup>
+                        <optgroup label="Ujian Semester & US">
+                            <option value="pts">PTS</option>
+                            <option value="pas">PAS</option>
+                            <option value="pat">PAT</option>
+                            <option value="us">Ujian Sekolah (US)</option>
+                        </optgroup>
+                    </select>
 
-                <!-- Tombol Upload JSON -->
-                <button onClick="document.getElementById('import-json-file').click()" class="px-3.5 py-2 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg text-xs md:text-sm flex items-center gap-2 transition border border-blue-600 shadow-sm">
-                    <i class="fa-solid fa-file-import"></i> Upload JSON
-                </button>
+                    <!-- Dropdown Mapel -->
+                    <select id="export-mapel" onChange="updateDownloadPreview()" class="bg-slate-900 border border-blue-700 text-white rounded-lg px-3 py-1.5 text-xs font-medium focus:outline-none focus:border-amber-400">
+                        <option value="">-- Mata Pelajaran --</option>
+                        <option value="pai">PAI & Budi Pekerti</option>
+                        <option value="bahasa_indonesia">Bahasa Indonesia</option>
+                        <option value="bahasa_inggris">Bahasa Inggris</option>
+                        <option value="matematika">Matematika</option>
+                        <option value="fisika">Fisika</option>
+                        <option value="kimia">Kimia</option>
+                        <option value="biologi">Biologi</option>
+                        <option value="sejarah">Sejarah</option>
+                        <option value="geografi">Geografi</option>
+                        <option value="informatika">Informatika</option>
+                        <option value="coding">Coding</option>
+                        <option value="pkn">PKn / PPKn</option>
+                        <option value="pjok">PJOK</option>
+                        <option value="leadership">Leadership</option>
+                        <option value="bahasa_sunda">Bahasa Sunda</option>
+                        <option value="ekonomi">Ekonomi</option>
+                        <option value="pkwu">PKWU</option>
+                        <option value="seni_budaya">Seni Budaya</option>
+                    </select>
 
-                <!-- Tombol Unduh JSON -->
-                <button onClick="exportJSON()" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg text-xs md:text-sm flex items-center gap-2 transition shadow-sm">
-                    <i class="fa-solid fa-download"></i> Unduh soal.json
-                </button>
+                    <!-- Dropdown Kelas -->
+                    <select id="export-kelas" onChange="updateDownloadPreview()" class="bg-slate-900 border border-blue-700 text-white rounded-lg px-3 py-1.5 text-xs font-medium focus:outline-none focus:border-amber-400">
+                        <option value="">-- Pilih Kelas --</option>
+                        <optgroup label="Kelas X">
+                            <option value="X-A">X-A</option>
+                            <option value="X-B">X-B</option>
+                            <option value="X-C">X-C</option>
+                            <option value="X-D">X-D</option>
+                            <option value="X-E">X-E</option>
+                        </optgroup>
+                        <optgroup label="Kelas XI">
+                            <option value="XI-A">XI-A</option>
+                            <option value="XI-B">XI-B</option>
+                            <option value="XI-C">XI-C</option>
+                            <option value="XI-D">XI-D</option>
+                        </optgroup>
+                        <optgroup label="Kelas XII IPA">
+                            <option value="XII-IPA1">XII-IPA1</option>
+                            <option value="XII-IPA2">XII-IPA2</option>
+                            <option value="XII-IPA3">XII-IPA3</option>
+                        </optgroup>
+                        <optgroup label="Kelas XII IPS">
+                            <option value="XII-IPS1">XII-IPS1</option>
+                            <option value="XII-IPS2">XII-IPS2</option>
+                            <option value="XII-IPS3">XII-IPS3</option>
+                        </optgroup>
+                    </select>
+
+                    <!-- Input Durasi Ujian -->
+                    <div class="flex items-center gap-1.5 bg-slate-900 border border-blue-700 rounded-lg px-2.5 py-1">
+                        <i class="fa-solid fa-clock text-amber-400 text-xs"></i>
+                        <input type="number" id="export-duration" value="60" min="5" max="300" placeholder="Durasi" title="Durasi Ujian (Menit)" class="w-full bg-transparent text-white text-xs font-medium focus:outline-none">
+                        <span class="text-[10px] text-blue-300 font-bold shrink-0">Mnt</span>
+                    </div>
+
+                    <!-- INPUT & GENERATOR TOKEN UJIAN -->
+                    <div class="flex items-center gap-1 bg-slate-900 border border-amber-500/50 rounded-lg px-2 py-1">
+                        <i class="fa-solid fa-key text-amber-400 text-xs"></i>
+                        <input type="text" id="export-token" value="ALM123" maxlength="6" placeholder="TOKEN" title="Token Akses Ujian" class="w-full bg-transparent text-amber-300 text-xs font-mono font-bold focus:outline-none tracking-widest uppercase">
+                        <button type="button" onclick="generateRandomToken()" title="Acak Token Baru" class="text-xs bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-1.5 py-0.5 rounded transition">
+                            <i class="fa-solid fa-rotate"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="text-[11px] text-blue-200 shrink-0 font-mono bg-blue-900 px-3 py-1.5 rounded border border-blue-700 w-full lg:w-auto text-center">
+                    Hasil: <strong id="preview-filename" class="text-amber-300">soal.json</strong>
+                </div>
             </div>
         </header>
+
+        <!-- PANEL RINGKAS DALAM BENTUK TABEL: DAFTAR MAPEL & TOKEN AKTIF -->
+        <section class="panel-bg p-4 rounded-2xl shadow-sm border-l-4 border-amber-500 space-y-3">
+            <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+                <h3 class="text-xs md:text-sm font-bold text-slate-800 flex items-center gap-2 uppercase tracking-wide">
+                    <i class="fa-solid fa-table-list text-amber-500"></i> Tabel Mapel & Token Ujian Aktif
+                </h3>
+                <button onclick="clearSavedTokens()" class="text-[11px] text-rose-600 hover:text-rose-800 font-semibold flex items-center gap-1 transition">
+                    <i class="fa-solid fa-trash-can"></i> Bersihkan Catatan
+                </button>
+            </div>
+
+            <!-- CONTAINER TABEL HEMAT TEMPAT -->
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200">
+                            <th class="p-2">Ujian</th>
+                            <th class="p-2">Mata Pelajaran</th>
+                            <th class="p-2 text-center">Kelas</th>
+                            <th class="p-2 text-center">Durasi</th>
+                            <th class="p-2 text-center">Token Ujian</th>
+                            <th class="p-2">Nama Berkas</th>
+                            <th class="p-2 text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="token-table-body" class="divide-y divide-slate-200 font-medium text-slate-700">
+                        <tr>
+                            <td colspan="7" class="p-4 text-center text-slate-400 italic">
+                                Belum ada riwayat token. Setiap kali Anda mengunduh atau mengunggah file JSON, catatannya akan otomatis tersusun rapi di tabel ini.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
         <!-- MAIN CONTENT (GRID 2 KOLOM) -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             
-            <!-- KOLOM KIRI: FORM TAMBAH / EDIT SOAL -->
+            <!-- FORM TAMBAH / EDIT SOAL -->
             <section class="lg:col-span-7 panel-bg p-6 rounded-2xl shadow-sm space-y-5">
                 <h2 class="text-base font-bold text-slate-800 border-b border-slate-200 pb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-file-pen text-blue-700"></i> Tambah / Edit Soal
+                    <i class="fa-solid fa-file-pen text-blue-700"></i> Input / Edit Naskah Soal
                 </h2>
 
                 <form id="quiz-form" onSubmit="saveQuestion(event)" class="space-y-4">
                     <input type="hidden" id="edit-index" value="-1">
 
-                    <!-- Pertanyaan / Soal -->
                     <div>
-                        <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">Pertanyaan / Soal:</label>
-                        <textarea id="input-q" rows="4" required placeholder="Tuliskan naskah pertanyaan di sini..." class="w-full input-light rounded-xl p-3 text-sm text-left font-normal"></textarea>
+                        <label class="block text-xs font-bold text-slate-700 mb-1.5 uppercase tracking-wider">
+                            Pertanyaan / Soal (Enter = Paragraf Baru):
+                        </label>
+                        <textarea id="input-q" rows="6" required placeholder="Tuliskan naskah pertanyaan di sini... Gunakan Enter untuk memisahkan paragraf." class="w-full input-light rounded-xl p-3 text-sm text-left font-normal preserve-format"></textarea>
                     </div>
 
-                    <!-- KOTAK MEDIA / GAMBAR SOAL -->
+                    <!-- MEDIA / EMBED / GAMBAR -->
                     <div class="inner-panel p-4 rounded-xl space-y-3">
                         <div class="flex items-center text-blue-700 font-bold text-xs uppercase tracking-wide">
                             <i class="fa-regular fa-image mr-2"></i> Gambar / Embed Media (Opsional)
                         </div>
 
                         <div class="space-y-2">
-                            <label class="block text-[11px] text-slate-500 font-medium">Pilih File dari Komputer ATAU Paste Kode HTML Embed / Link GDrive:</label>
-                            
                             <div class="flex flex-col sm:flex-row gap-2">
-                                <!-- Upload File Lokal -->
                                 <input type="file" id="input-file" accept="image/*" onChange="handleFileUpload(event)"
                                     class="block w-full text-xs text-slate-600 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-100 file:text-blue-800 hover:file:bg-blue-200 cursor-pointer border border-slate-300 rounded-lg bg-white p-1">
                                 
-                                <!-- Input Teks Embed HTML / Link Direct -->
                                 <input type="text" id="input-embed-text" oninput="handleEmbedInput()" placeholder="Paste kode <iframe...> atau link di sini..." class="w-full input-light rounded-lg px-3 py-2 text-xs">
                             </div>
                         </div>
 
-                        <!-- PREVIEW MEDIA UTUH -->
                         <div id="preview-box" class="mt-2 p-3 bg-slate-100 rounded-lg border border-slate-200 hidden">
                             <p class="text-[10px] text-slate-500 font-bold uppercase mb-2">Preview Media Soal:</p>
                             <div id="media-preview-content" class="flex justify-center items-center max-h-52 overflow-hidden rounded"></div>
@@ -124,35 +242,30 @@
                     <div class="space-y-2.5 pt-1">
                         <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Pilihan Jawaban (Tandai Kunci Jawaban Benar):</label>
 
-                        <!-- Jawaban A -->
                         <div class="flex items-center gap-3 input-light p-2.5 rounded-xl hover:border-blue-300 transition">
                             <input type="radio" name="correct_opt" value="0" required class="w-4 h-4 accent-blue-600 cursor-pointer">
                             <span class="text-xs font-bold text-slate-600">A.</span>
                             <input type="text" id="opt-0" required placeholder="Jawaban A" class="w-full bg-transparent text-xs text-slate-800 focus:outline-none">
                         </div>
 
-                        <!-- Jawaban B -->
                         <div class="flex items-center gap-3 input-light p-2.5 rounded-xl hover:border-blue-300 transition">
                             <input type="radio" name="correct_opt" value="1" class="w-4 h-4 accent-blue-600 cursor-pointer">
                             <span class="text-xs font-bold text-slate-600">B.</span>
                             <input type="text" id="opt-1" required placeholder="Jawaban B" class="w-full bg-transparent text-xs text-slate-800 focus:outline-none">
                         </div>
 
-                        <!-- Jawaban C -->
                         <div class="flex items-center gap-3 input-light p-2.5 rounded-xl hover:border-blue-300 transition">
                             <input type="radio" name="correct_opt" value="2" class="w-4 h-4 accent-blue-600 cursor-pointer">
                             <span class="text-xs font-bold text-slate-600">C.</span>
                             <input type="text" id="opt-2" required placeholder="Jawaban C" class="w-full bg-transparent text-xs text-slate-800 focus:outline-none">
                         </div>
 
-                        <!-- Jawaban D -->
                         <div class="flex items-center gap-3 input-light p-2.5 rounded-xl hover:border-blue-300 transition">
                             <input type="radio" name="correct_opt" value="3" class="w-4 h-4 accent-blue-600 cursor-pointer">
                             <span class="text-xs font-bold text-slate-600">D.</span>
                             <input type="text" id="opt-3" placeholder="Jawaban D" class="w-full bg-transparent text-xs text-slate-800 focus:outline-none">
                         </div>
 
-                        <!-- Jawaban E -->
                         <div class="flex items-center gap-3 input-light p-2.5 rounded-xl hover:border-blue-300 transition">
                             <input type="radio" name="correct_opt" value="4" class="w-4 h-4 accent-blue-600 cursor-pointer">
                             <span class="text-xs font-bold text-slate-600">E.</span>
@@ -166,7 +279,7 @@
                 </form>
             </section>
 
-            <!-- KOLOM KANAN: DAFTAR SOAL -->
+            <!-- DAFTAR SOAL & PREVIEW -->
             <section class="lg:col-span-5 panel-bg p-6 rounded-2xl shadow-sm space-y-4 min-h-[500px]">
                 <h2 class="text-base font-bold text-slate-800 border-b border-slate-200 pb-3 flex justify-between items-center">
                     <span class="flex items-center gap-2"><i class="fa-solid fa-list-ol text-blue-700"></i> Daftar Soal</span>
@@ -188,7 +301,161 @@
         let questions = [];
         let finalHtmlMedia = "";
 
-        // 1. Upload File Lokal (Base64)
+        // PEMUATAN AWAL RIWAYAT TOKEN
+        window.addEventListener('DOMContentLoaded', () => {
+            renderSavedTokens();
+        });
+
+        function generateRandomToken() {
+            const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+            let result = "";
+            for (let i = 0; i < 6; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('export-token').value = result;
+        }
+
+        function updateDownloadPreview() {
+            const evaluasi = document.getElementById('export-evaluasi').value;
+            const mapel = document.getElementById('export-mapel').value;
+            const kelas = document.getElementById('export-kelas').value;
+            const previewEl = document.getElementById('preview-filename');
+
+            if (evaluasi && mapel && kelas) {
+                previewEl.innerText = `${evaluasi}_${mapel}_${kelas}.json`;
+            } else if (mapel && kelas) {
+                previewEl.innerText = `${mapel}_${kelas}.json`;
+            } else if (evaluasi && mapel) {
+                previewEl.innerText = `${evaluasi}_${mapel}.json`;
+            } else {
+                previewEl.innerText = `soal.json`;
+            }
+        }
+
+        // SIMPAN TOKEN KE LOCALSTORAGE BROWSER
+        function saveTokenRecord(filename, evaluasiLabel, mapelLabel, kelasLabel, duration, token) {
+            let records = JSON.parse(localStorage.getItem('cbt_active_tokens') || '[]');
+            
+            const existingIdx = records.findIndex(r => r.filename === filename);
+            const newRecord = {
+                filename: filename,
+                evaluasi: evaluasiLabel || filename,
+                mapel: mapelLabel || "-",
+                kelas: kelasLabel || "-",
+                duration: duration,
+                token: token
+            };
+
+            if (existingIdx !== -1) {
+                records[existingIdx] = newRecord;
+            } else {
+                records.unshift(newRecord);
+            }
+
+            localStorage.setItem('cbt_active_tokens', JSON.stringify(records));
+            renderSavedTokens();
+        }
+
+        // RENDER RIWAYAT KE BENTUK TABEL RINGKAS
+        function renderSavedTokens() {
+            const tbody = document.getElementById('token-table-body');
+            const records = JSON.parse(localStorage.getItem('cbt_active_tokens') || '[]');
+
+            if (records.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="7" class="p-4 text-center text-slate-400 italic">
+                            Belum ada riwayat token. Setiap kali Anda mengunduh atau mengunggah file JSON, catatannya akan otomatis tersusun rapi di tabel ini.
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = '';
+            records.forEach((rec, idx) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition border-b border-slate-100";
+                
+                tr.innerHTML = `
+                    <td class="p-2.5"><span class="bg-indigo-50 text-indigo-700 font-bold px-2 py-0.5 rounded border border-indigo-200 text-[10px] uppercase">${rec.evaluasi}</span></td>
+                    <td class="p-2.5 font-bold text-slate-800">${rec.mapel}</td>
+                    <td class="p-2.5 text-center font-bold text-slate-600">${rec.kelas}</td>
+                    <td class="p-2.5 text-center font-mono text-slate-500">${rec.duration} Mnt</td>
+                    <td class="p-2.5 text-center">
+                        <span class="bg-amber-100 text-amber-900 font-mono font-extrabold px-2.5 py-1 rounded border border-amber-300 tracking-wider">
+                            ${rec.token}
+                        </span>
+                    </td>
+                    <td class="p-2.5 font-mono text-slate-500 text-[11px]">${rec.filename}</td>
+                    <td class="p-2.5 text-center space-x-1.5">
+                        <button onclick="copyTokenToClipboard('${rec.token}')" title="Salin Token" class="px-2 py-1 bg-amber-500 hover:bg-amber-600 text-white rounded text-[11px] font-bold transition">
+                            <i class="fa-regular fa-copy"></i> Salin
+                        </button>
+                        <button onclick="removeSingleToken(${idx})" title="Hapus Catatan" class="px-2 py-1 bg-rose-100 hover:bg-rose-200 text-rose-700 rounded text-[11px] font-semibold transition">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function copyTokenToClipboard(token) {
+            navigator.clipboard.writeText(token);
+            alert(`Token '${token}' berhasil disalin ke clipboard!`);
+        }
+
+        function removeSingleToken(idx) {
+            let records = JSON.parse(localStorage.getItem('cbt_active_tokens') || '[]');
+            records.splice(idx, 1);
+            localStorage.setItem('cbt_active_tokens', JSON.stringify(records));
+            renderSavedTokens();
+        }
+
+        function clearSavedTokens() {
+            if (confirm("Bersihkan seluruh daftar tabel token ujian dari browser ini?")) {
+                localStorage.removeItem('cbt_active_tokens');
+                renderSavedTokens();
+            }
+        }
+
+        function exportJSON() {
+            if (questions.length === 0) {
+                alert("Belum ada soal untuk diunduh!");
+                return;
+            }
+
+            const fileName = document.getElementById('preview-filename').innerText;
+            const durationVal = parseInt(document.getElementById('export-duration').value) || 60;
+            const tokenVal = document.getElementById('export-token').value.trim().toUpperCase() || "ALM123";
+
+            const evalElem = document.getElementById('export-evaluasi');
+            const mapelElem = document.getElementById('export-mapel');
+            const kelasElem = document.getElementById('export-kelas');
+
+            const evalText = evalElem.options[evalElem.selectedIndex]?.text || "Evaluasi";
+            const mapelText = mapelElem.options[mapelElem.selectedIndex]?.text || "Mapel";
+            const kelasText = kelasElem.value || "Kelas";
+
+            const exportObj = {
+                duration: durationVal,
+                token: tokenVal,
+                questions: questions
+            };
+
+            // Simpan ke riwayat token tabel
+            saveTokenRecord(fileName, evalText, mapelText, kelasText, durationVal, tokenVal);
+
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(exportObj, null, 2));
+            const anchor = document.createElement('a');
+            anchor.setAttribute("href", dataStr);
+            anchor.setAttribute("download", fileName);
+            document.body.appendChild(anchor);
+            anchor.click();
+            anchor.remove();
+        }
+
         function handleFileUpload(e) {
             document.getElementById('input-embed-text').value = '';
             const file = e.target.files[0];
@@ -204,7 +471,6 @@
             }
         }
 
-        // 2. Input Teks Embed / Drive Link
         function handleEmbedInput() {
             document.getElementById('input-file').value = '';
             const val = document.getElementById('input-embed-text').value.trim();
@@ -246,7 +512,7 @@
             e.preventDefault();
 
             const editIndex = parseInt(document.getElementById('edit-index').value);
-            const qText = document.getElementById('input-q').value.trim();
+            const qText = document.getElementById('input-q').value;
 
             const options = [];
             for (let i = 0; i < 5; i++) {
@@ -309,7 +575,7 @@
                             <button onclick="deleteQuestion(${i})" class="px-2 py-0.5 bg-rose-100 text-rose-800 border border-rose-200 rounded hover:bg-rose-200 font-semibold transition">Hapus</button>
                         </div>
                     </div>
-                    <p class="text-slate-700 line-clamp-2 text-left font-medium">${q.q}</p>
+                    <div class="text-slate-700 line-clamp-3 text-left font-medium preserve-format">${q.q}</div>
                 `;
                 listEl.appendChild(card);
             });
@@ -358,7 +624,6 @@
             clearMedia();
         }
 
-        // --- FITUR IMPORT WORD DENGAN TABEL ---
         function importWordTable(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -366,13 +631,12 @@
             const reader = new FileReader();
             reader.onload = function(e) {
                 const arrayBuffer = e.target.result;
-                // Mengkonversi file Word (.docm/.docx) menjadi struktur HTML
                 mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
                     .then(function(result) {
                         parseHtmlTable(result.value);
                     })
                     .catch(function(err) {
-                        alert("Gagal membaca file Word! Pastikan file tidak rusak.");
+                        alert("Gagal membaca file Word! Pastikan berkas tidak terenkripsi atau rusak.");
                         console.error(err);
                     });
             };
@@ -380,7 +644,6 @@
             event.target.value = '';
         }
 
-        // Fungsi menguraikan tabel HTML dari Mammoth
         function parseHtmlTable(htmlString) {
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = htmlString;
@@ -397,18 +660,25 @@
             rows.forEach((row, index) => {
                 const cols = row.querySelectorAll('td, th');
                 
-                // Mengabaikan baris header atau baris yang kurang dari 8 kolom
                 if (cols.length >= 8) {
                     const textNo = cols[0].innerText.trim();
-                    const qText = cols[1].innerText.trim();
-                    const optA = cols[2].innerText.trim();
-                    const optB = cols[3].innerText.trim();
-                    const optC = cols[4].innerText.trim();
-                    const optD = cols[5].innerText.trim();
-                    const optE = cols[6].innerText.trim();
+                    
+                    const extractCellText = (cell) => {
+                        const paragraphs = cell.querySelectorAll('p');
+                        if (paragraphs.length > 0) {
+                            return Array.from(paragraphs).map(p => p.innerText.trim()).filter(p => p !== '').join('\n\n');
+                        }
+                        return cell.innerText.trim();
+                    };
+
+                    const qText = extractCellText(cols[1]);
+                    const optA = extractCellText(cols[2]);
+                    const optB = extractCellText(cols[3]);
+                    const optC = extractCellText(cols[4]);
+                    const optD = extractCellText(cols[5]);
+                    const optE = extractCellText(cols[6]);
                     const rawAns = cols[7].innerText.trim().toUpperCase();
 
-                    // Abaikan baris header tabel
                     if (index === 0 && (textNo.toLowerCase().includes('no') || qText.toLowerCase().includes('soal'))) {
                         return;
                     }
@@ -437,45 +707,63 @@
             }
         }
 
-        // IMPOR / UPLOAD FILE JSON
         function importJSON(event) {
             const file = event.target.files[0];
             if (!file) return;
+
+            const fileName = file.name.replace('.json', '');
+            if (fileName.includes('_')) {
+                const parts = fileName.split('_');
+                if (parts.length === 3) {
+                    document.getElementById('export-evaluasi').value = parts[0];
+                    document.getElementById('export-mapel').value = parts[1];
+                    document.getElementById('export-kelas').value = parts[2];
+                    updateDownloadPreview();
+                }
+            }
 
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
                     const importedData = JSON.parse(e.target.result);
                     
+                    let tokenVal = "ALM123";
+                    let durationVal = 60;
+
                     if (Array.isArray(importedData)) {
                         questions = importedData;
-                        renderList();
-                        resetForm();
-                        alert(`Berhasil mengimpor ${questions.length} soal!`);
+                    } else if (importedData.questions && Array.isArray(importedData.questions)) {
+                        questions = importedData.questions;
+                        durationVal = importedData.duration || 60;
+                        tokenVal = importedData.token || "ALM123";
                     } else {
-                        alert("Format JSON tidak valid! Pastikan berkas berisi daftar array soal.");
+                        alert("Format JSON tidak valid!");
+                        return;
                     }
+
+                    document.getElementById('export-duration').value = durationVal;
+                    document.getElementById('export-token').value = tokenVal;
+
+                    const evalElem = document.getElementById('export-evaluasi');
+                    const mapelElem = document.getElementById('export-mapel');
+                    const kelasElem = document.getElementById('export-kelas');
+
+                    const evalText = evalElem.options[evalElem.selectedIndex]?.text || "Evaluasi";
+                    const mapelText = mapelElem.options[mapelElem.selectedIndex]?.text || "Mapel";
+                    const kelasText = kelasElem.value || "Kelas";
+
+                    // Simpan ke riwayat tabel
+                    saveTokenRecord(file.name, evalText, mapelText, kelasText, durationVal, tokenVal);
+
+                    renderList();
+                    resetForm();
+                    alert(`Berhasil mengimpor ${questions.length} soal! Token: ${tokenVal}`);
                 } catch (err) {
                     alert("Gagal membaca file JSON. Pastikan format berkas benar.");
                 }
             };
             reader.readAsText(file);
             event.target.value = '';
-        }
-
-        // EKSPOR / DOWNLOAD FILE JSON
-        function exportJSON() {
-            if (questions.length === 0) {
-                alert("Belum ada soal untuk diunduh!");
-                return;
-            }
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(questions, null, 2));
-            const anchor = document.createElement('a');
-            anchor.setAttribute("href", dataStr);
-            anchor.setAttribute("download", "soal.json");
-            document.body.appendChild(anchor);
-            anchor.click();
-            anchor.remove();
         }
     </script>
 </body>
