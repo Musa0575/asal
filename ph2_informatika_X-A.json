@@ -1,0 +1,486 @@
+{
+  "duration": 60,
+  "token": "ALM123",
+  "questions": [
+    {
+      "q": "Bacalah wacana berikut untuk menjawab pertanyaan!\n\nDalam pembelajaran Informatika, sistem bilangan merupakan konsep dasar yang digunakan untuk memahami bagaimana komputer merepresentasikan dan mengolah data. Setiap sistem bilangan memiliki simbol dan basis tertentu. Contohnya, sistem bilangan biner menggunakan dua simbol, yaitu 0 dan 1, sistem oktal menggunakan delapan simbol, sistem desimal menggunakan sepuluh simbol, sedangkan sistem heksadesimal menggunakan enam belas simbol.\n\nDalam penerapannya, terkadang suatu bilangan perlu diubah dari satu sistem bilangan ke sistem bilangan lainnya agar lebih mudah digunakan dalam proses komputasi. Misalnya, bilangan desimal dapat diubah menjadi biner, oktal, atau heksadesimal. Proses perubahan tersebut dilakukan dengan menggunakan metode perhitungan sesuai dengan basis masing-masing sistem bilangan. Kegiatan mengubah nilai bilangan dari satu sistem ke sistem bilangan lainnya dikenal dengan istilah konversi bilangan.\n\nPertanyaan:\n\nProses mengubah suatu nilai atau bilangan dari satu sistem bilangan ke sistem bilangan lainnya disebut ....",
+      "embed_html": "",
+      "options": [
+        "Konvesi bilangan",
+        "Alamat Memory",
+        "Radix",
+        "Sistem Komputer",
+        "Proseso"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Perhatikan pernyataan berikut :\n\nDari pernyataan di atas tentukan mana yang merupakan fungsi dari konversi bilangan",
+      "embed_html": "",
+      "options": [
+        "1, 2, 3",
+        "1, 2, 4",
+        "1, 2, 5",
+        "4, 5, 6",
+        "2, 3, 6"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Perhatikan pernyataan berikut :\n\nDari pernyataan di atas tentukan mana yang merupakan bukan fungsi dari konversi bilangan",
+      "embed_html": "",
+      "options": [
+        "1, 2, 3",
+        "1, 2, 4",
+        "1, 2, 5",
+        "4, 5, 6",
+        "2, 3, 6"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Bilangan adalah representasi atau notasi dari jumlah atau kuantitas. Konsep bilangan sangat mendasar dalam matematika dan digunakan untuk mengukur, menghitung, dan merinci jumlah entitas atau besaran. Bilangan dapat digunakan untuk mewakili berbagai jenis data, seperti jumlah, ukuran, waktu, dan banyak lagi. Bilangan yang kita kenal dalam keseharian adalah....",
+      "embed_html": "",
+      "options": [
+        "Binner",
+        "Oktal",
+        "Desimal",
+        "Hexadesimal",
+        "Bulat"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Bilangan digunakan dalam berbagai konteks, seperti dalam perhitungan aritmetika, ilmu fisika, ilmu komputer, keuangan, statistik, dan banyak disiplin ilmu lainnya. Mereka memungkinkan kita untuk mengukur, menghitung, dan memahami berbagai aspek dunia fisik dan konsep matematis. Bilangan adalah dasar dari hampir semua cabang matematika dan memiliki peran yang sangat penting dalam ilmu pengetahuan dan teknologi. Istilah sistem bilangan atau basis data pda ilmu komputer disebut dengan ...",
+      "embed_html": "",
+      "options": [
+        "binner",
+        "Radix",
+        "Formula",
+        "Fungsi",
+        "Symbol"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Bilangan adalah representasi atau notasi dari jumlah atau kuantitas. Konsep bilangan sangat mendasar dalam matematika dan digunakan untuk mengukur, menghitung, dan merinci jumlah entitas atau besaran. Bilangan dapat digunakan untuk mewakili berbagai jenis data, seperti jumlah, ukuran, waktu, dan banyak lagi. Berapakah jenis sistem bilangan yang kamu ketahui?",
+      "embed_html": "",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Bacalah wacana berikut untuk menjawab pertanyaan!\n\nDalam pembelajaran Informatika, sistem bilangan merupakan konsep dasar yang digunakan untuk merepresentasikan dan mengolah data di dalam komputer. Setiap sistem bilangan memiliki karakteristik yang berbeda, terutama dalam penggunaan simbol dan nilai basisnya. Beberapa sistem bilangan yang umum dikenal adalah biner, oktal, desimal, dan heksadesimal. Sistem bilangan tersebut digunakan dalam berbagai proses komputasi, mulai dari penyimpanan data hingga pengolahan informasi digital.\n\nSalah satu sistem bilangan yang memiliki keunikan adalah sistem bilangan heksadesimal. Sistem ini menggunakan kombinasi angka dan huruf untuk merepresentasikan nilai bilangan. Simbol yang digunakan terdiri atas angka 0 sampai 9 serta huruf A sampai F, dengan huruf A mewakili nilai 10 hingga huruf F mewakili nilai 15. Sistem bilangan ini memiliki basis 16 dan sering digunakan dalam pemrograman serta pengkodean warna pada halaman web.\n\nPertanyaan:\n\nSistem bilangan yang menggunakan kombinasi angka dan huruf disebut sistem bilangan ....",
+      "embed_html": "",
+      "options": [
+        "Biner",
+        "Heksadesimal",
+        "Oktal",
+        "Desimal",
+        "Real"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Bacalah wacana berikut untuk menjawab pertanyaan!\n\nSistem bilangan merupakan cara untuk merepresentasikan angka menggunakan simbol-simbol tertentu berdasarkan nilai basisnya. Dalam Informatika, terdapat beberapa sistem bilangan yang sering digunakan, yaitu biner, oktal, desimal, dan heksadesimal. Setiap sistem bilangan memiliki aturan penggunaan simbol yang berbeda. Perbedaan tersebut dapat dilihat dari jumlah angka yang digunakan dalam setiap sistem bilangan.\n\nSistem bilangan oktal merupakan sistem bilangan berbasis 8 yang hanya menggunakan delapan simbol angka, yaitu 0, 1, 2, 3, 4, 5, 6, dan 7. Oleh karena itu, angka 8 dan 9 tidak digunakan dalam sistem bilangan oktal. Pemahaman terhadap karakteristik setiap sistem bilangan sangat penting agar tidak terjadi kesalahan dalam melakukan konversi bilangan.\n\nPertanyaan:\n\nSistem bilangan yang tidak menggunakan angka 8 dan 9 karena hanya menggunakan simbol 0 sampai 7 adalah ....\n",
+      "embed_html": "",
+      "options": [
+        "Oktal",
+        "Desimal",
+        "Binner",
+        "Hexa",
+        "Real"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Bacalah wacana berikut untuk menjawab pertanyaan!\n\nSistem bilangan heksadesimal merupakan salah satu sistem bilangan yang digunakan dalam dunia komputer dan teknologi digital. Sistem bilangan ini memiliki basis 16, artinya menggunakan 16 simbol untuk merepresentasikan suatu nilai. Simbol yang digunakan terdiri atas angka 0 sampai 9 dan huruf A sampai F. Sistem bilangan heksadesimal sering digunakan dalam pemrograman komputer, pengalamatan memori, serta pengkodean warna pada halaman web.\n\nDalam sistem bilangan heksadesimal, huruf A, B, C, D, E, dan F masing-masing mewakili nilai desimal 10, 11, 12, 13, 14, dan 15. Penggunaan huruf tersebut bertujuan untuk melengkapi jumlah 16 simbol yang diperlukan dalam sistem bilangan berbasis 16. Oleh karena itu, memahami nilai setiap simbol heksadesimal sangat penting dalam proses konversi bilangan.\n\nPertanyaan:\n\nBerapakah nilai desimal dari bilangan heksadesimal \"C\"?\n\n\n",
+      "embed_html": "",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "10"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Konversi bilangan yang biasa dilakukan berkaitan dengan angka atau nilai numerik. Ketika kita berbicara tentang gambar atau data grafis, konversi biasanya berhubungan dengan kompresi, dekompresi, atau pengubahan format gambar. Proses konversi ini berbeda dari konversi bilangan dan melibatkan perubahan representasi data grafis.. Sistem bilangan terdiri dari 4 jenis. Yang merupakan sistem bilangan yang disebut juga dengan basis 7 adalah ...\n\n\n\n\n\n\n\n\n\n\n\n",
+      "embed_html": "",
+      "options": [
+        "Desimal",
+        "Biner",
+        "Hexadesimal",
+        "Oktal",
+        "Salah Semua"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "sebuah bilangan yang apabila ingin dikonversikan kebilangan lain harus dibagi sesuai dengan bilangan yang ingin dijadikan konversinya. Sebagai contoh bilangan tersebut akan dikonversikan kedalam bilangan oktal, maka cara konversinya adalah dengan dibagi 8. bilangan tersebut adalah...\n\n\n",
+      "embed_html": "",
+      "options": [
+        "Desimal",
+        "Oktal",
+        "Hexadesimal",
+        "Biner",
+        "Real"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Cara kerja konversi bilangan dapat bervariasi tergantung pada jenis konversi dan sistem bilangan yang digunakan. Penting untuk memahami metode konversi yang sesuai dengan kebutuhan Anda dan memastikan akurasi dalam perhitungan konversi. Untuk mengonversi bilangan desimal ke basis lain, seperti biner, oktal, atau heksadesimal, Anda dapat menggunakan metode pembagian berulang. Misalnya, untuk mengonversi desimal ke biner cara yang benar adalah dengan ...",
+      "embed_html": "",
+      "options": [
+        "membagi 2",
+        "membagi 8",
+        "membagi 16",
+        "membuat ruas tiga-tiga",
+        "salah semua"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Penggunaan utama bilangan biner adalah untuk merepresentasikan dan memproses data dalam sistem komputer. Dalam bilangan biner, operasi aritmetika dan logika dapat dilakukan dengan menggunakan aturan tertentu. Bilangan biner juga digunakan dalam penyimpanan dan transmisi data, pengkodean sirkuit logika, serta banyak aspek lain dalam dunia teknologi dan komputasi. Konversi antara bilangan biner dan sistem bilangan lainnya, seperti desimal atau heksadesimal, adalah hal umum dalam pemrograman dan ilmu komputer. Cara konversi bilangan biner ke bilangan ocatal dengan cara ...",
+      "embed_html": "",
+      "options": [
+        "membagi ruas tiga-tiga",
+        "membagi ruas empat-empat",
+        "membagi dua",
+        "membagi 8",
+        "salah semua"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Penggunaan utama bilangan biner adalah untuk merepresentasikan dan memproses data dalam sistem komputer. Dalam bilangan biner, operasi aritmetika dan logika dapat dilakukan dengan menggunakan aturan tertentu. Bilangan biner juga digunakan dalam penyimpanan dan transmisi data, pengkodean sirkuit logika, serta banyak aspek lain dalam dunia teknologi dan komputasi. Konversi antara bilangan biner dan sistem bilangan lainnya, seperti desimal atau heksadesimal, adalah hal umum dalam pemrograman dan ilmu komputer. Cara konversi bilangan biner ke bilangan Hexadesimall dengan cara ...",
+      "embed_html": "",
+      "options": [
+        "membagi ruas tiga-tiga",
+        "membagi ruas empat-empat",
+        "membagi dua   membagi 8",
+        "salah semua",
+        "Membagi dua"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Seorang siswa sedang mempelajari empat sistem bilangan yang digunakan dalam teknologi komputer, yaitu biner, oktal, desimal, dan heksadesimal. Dalam kegiatan pembelajaran, guru menjelaskan bahwa setiap sistem bilangan mempunyai basis dan simbol yang berbeda. Sistem biner menggunakan basis 2 dengan simbol 0 dan 1, sedangkan sistem oktal menggunakan basis 8 dengan simbol 0 sampai 7. Sistem desimal yang umum digunakan manusia memiliki basis 10 dengan simbol 0 sampai 9. Sementara itu, sistem heksadesimal menggunakan basis 16 dengan simbol 0 sampai 9 serta huruf A sampai F. Keempat sistem tersebut memiliki hubungan erat dengan pengolahan data digital. Biner menjadi bahasa dasar komputer, oktal digunakan dalam penyederhanaan kelompok bilangan biner, desimal digunakan dalam aktivitas manusia, sedangkan heksadesimal banyak dimanfaatkan dalam pemrograman dan teknologi digital. Pemahaman karakteristik tersebut membantu siswa menentukan sistem bilangan yang tepat ketika melakukan proses konversi.\n\nPertanyaan:\n\nBerdasarkan informasi dalam narasi, seorang siswa menemukan bilangan A16 dan diminta menjelaskan alasan mengapa simbol huruf A dapat digunakan dalam sistem bilangan tersebut. Penjelasan yang paling tepat adalah ....",
+      "embed_html": "",
+      "options": [
+        "Karena sistem heksadesimal memiliki basis 10 dan menggunakan simbol angka 0 sampai 9.",
+        "Karena sistem heksadesimal menggunakan basis 16 dengan simbol angka 0 sampai 9 dan huruf A sampai F.",
+        "Karena sistem oktal menggunakan huruf A sampai F sebagai pengganti angka 8 dan 9.",
+        "Karena sistem heksadesimal menggunakan basis 8 sehingga membutuhkan tambahan simbol huruf.",
+        "Karena sistem biner menggunakan simbol angka dan huruf untuk mewakili nilai yang lebih besar."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Berapakah bilangan Oktal dari Biner 1001011",
+      "embed_html": "",
+      "options": [
+        "113",
+        "112",
+        "75",
+        "80",
+        "55"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Dalam kegiatan pembelajaran Informatika, seorang siswa diminta menjelaskan manfaat konversi bilangan bagi perkembangan teknologi komputer. Ia menemukan bahwa komputer menyimpan dan memproses informasi menggunakan representasi data digital. Agar manusia dapat memahami informasi tersebut, diperlukan proses representasi yang sesuai dengan sistem bilangan yang biasa digunakan. Konversi bilangan juga membantu programmer memahami data yang diproses oleh komputer serta mempermudah pembacaan informasi digital. Selain itu, konversi bilangan memiliki fungsi dalam menghubungkan representasi manusia dengan representasi mesin. Dalam bidang jaringan komputer, pemahaman sistem bilangan dapat digunakan ketika mempelajari alamat IP dan subnetting. Pada bidang perangkat digital, sistem bilangan membantu memahami cara mikrokontroler dan sensor bekerja dengan sinyal digital. Dengan demikian, konversi bilangan bukan sekadar kegiatan mengubah angka, melainkan salah satu kemampuan dasar yang mendukung pemahaman terhadap sistem komputer, pemrograman, dan teknologi digital.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, manakah pernyataan berikut yang TIDAK termasuk fungsi konversi bilangan sebagaimana dijelaskan dalam infografis?",
+      "embed_html": "",
+      "options": [
+        "Mengubah representasi data agar dapat digunakan dalam sistem bilangan yang berbeda.",
+        "Membantu menghubungkan representasi manusia dengan representasi mesin.",
+        "Mengubah nilai sebenarnya dari suatu bilangan agar hasil pengolahan komputer menjadi lebih besar.",
+        "Mempermudah pembacaan data yang diproses oleh komputer.",
+        "Membantu programmer membaca dan memahami data digital."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Dalam kehidupan sehari-hari, kita sering menemukan perangkat elektronik yang memiliki kondisi ON dan OFF, seperti komputer, televisi, lampu, dan berbagai mesin elektronik lainnya. Kondisi ON menunjukkan bahwa perangkat sedang aktif atau menyala, sedangkan kondisi OFF menunjukkan bahwa perangkat tidak aktif atau mati. Dalam teknologi digital, kedua kondisi tersebut menjadi dasar dalam proses pengolahan informasi oleh komputer.\n\nKomputer menggunakan sistem elektronik digital yang bekerja dengan dua kondisi dasar, yaitu ada atau tidak adanya sinyal listrik. Kedua kondisi tersebut direpresentasikan menggunakan angka 1 dan 0. Angka 1 menunjukkan kondisi ON atau aktif, sedangkan angka 0 menunjukkan kondisi OFF atau tidak aktif. Sistem bilangan yang menggunakan dua simbol tersebut dikenal sebagai sistem bilangan biner dengan basis 2.\n\nPertanyaan:\n\nDalam sebuah mesin dikenal istilah ON/OFF. Sistem bilangan yang paling sesuai untuk merepresentasikan kedua kondisi tersebut adalah bilangan ....",
+      "embed_html": "",
+      "options": [
+        "Desimal",
+        "Biner",
+        "Oktal",
+        "Hexadesimal",
+        "Romawi"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Sistem bilangan heksadesimal merupakan sistem bilangan yang menggunakan basis 16. Sistem ini memiliki 16 simbol, yaitu angka 0 sampai 9 dan huruf A sampai F. Angka 0–9 memiliki nilai yang sama seperti pada sistem desimal, sedangkan huruf A, B, C, D, E, dan F digunakan untuk mewakili nilai 10, 11, 12, 13, 14, dan 15.\n\nPenggunaan huruf dalam sistem heksadesimal bertujuan untuk melengkapi jumlah simbol yang dibutuhkan dalam sistem berbasis 16. Oleh karena itu, setiap huruf memiliki nilai numerik tertentu yang dapat dikonversi ke dalam sistem bilangan desimal.\n\nPertanyaan:\n\nBerapakah nilai bilangan heksadesimal \"D\" jika dikonversikan ke dalam bilangan desimal?",
+      "embed_html": "",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Sistem bilangan heksadesimal merupakan sistem bilangan berbasis 16 yang banyak digunakan dalam teknologi komputer. Sistem ini menggunakan simbol angka 0 sampai 9 dan huruf A sampai F, dengan huruf A bernilai 10, B bernilai 11, C bernilai 12, D bernilai 13, E bernilai 14, dan F bernilai 15. Sistem bilangan heksadesimal sering digunakan dalam pemrograman, pengalamatan memori komputer, serta pengkodean warna pada halaman web.\n\nUntuk mengubah bilangan desimal menjadi heksadesimal, diperlukan metode pembagian berulang menggunakan angka 16. Bilangan desimal dibagi dengan 16, kemudian sisa hasil pembagian dicatat. Proses tersebut dilakukan terus-menerus sampai hasil pembagian menjadi 0. Setelah itu, sisa pembagian dibaca dari bawah ke atas. Apabila terdapat sisa pembagian antara 10 sampai 15, maka sisa tersebut diganti dengan huruf A sampai F sesuai nilainya.\n\nPertanyaan:\n\nCara mengonversi bilangan desimal ke bilangan heksadesimal adalah dengan cara ....",
+      "embed_html": "",
+      "options": [
+        "dibagi 16",
+        "dibagi 8",
+        "di bagi 10",
+        "di bagi 2",
+        "di bagi 4"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Bacalah wacana berikut untuk menjawab pertanyaan!\n\nDalam pembelajaran Informatika, sistem bilangan merupakan dasar penting untuk memahami cara komputer mengolah, menyimpan, dan merepresentasikan data. Setiap sistem bilangan memiliki karakteristik tersendiri, terutama dalam hal jumlah simbol yang digunakan dan nilai basisnya. Sistem bilangan tidak hanya digunakan dalam perhitungan matematika, tetapi juga diterapkan dalam berbagai teknologi digital, seperti pemrograman komputer, pengalamatan memori, dan pengolahan data.\n\nSecara umum, terdapat empat jenis sistem bilangan yang sering dipelajari dalam Informatika, yaitu biner, oktal, desimal, dan heksadesimal. Sistem biner memiliki basis 2, oktal berbasis 8, desimal berbasis 10, dan heksadesimal berbasis 16. Keempat sistem bilangan tersebut memiliki fungsi dan penggunaan yang berbeda dalam dunia komputasi.\n\nPertanyaan:\n\nBerapakah jumlah jenis sistem bilangan yang umum digunakan dalam pembelajaran dasar Informatika?",
+      "embed_html": "",
+      "options": [
+        "4",
+        "3",
+        "2",
+        "1",
+        "5"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Dalam kehidupan sehari-hari, manusia lebih sering menggunakan sistem bilangan desimal yang memiliki basis 10 dengan simbol angka 0 sampai 9. Namun, komputer tidak memproses informasi menggunakan sistem bilangan yang sama seperti manusia. Komputer menggunakan sistem bilangan biner yang memiliki basis 2 dengan simbol 0 dan 1. Perbedaan sistem bilangan tersebut menyebabkan perlunya proses konversi bilangan agar informasi dapat dipahami oleh manusia maupun perangkat komputer. Sebagai contoh, bilangan desimal 10 dapat direpresentasikan menjadi bilangan biner 1010. Meskipun kedua bilangan tersebut memiliki bentuk penulisan yang berbeda, keduanya tetap menunjukkan nilai yang sama. Proses konversi juga digunakan pada sistem bilangan oktal dan heksadesimal yang masing-masing memiliki basis 8 dan 16. Dengan adanya konversi, proses pengolahan informasi, pemrograman, serta komunikasi antara manusia dan komputer dapat dilakukan dengan lebih mudah dan terstruktur.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, pernyataan manakah yang paling tepat menjelaskan hakikat konversi bilangan dalam sistem komputer?",
+      "embed_html": "",
+      "options": [
+        "Proses mengubah suatu bilangan menjadi nilai yang lebih besar agar komputer dapat memproses data dengan cepat.",
+        "Proses mengubah bentuk representasi suatu bilangan dari satu sistem bilangan ke sistem lainnya tanpa mengubah nilai sebenarnya.",
+        "Proses menghilangkan beberapa simbol bilangan agar informasi dapat disimpan dalam kapasitas memori yang lebih kecil.",
+        "Proses mengubah bilangan menjadi simbol huruf agar manusia dapat memahami seluruh informasi yang dihasilkan komputer.",
+        "Proses mengganti seluruh bilangan desimal menjadi bilangan biner tanpa mempertimbangkan sistem bilangan lainnya."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Sistem bilangan biner merupakan salah satu sistem bilangan yang sangat penting dalam teknologi komputer. Berbeda dengan manusia yang umumnya menggunakan sistem bilangan desimal, komputer menggunakan sistem bilangan biner untuk memproses dan menyimpan data digital. Sistem bilangan biner hanya memiliki dua simbol angka, yaitu 0 dan 1, sehingga disebut juga sistem bilangan berbasis 2.\n\nDalam pembelajaran Informatika, proses mengubah bilangan desimal menjadi bilangan biner disebut konversi bilangan. Salah satu cara untuk melakukan konversi tersebut adalah dengan membagi bilangan desimal secara berulang menggunakan angka 2. Setiap sisa pembagian dicatat, kemudian dibaca dari bawah ke atas untuk mendapatkan hasil bilangan biner.\n\nPertanyaan:\n\nBilangan desimal 21 apabila dikonversi ke dalam bilangan biner, hasilnya adalah ....",
+      "embed_html": "",
+      "options": [
+        "10101",
+        "1101",
+        "1010",
+        "1101",
+        "11101"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Sistem bilangan merupakan salah satu materi penting dalam pembelajaran Informatika. Sistem bilangan digunakan untuk merepresentasikan nilai atau angka dengan aturan tertentu berdasarkan jumlah simbol yang digunakan. Dalam kehidupan sehari-hari, manusia lebih sering menggunakan sistem bilangan desimal yang memiliki basis 10, sedangkan komputer juga mengenal sistem bilangan lain, seperti biner, oktal, dan heksadesimal.\n\nSistem bilangan oktal merupakan sistem bilangan berbasis 8 yang menggunakan delapan simbol angka, yaitu 0, 1, 2, 3, 4, 5, 6, dan 7. Untuk mengubah bilangan desimal menjadi oktal, dapat dilakukan dengan cara membagi bilangan desimal secara berulang dengan angka 8. Setiap sisa hasil pembagian dicatat, kemudian dibaca dari sisa pembagian terakhir hingga pertama untuk memperoleh hasil konversi.\n\nPertanyaan:\n\nBilangan desimal 96 apabila diubah menjadi bilangan oktal, hasilnya adalah ....",
+      "embed_html": "",
+      "options": [
+        "240",
+        "140",
+        "210",
+        "410",
+        "125"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Sistem komputer merupakan kesatuan dari beberapa komponen yang saling bekerja sama untuk mengolah data menjadi informasi. Komponen-komponen tersebut meliputi perangkat keras (hardware), perangkat lunak (software), dan pengguna (brainware). Agar komputer dapat menjalankan berbagai instruksi dengan baik, setiap komponen harus memiliki hubungan dan mekanisme kerja yang terorganisasi. Hubungan tersebut memungkinkan komputer melakukan proses pengolahan data sesuai dengan perintah yang diberikan.\n\nDalam mempelajari organisasi dan arsitektur komputer, terdapat dua konsep yang saling berkaitan, yaitu arsitektur komputer dan organisasi komputer. Arsitektur komputer berkaitan dengan atribut yang terlihat oleh programmer, sedangkan organisasi komputer membahas bagian operasional yang berkaitan dengan implementasi, hubungan, serta interkoneksi antarberbagai komponen penyusun sistem komputer. Kedua konsep tersebut menjadi dasar dalam memahami cara kerja sebuah sistem komputer.",
+      "embed_html": "",
+      "options": [
+        "Aplikasi Komputer",
+        "Dasar Komputer",
+        "Sistem Komputer",
+        "Arsitektur Komputer",
+        "Organisasi Komputer"
+      ],
+      "answer": 4
+    },
+    {
+      "q": "Soal 1. Penerapan Bilangan Biner pada Perangkat Elektronik\nDalam kehidupan sehari-hari, manusia banyak menggunakan perangkat elektronik seperti komputer, laptop, smartphone, dan televisi digital. Perangkat tersebut bekerja dengan memanfaatkan sistem bilangan biner yang hanya memiliki dua simbol, yaitu 0 dan 1. Kedua simbol tersebut menggambarkan kondisi logika dalam rangkaian elektronik, seperti OFF dan ON. Sebagai contoh, sebuah perangkat penyimpanan digital menerima data berupa rangkaian angka biner untuk diproses oleh sistem komputer. Seorang teknisi menemukan sebuah data dengan kode biner 101101₂ yang tersimpan pada salah satu perangkat komputer. Ia ingin mengetahui nilai desimal dari kode tersebut agar dapat membandingkannya dengan data yang ditampilkan oleh aplikasi pemantauan sistem. Proses konversi ini penting karena komputer menggunakan bilangan biner, sedangkan manusia lebih mudah memahami bilangan desimal dalam aktivitas sehari-hari.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, berapakah nilai desimal dari bilangan biner 101101₂?",
+      "embed_html": "",
+      "options": [
+        "35",
+        "41",
+        "43",
+        "45",
+        "47"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Seorang administrator jaringan sedang melakukan pengaturan hak akses file pada sebuah server sekolah. Dalam sistem operasi Linux, pengaturan hak akses file dapat dituliskan menggunakan bilangan oktal, misalnya angka 755. Bilangan oktal menggunakan delapan simbol, yaitu 0 sampai 7, dan memiliki basis 8. Administrator tersebut ingin memahami bagaimana angka oktal dapat dikonversi ke sistem bilangan desimal agar dapat mempelajari hubungan antara berbagai sistem bilangan. Ia menemukan sebuah kode 157₈ pada dokumentasi pengaturan sistem. Untuk memastikan pemahamannya, ia mencoba mengubah kode tersebut menjadi bilangan desimal secara manual. Pengetahuan tentang konversi sistem bilangan sangat diperlukan dalam dunia teknologi informasi karena berbagai perangkat lunak dan sistem operasi menggunakan representasi bilangan yang berbeda sesuai dengan kebutuhan pemrosesan data.\n\nPertanyaan:\n\nBerapakah nilai desimal dari bilangan oktal 157₈?",
+      "embed_html": "",
+      "options": [
+        "A. 101",
+        "B. 107",
+        "C. 109",
+        "D. 111",
+        "E. 117"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Sebuah sekolah memiliki laboratorium komputer yang digunakan untuk kegiatan pembelajaran Informatika. Setiap komputer dilengkapi dengan perangkat penyimpanan yang mampu menyimpan berbagai jenis data, mulai dari dokumen, gambar, hingga video. Dalam pembelajaran sistem komputer, seorang peserta didik menemukan informasi bahwa kapasitas penyimpanan digital dapat direpresentasikan menggunakan satuan bit dan byte. Bit merupakan satuan terkecil dalam penyimpanan data yang hanya memiliki nilai 0 atau 1. Ketika mempelajari representasi data, peserta didik diminta mengubah bilangan desimal 75 menjadi bilangan biner. Proses ini bertujuan agar mereka memahami bagaimana angka yang biasa digunakan manusia dapat direpresentasikan oleh komputer dalam bentuk kombinasi angka 0 dan 1. Kemampuan melakukan konversi tersebut menjadi dasar untuk memahami cara komputer memproses dan menyimpan informasi digital.\n\nPertanyaan:\n\nBerapakah hasil konversi bilangan desimal 75 ke dalam bilangan biner?",
+      "embed_html": "",
+      "options": [
+        "A. 1001001",
+        "B. 1001011",
+        "C. 1001101",
+        "D. 1010011",
+        "E. 1010101"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Perkembangan teknologi komputer memberikan banyak kemudahan dalam kehidupan manusia. Komputer dapat digunakan untuk mengolah dokumen, menyimpan foto, menjalankan aplikasi, hingga melakukan komunikasi melalui internet. Namun, komputer memiliki cara tersendiri dalam membaca dan mengolah informasi. Berbeda dengan manusia yang terbiasa menggunakan bilangan desimal, komputer menggunakan sistem bilangan biner yang terdiri atas angka 0 dan 1. Dalam proses pengembangan perangkat lunak, seorang programmer sering menemukan data yang ditampilkan dalam bentuk biner, oktal, desimal, maupun heksadesimal. Oleh karena itu, kemampuan melakukan konversi bilangan menjadi salah satu keterampilan penting dalam bidang Informatika. Dengan memahami konversi bilangan, seseorang dapat membaca representasi data, menganalisis informasi digital, serta memahami cara kerja perangkat komputer. Kemampuan tersebut juga membantu teknisi ketika melakukan pemeriksaan dan perbaikan sistem komputer.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, manfaat utama mempelajari konversi sistem bilangan dalam teknologi komputer adalah ....",
+      "embed_html": "",
+      "options": [
+        "A. Mempercepat koneksi internet tanpa menggunakan jaringan.",
+        "B. Mempermudah manusia memahami representasi data yang digunakan komputer.",
+        "C. Mengubah komputer menjadi perangkat yang tidak membutuhkan listrik.",
+        "D. Menghilangkan seluruh kesalahan dalam pemrograman komputer.",
+        "E. Menggantikan fungsi sistem operasi dalam mengelola perangkat komputer."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Seorang peserta didik sedang mengembangkan aplikasi sederhana menggunakan bahasa pemrograman Python. Dalam proses pembelajaran, ia menemukan bahwa komputer memproses data menggunakan bilangan biner, sedangkan beberapa dokumentasi pemrograman menampilkan nilai dalam bentuk heksadesimal. Ketika melakukan pengembangan aplikasi, ia harus memahami hubungan antara kedua sistem bilangan tersebut agar dapat membaca nilai yang digunakan dalam program. Selain itu, pemahaman sistem bilangan juga diperlukan ketika mempelajari alamat memori, representasi warna, dan pengolahan data digital. Temannya berpendapat bahwa mempelajari konversi bilangan tidak terlalu penting karena komputer sudah dapat melakukan perhitungan secara otomatis. Namun, ia menyadari bahwa seorang programmer tetap perlu memahami proses tersebut agar dapat menganalisis kesalahan, membaca kode, dan mengetahui bagaimana data direpresentasikan oleh sistem komputer.\n\nPertanyaan:\n\nBerdasarkan ilustrasi tersebut, alasan paling tepat seorang programmer perlu memahami konversi bilangan adalah ....",
+      "embed_html": "",
+      "options": [
+        "Agar tidak perlu menggunakan bahasa pemrograman.",
+        "Agar komputer dapat bekerja tanpa prosesor.",
+        "Agar mampu memahami dan menganalisis representasi data digital.",
+        "Agar seluruh aplikasi dapat berjalan tanpa sistem operasi.",
+        "Agar dapat menghapus semua data dalam memori komputer."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Dalam pembuatan website, seorang desainer menggunakan berbagai kode warna untuk menentukan tampilan halaman. Salah satu sistem yang sering digunakan adalah kode warna heksadesimal, misalnya #FF0000 untuk warna merah. Kode tersebut merupakan representasi warna yang dapat dipahami oleh browser ketika menampilkan halaman website. Desainer yang memahami sistem bilangan dapat mengetahui bahwa setiap dua digit kode heksadesimal mewakili intensitas warna merah, hijau, dan biru. Pemahaman tersebut mempermudah proses pengaturan warna dan membantu desainer ketika harus menyesuaikan tampilan website dengan identitas visual sebuah lembaga. Selain itu, pengetahuan tentang konversi bilangan juga berguna ketika seseorang mempelajari pemrograman web, pengolahan gambar digital, serta pengembangan aplikasi berbasis komputer. Dengan demikian, sistem bilangan tidak hanya digunakan dalam perhitungan matematika, tetapi juga memiliki penerapan nyata dalam bidang desain digital.\n\nPertanyaan:\n\nManfaat mempelajari sistem bilangan heksadesimal berdasarkan narasi tersebut adalah ....",
+      "embed_html": "",
+      "options": [
+        "Mempercepat proses pengisian daya komputer.",
+        "Menghilangkan kebutuhan penggunaan browser.",
+        "Mengubah gambar digital menjadi dokumen cetak secara langsung.",
+        "Memperbesar kapasitas RAM secara otomatis.",
+        "Mempermudah pengaturan dan pemahaman kode warna digital."
+      ],
+      "answer": 4
+    },
+    {
+      "q": "Sebuah sekolah memiliki jaringan komputer yang digunakan oleh guru, peserta didik, dan tenaga administrasi. Jaringan tersebut menghubungkan berbagai perangkat seperti komputer, laptop, server, dan printer. Ketika melakukan konfigurasi jaringan, seorang administrator sering berhadapan dengan alamat IP yang menggunakan sistem bilangan desimal. Dalam beberapa proses pembelajaran jaringan komputer, administrator juga mempelajari bagaimana komputer merepresentasikan alamat dan data dalam bentuk biner. Pengetahuan tentang konversi bilangan membantu administrator memahami pembagian alamat jaringan, subnet mask, serta proses komunikasi antarperangkat. Ketika terjadi gangguan koneksi, pemahaman tersebut dapat membantu proses pemeriksaan konfigurasi jaringan dan menemukan kemungkinan kesalahan. Oleh sebab itu, konversi sistem bilangan memiliki peranan penting dalam bidang jaringan komputer, khususnya bagi seseorang yang bertanggung jawab mengelola dan memelihara infrastruktur jaringan.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, manfaat konversi bilangan dalam pengelolaan jaringan komputer adalah ....",
+      "embed_html": "",
+      "options": [
+        "Mengubah jaringan lokal menjadi jaringan tanpa kabel secara otomatis.",
+        "Menghilangkan kebutuhan alamat IP pada setiap perangkat.",
+        "Mempermudah administrator memahami alamat jaringan dan konfigurasi subnet.",
+        "Menambah jumlah perangkat tanpa menggunakan router.",
+        "Menghilangkan seluruh gangguan jaringan internet."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Saat ini, hampir seluruh aktivitas manusia melibatkan teknologi digital. Transaksi perbankan, pembayaran menggunakan QRIS, komunikasi melalui smartphone, pembelajaran daring, dan penyimpanan dokumen merupakan contoh penerapan teknologi komputer. Semua informasi digital tersebut diproses menggunakan sistem komputer yang bekerja dengan representasi data tertentu. Dalam proses tersebut, sistem bilangan biner menjadi dasar pengolahan data, sedangkan bilangan desimal, oktal, dan heksadesimal digunakan dalam berbagai kebutuhan teknis. Seseorang yang memahami konversi bilangan akan lebih mudah mempelajari cara kerja teknologi digital, memahami dasar pemrograman, serta mengenali bagaimana komputer mengolah informasi. Pengetahuan ini juga dapat menjadi bekal untuk mempelajari bidang teknologi yang lebih luas seperti kecerdasan buatan, Internet of Things, keamanan jaringan, dan pengembangan aplikasi. Dengan demikian, mempelajari konversi bilangan bukan hanya untuk menyelesaikan soal matematika, melainkan juga untuk meningkatkan literasi teknologi.\n\nPertanyaan:\n\nKesimpulan paling tepat mengenai manfaat mempelajari konversi sistem bilangan berdasarkan narasi tersebut adalah ....",
+      "embed_html": "",
+      "options": [
+        "Konversi bilangan hanya dibutuhkan oleh orang yang bekerja sebagai ahli matematika.",
+        "Konversi bilangan tidak memiliki hubungan dengan perkembangan teknologi digital.",
+        "Konversi bilangan hanya digunakan untuk menghitung kapasitas penyimpanan.",
+        "Konversi bilangan membantu meningkatkan pemahaman terhadap cara kerja dan pengolahan data teknologi digital.",
+        "Konversi bilangan dapat menggantikan seluruh sistem komputer modern."
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Sebuah perusahaan menggunakan sistem komputer untuk menyimpan berbagai dokumen penting, termasuk data pelanggan dan laporan keuangan. Dalam proses pengamanan data, seorang teknisi mempelajari bagaimana informasi direpresentasikan oleh komputer menggunakan sistem bilangan biner. Ia juga menemukan bahwa bilangan heksadesimal sering digunakan dalam berbagai kebutuhan teknis, seperti membaca nilai tertentu pada sistem komputer dan menganalisis data digital. Ketika terjadi gangguan pada sistem, teknisi harus mampu memahami informasi yang ditampilkan dalam bentuk representasi bilangan berbeda. Pengetahuan tentang konversi bilangan dapat membantunya membaca data, memahami struktur informasi digital, serta melakukan pemeriksaan terhadap sistem komputer. Meskipun konversi bilangan bukan satu-satunya metode pengamanan data, pemahaman tersebut menjadi salah satu dasar penting dalam mempelajari teknologi keamanan informasi. Oleh karena itu, kemampuan memahami sistem bilangan diperlukan dalam pengembangan kompetensi teknologi informasi.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, manfaat mempelajari konversi bilangan dalam bidang keamanan data adalah ....",
+      "embed_html": "",
+      "options": [
+        "Menghilangkan seluruh risiko pencurian data.",
+        "Mempermudah memahami representasi dan menganalisis informasi digital.",
+        "Menggantikan fungsi antivirus dalam komputer.",
+        "Membuat semua data otomatis menjadi rahasia.",
+        "Menghapus kebutuhan penggunaan kata sandi."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Dalam kegiatan pembelajaran Internet of Things (IoT), peserta didik membuat sebuah alat otomatis untuk menyalakan lampu menggunakan sensor cahaya dan mikrokontroler Arduino. Sensor mengirimkan informasi kepada mikrokontroler, kemudian perangkat memproses data tersebut untuk menentukan apakah lampu harus menyala atau mati. Pada dasarnya, mikrokontroler mengolah instruksi digital menggunakan logika biner yang terdiri atas angka 0 dan 1. Ketika mempelajari cara kerja perangkat tersebut, peserta didik menemukan bahwa nilai data terkadang ditampilkan dalam bentuk desimal maupun heksadesimal. Agar dapat memahami komunikasi antara sensor dan mikrokontroler, mereka perlu mengetahui cara mengubah satu sistem bilangan ke sistem lainnya. Pengetahuan ini juga berguna ketika melakukan pemeriksaan program, membaca nilai register, dan memahami data yang dikirimkan oleh perangkat elektronik.\n\nPertanyaan:\n\nMengapa pemahaman konversi sistem bilangan penting dalam pengembangan perangkat IoT?",
+      "embed_html": "",
+      "options": [
+        "Karena semua sensor hanya menggunakan bilangan desimal.",
+        "Karena mikrokontroler tidak membutuhkan instruksi digital.",
+        "Karena membantu memahami representasi data yang diproses dan dikirimkan perangkat.",
+        "Karena dapat membuat sensor bekerja tanpa sumber listrik.",
+        "Karena menggantikan seluruh fungsi mikrokontroler."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Seorang pengembang website sedang membuat halaman informasi untuk sebuah sekolah. Dalam proses desain, ia menggunakan HTML dan CSS untuk mengatur tampilan halaman, termasuk warna tulisan, latar belakang, dan tombol navigasi. Ketika menentukan warna, ia menggunakan kode heksadesimal seperti #00FF00 untuk menghasilkan warna hijau. Ia mengetahui bahwa kode tersebut merupakan representasi nilai warna yang terdiri atas komponen merah, hijau, dan biru. Selain itu, dalam mempelajari pemrograman web, ia juga menemukan berbagai representasi bilangan yang digunakan dalam pengolahan data komputer. Pemahaman konversi bilangan membuatnya lebih mudah membaca kode warna dan memahami hubungan antara nilai digital dengan tampilan visual pada layar. Dengan pengetahuan tersebut, ia dapat bekerja lebih efektif ketika mengembangkan website dan memecahkan masalah yang berkaitan dengan representasi data digital.\n\nPertanyaan:\n\nManfaat konversi bilangan yang paling sesuai dengan kegiatan pengembangan website tersebut adalah ....",
+      "embed_html": "",
+      "options": [
+        "Menambah kapasitas penyimpanan server secara otomatis.",
+        "Membantu memahami kode warna dan representasi nilai digital.",
+        "Menghilangkan kebutuhan menggunakan HTML dan CSS.",
+        "Membuat website dapat berjalan tanpa browser.",
+        "Mengubah seluruh kode program menjadi gambar."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Perkembangan teknologi digital mendorong manusia untuk mempelajari berbagai bidang baru, seperti kecerdasan buatan, robotika, jaringan komputer, dan sistem otomatisasi. Semua teknologi tersebut memanfaatkan komputer sebagai perangkat utama untuk mengolah data dan menjalankan instruksi. Dalam proses pembelajaran Informatika, seorang peserta didik mempelajari sistem bilangan biner sebagai dasar kerja komputer. Ia kemudian memahami bahwa sistem bilangan lainnya, seperti desimal, oktal, dan heksadesimal, dapat digunakan untuk merepresentasikan nilai yang sama dalam bentuk berbeda. Kemampuan mengubah bilangan dari satu sistem ke sistem lainnya dapat membantu seseorang memahami materi teknologi secara lebih mendalam. Ketika seseorang mempelajari pemrograman, komunikasi perangkat keras, maupun pengolahan data, pengetahuan tentang sistem bilangan akan menjadi bekal untuk memahami proses yang berlangsung di dalam perangkat digital.\n\nPertanyaan:\n\nApa hubungan antara kemampuan konversi bilangan dengan perkembangan teknologi masa kini?",
+      "embed_html": "",
+      "options": [
+        "Konversi bilangan hanya digunakan untuk menyelesaikan soal ujian.",
+        "Konversi bilangan menjadi dasar untuk memahami representasi data dalam berbagai teknologi digital.",
+        "Konversi bilangan dapat menggantikan kecerdasan buatan.",
+        "Konversi bilangan membuat perangkat elektronik tidak membutuhkan prosesor.",
+        "Konversi bilangan hanya bermanfaat dalam kegiatan perdagangan."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Seorang teknisi mendapatkan tugas memperbaiki komputer yang mengalami gangguan pada sistem perangkat keras. Ketika melakukan pemeriksaan, ia menggunakan beberapa perangkat lunak diagnostik yang menampilkan informasi teknis dalam bentuk bilangan heksadesimal. Teknisi tersebut juga mengetahui bahwa komputer memproses informasi menggunakan bilangan biner. Untuk memahami informasi yang ditampilkan, ia harus mampu membaca dan mengonversi nilai dari satu sistem bilangan ke sistem lainnya. Pengetahuan ini dapat membantunya memahami nilai tertentu pada register, kode kesalahan, dan informasi teknis yang berkaitan dengan perangkat komputer. Jika teknisi tidak memahami representasi bilangan tersebut, ia mungkin akan mengalami kesulitan ketika membaca hasil pemeriksaan. Oleh karena itu, kemampuan konversi bilangan menjadi salah satu kompetensi pendukung bagi seseorang yang bekerja dalam bidang pemeliharaan dan perbaikan komputer.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, manfaat konversi bilangan dalam kegiatan troubleshooting adalah ....",
+      "embed_html": "",
+      "options": [
+        "Mengganti seluruh komponen komputer yang rusak secara otomatis.",
+        "Mempercepat koneksi internet tanpa konfigurasi.",
+        "Membantu teknisi membaca dan memahami informasi teknis komputer.",
+        "Menghapus semua kesalahan sistem tanpa pemeriksaan.",
+        "Mengubah perangkat keras menjadi perangkat lunak."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Dalam kehidupan modern, penggunaan teknologi digital semakin meningkat. Peserta didik menggunakan smartphone untuk mencari informasi, mengirim pesan, mengakses pembelajaran daring, dan menyimpan berbagai dokumen. Mereka mungkin tidak menyadari bahwa semua informasi tersebut diproses oleh komputer menggunakan sistem bilangan biner. Dalam pembelajaran Informatika, peserta didik diperkenalkan pada sistem bilangan biner, oktal, desimal, dan heksadesimal. Mereka juga belajar bahwa satu nilai dapat dinyatakan menggunakan sistem bilangan yang berbeda melalui proses konversi. Kemampuan tersebut tidak hanya membantu dalam menyelesaikan perhitungan, tetapi juga melatih kemampuan berpikir logis, sistematis, dan analitis. Seorang peserta didik yang memahami konsep konversi bilangan akan lebih mudah mengikuti pembelajaran pemrograman, sistem komputer, dan teknologi digital lainnya. Dengan demikian, mempelajari konversi bilangan dapat menjadi salah satu bekal penting dalam meningkatkan kemampuan literasi digital.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, dampak positif mempelajari konversi bilangan bagi peserta didik adalah ....",
+      "embed_html": "",
+      "options": [
+        "Meningkatkan kemampuan berpikir logis dan memahami teknologi digital.",
+        "Membuat peserta didik tidak perlu belajar pemrograman.",
+        "Menghilangkan kebutuhan menggunakan perangkat komputer.",
+        "Membuat seluruh informasi internet menjadi lebih cepat.",
+        "Menggantikan seluruh materi pembelajaran Informatika."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Sebuah perusahaan teknologi sedang mengembangkan perangkat penyimpanan data yang digunakan untuk menyimpan dokumen, foto, video, dan berbagai informasi digital. Dalam proses pengembangannya, tim teknisi harus memahami bagaimana komputer menyimpan dan membaca data. Komputer menggunakan sistem bilangan biner yang terdiri atas angka 0 dan 1 sebagai dasar representasi informasi digital. Namun, dalam kegiatan pengembangan perangkat lunak dan pemeriksaan sistem, teknisi juga sering menggunakan bilangan desimal dan heksadesimal untuk mempermudah pembacaan nilai tertentu. Oleh karena itu, kemampuan melakukan konversi bilangan menjadi keterampilan yang penting. Sebagai contoh, ketika teknisi menemukan informasi kapasitas data atau nilai tertentu dalam format yang berbeda, ia dapat mengubahnya ke sistem bilangan lain agar lebih mudah dipahami dan dianalisis. Pengetahuan tersebut membantu teknisi bekerja secara sistematis serta memahami hubungan antara data yang disimpan dengan proses pengolahan yang dilakukan komputer.\n\nPertanyaan:\n\nBerdasarkan narasi tersebut, manfaat utama mempelajari konversi sistem bilangan dalam teknologi penyimpanan digital adalah ....",
+      "embed_html": "",
+      "options": [
+        "Memperbesar kapasitas penyimpanan tanpa menambah perangkat keras.",
+        "Menghilangkan kebutuhan komputer untuk memproses data.",
+        "Mempermudah memahami, membaca, dan menganalisis representasi data digital.",
+        "Mengubah seluruh data digital menjadi bilangan desimal secara otomatis.",
+        "Mempercepat proses penyimpanan tanpa dipengaruhi kemampuan perangkat."
+      ],
+      "answer": 2
+    }
+  ]
+}
