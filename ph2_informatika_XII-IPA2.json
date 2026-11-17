@@ -1,0 +1,606 @@
+{
+  "duration": 60,
+  "token": "ALM123",
+  "questions": [
+    {
+      "q": "Narasi: Sebuah sekolah berencana mengembangkan sistem informasi akademik berbasis web untuk memudahkan siswa, guru, dan orang tua dalam memperoleh informasi pendidikan. Sebelumnya, informasi nilai, jadwal pelajaran, kehadiran, dan pengumuman sekolah disampaikan melalui papan informasi dan grup pesan. Cara tersebut dinilai kurang efektif karena informasi sering terlambat diterima dan sulit ditemukan kembali. Tim pengembang kemudian mengusulkan pembuatan website yang dapat diakses melalui komputer, laptop, tablet, maupun smartphone menggunakan browser. Dalam proses pengembangannya, tim membagi pekerjaan menjadi beberapa bagian. HTML digunakan untuk membentuk struktur halaman seperti judul, paragraf, tabel nilai, formulir login, dan menu navigasi. CSS digunakan untuk mengatur tampilan halaman, termasuk warna, ukuran huruf, jarak antarelemen, serta tata letak agar nyaman digunakan pada berbagai ukuran layar. JavaScript digunakan untuk menambahkan interaksi, misalnya memeriksa kelengkapan formulir sebelum dikirim, menampilkan pesan kesalahan, dan memperbarui informasi tertentu tanpa harus memuat ulang seluruh halaman. Selain itu, sistem memerlukan server untuk menyimpan dan mengelola data serta basis data untuk menyimpan informasi pengguna, nilai, dan jadwal. Ketika seorang siswa membuka website, browser mengirimkan permintaan kepada server melalui jaringan internet. Server memproses permintaan tersebut dan mengirimkan respons yang kemudian ditampilkan oleh browser. Tim juga mempertimbangkan keamanan sistem, terutama perlindungan akun pengguna dan data akademik. Mereka menyadari bahwa website bukan sekadar kumpulan halaman yang menarik, tetapi merupakan sistem yang menggabungkan struktur dokumen, desain, interaksi, komunikasi jaringan, dan pengelolaan data. Oleh karena itu, setiap teknologi harus digunakan sesuai fungsi dan tanggung jawabnya agar sistem dapat berjalan secara efektif. Pertanyaan (KKO: Menganalisis): Berdasarkan narasi tersebut, analisislah hubungan fungsi HTML, CSS, dan JavaScript dalam membangun sistem informasi akademik berbasis web yang efektif!",
+      "embed_html": "",
+      "options": [
+        "HTML mengatur struktur, CSS mengatur tampilan, dan JavaScript mengatur interaksi halaman web.",
+        "HTML digunakan untuk menyimpan seluruh data akademik, CSS mengirim permintaan ke server, dan JavaScript mengatur koneksi internet.",
+        "HTML mengatur warna, CSS mengelola basis data, dan JavaScript membentuk struktur dokumen.",
+        "HTML dan CSS berfungsi sebagai server, sedangkan JavaScript digunakan untuk menggantikan browser.",
+        "Ketiga teknologi memiliki fungsi yang sama sehingga dapat saling menggantikan tanpa memengaruhi website."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Sebuah perusahaan kecil ingin memperkenalkan produk-produknya melalui website agar calon pelanggan dapat mengetahui informasi barang tanpa harus datang langsung ke toko. Pada tahap awal, pemilik perusahaan menganggap bahwa membuat website cukup dengan menuliskan teks dan memasukkan beberapa gambar ke dalam halaman. Namun, setelah melakukan pengujian, mereka menemukan bahwa halaman yang dibuat belum memiliki susunan informasi yang jelas, tampilannya tidak konsisten, dan pengguna kesulitan menemukan informasi produk. Tim pengembang kemudian menjelaskan bahwa pemrograman web membutuhkan perencanaan yang melibatkan beberapa teknologi. Pertama, pengembang harus menentukan struktur halaman, seperti bagian header untuk identitas perusahaan, navigation untuk menu, main untuk informasi utama, dan footer untuk informasi kontak. Struktur tersebut dapat dibuat menggunakan HTML. Selanjutnya, pengembang mengatur desain menggunakan CSS agar setiap bagian memiliki warna, ukuran, dan posisi yang sesuai. Tampilan juga perlu menyesuaikan perangkat yang digunakan pengunjung. Misalnya, pada layar komputer, daftar produk dapat ditampilkan dalam empat kolom, sedangkan pada smartphone jumlah kolom dikurangi menjadi satu atau dua agar informasi tetap terbaca. Pengembang juga menambahkan JavaScript untuk memberikan kemampuan interaktif, seperti tombol pencarian, penyaringan produk berdasarkan kategori, serta validasi formulir pemesanan. Setelah halaman selesai dibuat, file website ditempatkan pada server hosting sehingga dapat diakses melalui alamat domain. Pengembang menjelaskan bahwa domain merupakan alamat yang memudahkan pengguna menemukan website, sedangkan hosting menyediakan tempat penyimpanan file website agar dapat diakses melalui internet. Website tersebut kemudian diuji menggunakan beberapa browser untuk memastikan bahwa tampilannya berjalan dengan baik. Proses ini menunjukkan bahwa pembuatan website memerlukan tahapan perencanaan, pengembangan, pengujian, dan publikasi. Pertanyaan (KKO: Menganalisis): Berdasarkan kasus tersebut, analisislah alasan pengembangan website harus melibatkan perencanaan struktur, desain, interaksi, serta proses publikasi melalui hosting dan domain!",
+      "embed_html": "",
+      "options": [
+        "Karena seluruh proses tersebut hanya diperlukan untuk memperindah tampilan halaman website.",
+        "Karena struktur, desain, interaksi, hosting, dan domain memiliki peran berbeda yang saling mendukung agar website dapat dibangun dan diakses pengguna.",
+        "Karena domain berfungsi sebagai tempat menyimpan seluruh kode HTML, CSS, dan JavaScript.",
+        "Karena hosting digunakan untuk membuat desain halaman tanpa memerlukan browser.",
+        "Karena website tidak dapat dibuat apabila pengembang tidak menggunakan seluruh jenis bahasa pemrograman sekaligus."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Dalam kegiatan pembelajaran Informatika, seorang siswa diminta membuat website sederhana untuk menampilkan informasi kegiatan ekstrakurikuler sekolah. Siswa tersebut membuat halaman yang berisi nama ekstrakurikuler, jadwal kegiatan, lokasi latihan, dan nama pembina. Pada awalnya, ia membuat semua informasi dalam satu file HTML dan menambahkan pengaturan warna langsung pada setiap elemen. Ketika guru meminta perubahan warna seluruh judul dan ukuran huruf, siswa harus mengubah banyak bagian kode satu per satu. Hal tersebut membuat pekerjaan menjadi lambat dan meningkatkan kemungkinan terjadinya kesalahan. Setelah mempelajari konsep pemrograman web, siswa mengetahui bahwa pemisahan struktur dan tampilan dapat mempermudah pemeliharaan website. Ia kemudian membuat file index.html untuk struktur konten dan style.css untuk pengaturan desain. Pada file HTML, ia menghubungkan CSS menggunakan elemen link dengan atribut rel dan href. Dengan cara tersebut, satu file CSS dapat digunakan oleh beberapa halaman yang memiliki desain seragam. Selanjutnya, guru meminta siswa menambahkan fitur agar pengunjung dapat memilih kategori ekstrakurikuler. Siswa menggunakan JavaScript untuk membaca pilihan pengguna dan menampilkan informasi sesuai kategori yang dipilih. Ia juga mempelajari bahwa kode JavaScript dapat ditempatkan langsung di dalam HTML menggunakan elemen script atau disimpan pada file eksternal dengan ekstensi .js. Setelah melakukan perubahan, siswa menguji website melalui browser dan menemukan bahwa perubahan desain dapat dilakukan lebih cepat tanpa mengubah struktur setiap halaman. Guru menjelaskan bahwa pemisahan HTML, CSS, dan JavaScript merupakan praktik yang membantu pengembang mengelola kode, memperbaiki kesalahan, serta mengembangkan fitur baru. Pemisahan tersebut juga memungkinkan beberapa anggota tim bekerja pada bagian berbeda secara lebih terorganisasi. Pertanyaan (KKO: Mengevaluasi): Berdasarkan narasi tersebut, evaluasilah keputusan siswa yang memisahkan HTML, CSS, dan JavaScript ke dalam file berbeda dibandingkan menuliskan seluruh kode dalam satu file!",
+      "embed_html": "",
+      "options": [
+        "Pemisahan file tidak memiliki manfaat karena browser hanya dapat membaca satu file website.",
+        "Seluruh kode sebaiknya ditulis dalam HTML agar pengembang tidak perlu memahami teknologi lain.",
+        "Pemisahan file membantu pengelolaan, pemeliharaan, konsistensi desain, dan pengembangan fitur secara lebih terstruktur.",
+        "CSS seharusnya digunakan untuk menggantikan seluruh fungsi JavaScript agar website lebih sederhana.",
+        "JavaScript harus selalu ditulis di dalam file CSS agar perubahan tampilan dapat diproses otomatis."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Sebuah organisasi siswa membuat website pendaftaran kegiatan lomba antarkelas. Website tersebut menyediakan halaman informasi lomba, formulir pendaftaran, dan halaman konfirmasi. Pada tahap pengujian, ditemukan bahwa sebagian siswa mengirim formulir tanpa mengisi nama lengkap, kelas, dan jenis lomba. Akibatnya, panitia mengalami kesulitan dalam mengelola data peserta. Pengembang kemudian mempelajari bagaimana setiap teknologi web dapat membantu mengatasi permasalahan tersebut. HTML digunakan untuk menyediakan elemen formulir seperti input, label, select, dan button. Setiap elemen memiliki fungsi tertentu sehingga pengguna dapat memasukkan informasi sesuai kebutuhan. CSS digunakan untuk membuat formulir lebih mudah dibaca, misalnya dengan mengatur jarak antarkolom, warna tombol, ukuran teks, dan penanda kolom wajib. Selanjutnya, JavaScript digunakan untuk memeriksa data yang dimasukkan sebelum formulir diproses. Jika kolom nama belum diisi, sistem dapat menampilkan pesan bahwa nama wajib dilengkapi. Jika pengguna memilih kategori lomba tertentu, JavaScript dapat menampilkan informasi tambahan yang sesuai dengan pilihan tersebut. Pengembang juga menyadari bahwa pemeriksaan melalui JavaScript di browser tidak cukup untuk menjamin keamanan dan kebenaran data. Oleh sebab itu, server tetap perlu melakukan validasi ulang ketika menerima data formulir. Data yang valid kemudian disimpan ke dalam basis data. Panitia juga meminta agar website dapat digunakan pada perangkat yang berbeda. Pengembang menggunakan desain responsif sehingga tata letak formulir dapat menyesuaikan ukuran layar. Setelah sistem selesai, dilakukan pengujian terhadap beberapa kemungkinan kesalahan, seperti kolom kosong, format data tidak sesuai, dan pilihan kategori yang tidak tersedia. Dari kegiatan tersebut, siswa memahami bahwa kualitas website ditentukan oleh ketepatan fungsi, kemudahan penggunaan, dan keandalan pengolahan data. Pertanyaan (KKO: Menganalisis): Analisislah pembagian peran HTML, CSS, JavaScript, dan server dalam menyelesaikan permasalahan formulir pendaftaran berdasarkan narasi tersebut!",
+      "embed_html": "",
+      "options": [
+        "HTML mengelola server, CSS menyimpan data, JavaScript menggantikan basis data, dan server hanya menampilkan warna.",
+        "HTML membangun formulir, CSS mengatur tampilan, JavaScript memeriksa interaksi di browser, dan server melakukan validasi serta pengolahan data.",
+        "HTML memeriksa seluruh keamanan server, CSS memproses data formulir, dan JavaScript hanya digunakan untuk mengatur ukuran huruf.",
+        "HTML dan JavaScript digunakan untuk mengatur domain, sedangkan CSS bertugas menyimpan informasi peserta.",
+        "Server hanya diperlukan untuk mengatur warna tombol dan tidak berhubungan dengan data formulir."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Sebuah toko perlengkapan komputer ingin mengembangkan website penjualan yang dapat digunakan pelanggan untuk melihat produk, mengetahui harga, dan melakukan pemesanan. Sebelum sistem dibangun, pemilik toko meminta pengembang membuat rancangan alur kerja website. Pada tahap pertama, pelanggan membuka alamat website melalui browser. Browser kemudian meminta halaman kepada server menggunakan protokol komunikasi web. Server mengirimkan file yang diperlukan agar browser dapat menampilkan halaman. HTML menyusun informasi produk, seperti nama barang, gambar, harga, dan deskripsi. CSS mengatur tata letak agar informasi produk terlihat rapi serta mudah dibandingkan. JavaScript memberikan fitur interaktif, misalnya tombol tambah ke keranjang, penghitungan jumlah barang, dan pembaruan total harga ketika pelanggan mengubah jumlah pembelian. Ketika pelanggan menekan tombol pesan, data pesanan harus dikirim ke server untuk diproses lebih lanjut. Server memeriksa informasi pesanan, menghitung nilai transaksi, dan menyimpan data ke basis data. Pengembang juga menjelaskan bahwa JavaScript yang berjalan pada browser tidak boleh dianggap sebagai satu-satunya pengaman transaksi karena pengguna dapat memodifikasi kode pada sisi klien. Perhitungan harga dan pemeriksaan penting harus dilakukan kembali di server agar hasil transaksi dapat dipercaya. Selain itu, toko perlu menggunakan koneksi HTTPS untuk melindungi komunikasi data antara browser dan server. Pengembang kemudian membuat rancangan pengujian. Mereka memeriksa apakah gambar produk muncul, tombol berfungsi, harga dihitung dengan benar, dan data pesanan tersimpan. Mereka juga menguji website menggunakan perangkat mobile untuk memastikan pelanggan tetap dapat berbelanja dengan nyaman. Dari proses tersebut, pengembang menyimpulkan bahwa website penjualan merupakan sistem yang melibatkan komunikasi antara klien dan server, pengolahan data, tampilan antarmuka, serta pengamanan transaksi. Pertanyaan (KKO: Mengevaluasi): Evaluasilah rancangan sistem website toko komputer tersebut dengan menentukan pendekatan yang paling tepat untuk menjaga ketepatan perhitungan transaksi dan keamanan data pelanggan!",
+      "embed_html": "",
+      "options": [
+        "Mengandalkan JavaScript pada browser untuk seluruh perhitungan dan mengabaikan pemeriksaan server.",
+        "Menyimpan semua data pelanggan pada file HTML agar dapat dibaca langsung oleh browser.",
+        "Menggunakan CSS untuk memvalidasi harga dan mengenkripsi seluruh transaksi pelanggan.",
+        "Melakukan validasi dan perhitungan penting di server, menggunakan HTTPS, serta memanfaatkan HTML, CSS, dan JavaScript sesuai fungsinya.",
+        "Menghapus JavaScript dan server agar pelanggan dapat melakukan transaksi langsung melalui CSS."
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Narasi: Sebuah sekolah mengembangkan sistem pembelajaran digital yang memungkinkan siswa mengakses materi, mengerjakan tugas, dan melihat hasil evaluasi melalui website. Untuk menggunakan layanan tersebut, siswa membuka browser pada laptop atau smartphone dan mengetikkan alamat website sekolah. Browser kemudian menerjemahkan alamat website menjadi alamat IP melalui bantuan DNS. Setelah alamat server ditemukan, browser mengirimkan permintaan kepada server melalui jaringan internet. Dalam proses komunikasi tersebut, website menggunakan protokol HTTP atau HTTPS untuk mengatur pertukaran informasi antara browser dan server. Server menerima permintaan, memprosesnya, kemudian mengirimkan respons berupa dokumen HTML, file CSS, JavaScript, gambar, atau data lainnya. Browser selanjutnya membaca dan menampilkan konten tersebut kepada pengguna. Sekolah memilih menggunakan HTTPS karena komunikasi yang dilakukan melibatkan informasi penting, seperti identitas siswa, akun pengguna, dan hasil evaluasi. HTTPS menggunakan mekanisme enkripsi melalui TLS untuk membantu melindungi data selama proses pengiriman. Guru Informatika menjelaskan bahwa internet merupakan jaringan global yang menghubungkan berbagai perangkat dan jaringan komputer. Sementara itu, website merupakan salah satu layanan yang dapat digunakan melalui internet. Siswa juga mempelajari bahwa browser berbeda dengan mesin pencari. Browser merupakan aplikasi untuk mengakses dan menampilkan halaman web, sedangkan mesin pencari membantu menemukan informasi berdasarkan kata kunci. Dalam praktiknya, siswa dapat menggunakan browser untuk membuka website sekolah, kemudian menggunakan mesin pencari untuk menemukan referensi pembelajaran. Guru meminta siswa memahami hubungan antara DNS, server, browser, internet, dan protokol komunikasi agar tidak menganggap seluruh komponen tersebut memiliki fungsi yang sama. Pemahaman ini diperlukan karena gangguan pada salah satu komponen dapat menyebabkan website tidak dapat diakses meskipun perangkat pengguna masih terhubung ke jaringan internet. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah urutan proses yang paling tepat ketika siswa mengakses website sekolah melalui browser!",
+      "embed_html": "",
+      "options": [
+        "Browser mengirimkan permintaan, DNS mencari alamat IP, kemudian pengguna baru mengetikkan alamat website.",
+        "DNS menerjemahkan nama domain menjadi alamat IP, browser menghubungi server, server memproses permintaan, kemudian mengirimkan respons kepada browser.",
+        "Server terlebih dahulu menampilkan halaman tanpa menerima permintaan dari browser, kemudian DNS menyimpan hasilnya.",
+        "Browser meminta mesin pencari untuk membuat server baru sebelum website dapat ditampilkan.",
+        "HTTPS mengubah alamat domain menjadi kode HTML sebelum dikirimkan kepada pengguna."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Seorang siswa mendapatkan tugas membuat laporan tentang perbedaan internet dan website. Dalam pencariannya, ia menemukan bahwa internet merupakan jaringan komputer global yang saling terhubung dan memungkinkan pertukaran data menggunakan standar komunikasi tertentu. Internet mendukung berbagai layanan, seperti surat elektronik, transfer file, komunikasi suara, konferensi video, dan World Wide Web. World Wide Web atau WWW merupakan salah satu layanan internet yang menyediakan dokumen dan sumber daya yang dapat diakses melalui browser. Dokumen web umumnya dihubungkan menggunakan hyperlink sehingga pengguna dapat berpindah dari satu halaman ke halaman lainnya. Siswa tersebut kemudian mengunjungi beberapa website pendidikan untuk mengumpulkan referensi. Ia menemukan bahwa setiap website mempunyai alamat yang disebut URL. URL dapat memuat protokol, nama domain, dan jalur menuju sumber daya tertentu. Misalnya, sebuah halaman pembelajaran dapat memiliki alamat yang menunjukkan lokasi dokumen pada server. Guru menjelaskan bahwa internet tidak sama dengan website karena internet merupakan infrastruktur jaringan yang mendukung berbagai layanan, sedangkan website merupakan kumpulan halaman dan sumber daya web yang saling berhubungan. Guru memberikan contoh bahwa seseorang dapat mengirim email menggunakan layanan surat elektronik tanpa harus membuka website pendidikan. Sebaliknya, seseorang dapat membuka website melalui browser menggunakan koneksi internet. Dalam diskusi kelas, beberapa siswa berpendapat bahwa semua aktivitas internet selalu berarti membuka website. Pendapat tersebut perlu dikaji karena internet memiliki cakupan layanan yang lebih luas daripada WWW. Siswa kemudian diminta memberikan contoh layanan internet yang bukan merupakan aktivitas mengakses halaman website. Ia menyimpulkan bahwa pemahaman perbedaan internet dan WWW penting agar pengguna dapat menjelaskan fungsi teknologi jaringan dan layanan informasi secara tepat. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah pernyataan yang paling tepat untuk menjelaskan hubungan antara internet dan World Wide Web!",
+      "embed_html": "",
+      "options": [
+        "Internet merupakan bagian dari WWW karena semua jaringan komputer harus menggunakan halaman HTML.",
+        "WWW merupakan jaringan fisik yang menghubungkan seluruh komputer di dunia, sedangkan internet hanya digunakan untuk membuka email.",
+        "Internet merupakan jaringan global yang mendukung berbagai layanan, sedangkan WWW merupakan salah satu layanan yang berjalan di atas internet.",
+        "Internet dan WWW merupakan dua istilah yang sepenuhnya sama sehingga tidak memiliki perbedaan fungsi.",
+        "WWW hanya dapat digunakan untuk mengirimkan file melalui jaringan lokal tanpa memerlukan browser."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Sebuah perusahaan menyediakan layanan belanja daring melalui website. Pelanggan dapat melihat katalog, memilih barang, memasukkan alamat pengiriman, dan melakukan pembayaran. Pada awal pengembangan, perusahaan menggunakan protokol HTTP untuk mengirimkan data antara browser dan server. Namun, setelah dilakukan evaluasi keamanan, tim teknologi informasi menemukan bahwa penggunaan HTTP tanpa perlindungan enkripsi dapat meningkatkan risiko penyadapan informasi ketika data dikirimkan melalui jaringan. Informasi yang berpotensi terpapar antara lain data formulir, identitas pengguna, dan informasi transaksi. Tim kemudian memutuskan menggunakan HTTPS. HTTPS merupakan pengembangan HTTP yang dilengkapi perlindungan komunikasi melalui TLS. Dengan mekanisme tersebut, data yang dikirimkan antara browser dan server dienkripsi sehingga lebih sulit dibaca oleh pihak yang tidak berwenang selama perjalanan data. Tim juga menerapkan sertifikat digital untuk membantu browser memverifikasi identitas server yang diakses. Guru Informatika yang diminta memberikan pelatihan kepada karyawan menjelaskan bahwa penggunaan HTTPS merupakan salah satu langkah penting dalam menjaga keamanan komunikasi web. Namun, HTTPS tidak secara otomatis menjamin bahwa seluruh website aman dari semua jenis serangan. Website tetap harus menerapkan pengamanan tambahan, seperti validasi input, pengelolaan kata sandi yang aman, pembatasan akses, dan pembaruan perangkat lunak. Tim juga harus memastikan bahwa informasi penting tidak ditampilkan secara sembarangan kepada pengguna yang tidak memiliki hak akses. Dalam pengujian, mereka membandingkan alamat website yang menggunakan HTTP dan HTTPS. Browser menampilkan indikator keamanan koneksi untuk membantu pengguna mengenali jenis koneksi yang digunakan. Perusahaan akhirnya menetapkan HTTPS sebagai standar komunikasi untuk layanan transaksi daring karena informasi yang diproses memiliki tingkat kepentingan tinggi. Pertanyaan (KKO: Mengevaluasi/C5): Berdasarkan narasi tersebut, evaluasilah alasan paling kuat perusahaan mengganti HTTP dengan HTTPS dalam sistem belanja daring!",
+      "embed_html": "",
+      "options": [
+        "HTTPS membuat website dapat berjalan tanpa server dan tanpa koneksi internet.",
+        "HTTPS digunakan agar seluruh halaman website otomatis memiliki desain yang lebih menarik.",
+        "HTTPS menggantikan fungsi HTML, CSS, dan JavaScript dalam proses pengembangan website.",
+        "HTTPS membantu melindungi komunikasi browser dan server melalui enkripsi serta mendukung verifikasi identitas server.",
+        "HTTPS menjamin website tidak mungkin mengalami peretasan dalam kondisi apa pun."
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Narasi: Seorang siswa mencari materi pembelajaran tentang perkembangan teknologi komputer menggunakan internet. Ia membuka browser dan memasukkan kata kunci pada layanan mesin pencari. Beberapa saat kemudian, mesin pencari menampilkan daftar halaman yang dianggap relevan dengan kata kunci tersebut. Siswa kemudian memilih salah satu hasil pencarian dan diarahkan menuju website pendidikan. Guru menjelaskan bahwa mesin pencari merupakan layanan yang membantu pengguna menemukan informasi di internet berdasarkan kata kunci atau frasa tertentu. Mesin pencari bekerja melalui beberapa proses, antara lain crawling untuk menemukan halaman, indexing untuk mengorganisasi informasi yang ditemukan, dan ranking untuk menentukan urutan hasil yang ditampilkan kepada pengguna. Browser memiliki fungsi berbeda karena merupakan perangkat lunak yang digunakan untuk mengakses dan menampilkan halaman web. Contoh browser yang sering digunakan antara lain Google Chrome, Mozilla Firefox, Microsoft Edge, dan Safari. Guru kemudian memberikan ilustrasi bahwa seseorang dapat menggunakan Google Chrome untuk membuka website secara langsung dengan mengetikkan URL pada kolom alamat tanpa harus menggunakan mesin pencari. Sebaliknya, mesin pencari dapat diakses melalui browser untuk menemukan informasi tertentu. Siswa juga mempelajari bahwa hasil pencarian tidak selalu menjamin seluruh informasi benar. Pengguna perlu memeriksa kredibilitas sumber, tanggal publikasi, identitas penulis, serta kesesuaian informasi dengan kebutuhan. Dalam tugasnya, siswa menemukan dua artikel yang membahas topik sama tetapi memberikan informasi berbeda. Ia kemudian membandingkan sumber dan memilih artikel dari lembaga pendidikan yang memiliki identitas penulis dan referensi jelas. Guru menekankan bahwa kemampuan menggunakan mesin pencari harus disertai kemampuan mengevaluasi informasi agar pengguna tidak mudah menerima informasi yang keliru. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah perbedaan fungsi browser dan mesin pencari dalam proses menemukan serta mengakses informasi di internet!",
+      "embed_html": "",
+      "options": [
+        "Browser digunakan untuk menampilkan halaman web, sedangkan mesin pencari membantu menemukan informasi berdasarkan kata kunci.",
+        "Browser berfungsi mengindeks seluruh halaman internet, sedangkan mesin pencari digunakan untuk mengatur warna halaman.",
+        "Browser menyimpan seluruh informasi website secara permanen, sedangkan mesin pencari hanya menampilkan gambar.",
+        "Browser dan mesin pencari memiliki fungsi identik sehingga keduanya selalu dapat saling menggantikan.",
+        "Mesin pencari merupakan perangkat keras yang digunakan untuk menghubungkan komputer dengan jaringan internet."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Sebuah sekolah menyediakan website yang dapat diakses oleh siswa dari berbagai lokasi. Namun, beberapa siswa mengeluhkan bahwa website sulit dibuka ketika menggunakan jaringan internet sekolah. Setelah dilakukan pemeriksaan, teknisi menemukan bahwa perangkat komputer di laboratorium dapat terhubung ke jaringan lokal, tetapi belum seluruhnya dapat mengakses internet. Guru kemudian menjelaskan perbedaan jaringan lokal dan jaringan internet. Local Area Network atau LAN merupakan jaringan yang menghubungkan perangkat dalam area terbatas, seperti ruang laboratorium, kantor, atau gedung sekolah. LAN memungkinkan komputer berbagi sumber daya, seperti printer, file, dan layanan server lokal. Sementara itu, internet merupakan jaringan global yang menghubungkan berbagai jaringan komputer di seluruh dunia. Untuk menghubungkan LAN sekolah ke internet, diperlukan perangkat jaringan dan layanan koneksi dari penyedia internet. Router dapat digunakan untuk menghubungkan jaringan lokal dengan jaringan lain serta mengatur lalu lintas data. Switch digunakan untuk menghubungkan beberapa perangkat dalam satu jaringan lokal. Access point menyediakan koneksi nirkabel agar laptop dan smartphone dapat terhubung ke jaringan. Modem atau perangkat terminasi lain dapat digunakan sesuai teknologi layanan internet yang disediakan. Teknisi kemudian memeriksa kabel jaringan, konfigurasi alamat IP, gateway, DNS, serta koneksi router. Ia menemukan bahwa beberapa komputer belum mendapatkan konfigurasi gateway yang benar sehingga tidak dapat mengirimkan paket data ke jaringan luar. Setelah konfigurasi diperbaiki, komputer dapat mengakses website sekolah dan layanan internet lainnya. Guru meminta siswa memahami bahwa koneksi LAN yang aktif tidak selalu berarti perangkat sudah terhubung ke internet. Koneksi internet membutuhkan jalur komunikasi yang sesuai dan konfigurasi jaringan yang benar. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah penyebab paling logis komputer laboratorium dapat terhubung ke LAN tetapi tidak dapat mengakses internet!",
+      "embed_html": "",
+      "options": [
+        "Komputer tidak memiliki aplikasi pengolah kata sehingga router menolak koneksi internet.",
+        "Switch secara otomatis menghapus seluruh alamat domain dari browser.",
+        "Komputer belum memiliki konfigurasi gateway yang benar sehingga tidak dapat meneruskan paket menuju jaringan luar.",
+        "Access point hanya dapat digunakan untuk menyimpan dokumen HTML pada komputer.",
+        "LAN tidak dapat digunakan apabila terdapat lebih dari dua komputer dalam satu ruangan."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Dalam kegiatan pembelajaran, guru meminta siswa membuat website profil sekolah yang dapat diakses oleh masyarakat. Setelah halaman selesai dibuat, siswa menyadari bahwa website tersebut hanya dapat dibuka melalui komputer yang menyimpan file proyek. Ketika alamat file lokal dikirimkan kepada temannya, halaman tersebut tidak dapat dibuka dari perangkat lain. Guru menjelaskan bahwa website yang dibuat pada komputer lokal belum tentu dapat diakses secara publik melalui internet. Agar website dapat diakses pengguna lain, file website perlu ditempatkan pada layanan hosting atau server yang terhubung ke jaringan internet. Hosting menyediakan sumber daya penyimpanan dan layanan untuk menjalankan website. Selanjutnya, pengembang dapat menggunakan domain sebagai alamat yang lebih mudah diingat dibandingkan alamat IP server. Misalnya, sebuah sekolah dapat menggunakan nama domain khusus yang mencerminkan identitas lembaganya. Ketika pengunjung memasukkan domain tersebut ke browser, DNS membantu menerjemahkan nama domain menjadi alamat IP server tujuan. Browser kemudian menghubungi server dan meminta halaman website. Server mengirimkan file yang diperlukan sehingga halaman dapat ditampilkan. Guru juga menjelaskan bahwa domain dan hosting memiliki fungsi yang berbeda. Domain berperan sebagai alamat website, sedangkan hosting menyediakan tempat dan layanan untuk menyimpan serta menyajikan file website. Siswa kemudian mencoba mengunggah file HTML, CSS, gambar, dan JavaScript ke layanan hosting. Setelah konfigurasi domain selesai, website dapat dibuka dari perangkat lain selama server dan koneksi tersedia. Dalam proses pengujian, siswa juga memeriksa apakah tautan gambar dan file CSS menggunakan lokasi yang benar. Ia menemukan bahwa beberapa gambar tidak muncul karena alamat file masih mengarah ke folder lokal komputer pembuatnya. Setelah memperbaiki jalur file, website dapat ditampilkan dengan benar. Pertanyaan (KKO: Mengevaluasi/C5): Evaluasilah solusi paling tepat agar website profil sekolah yang semula hanya dapat dibuka secara lokal dapat diakses masyarakat melalui internet!",
+      "embed_html": "",
+      "options": [
+        "Mengunggah file website ke layanan hosting, menghubungkan domain, dan memastikan konfigurasi file serta DNS berjalan dengan benar.",
+        "Mengubah seluruh file HTML menjadi gambar agar dapat dibuka tanpa server.",
+        "Mengganti nama file index.html menjadi domain agar langsung dapat diakses dari seluruh dunia.",
+        "Menyimpan seluruh file website hanya di folder dokumen komputer pembuatnya.",
+        "Menghapus CSS dan JavaScript agar website dapat ditemukan oleh mesin pencari."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Sebuah sekolah menyediakan jaringan Wi-Fi untuk mendukung pembelajaran digital. Siswa dapat mengakses materi, mengirim tugas, dan mencari referensi menggunakan jaringan tersebut. Namun, pada suatu hari, beberapa siswa mengalami kesulitan membuka website meskipun ikon Wi-Fi pada perangkat menunjukkan bahwa koneksi telah tersambung. Teknisi sekolah kemudian melakukan pemeriksaan dan menjelaskan bahwa terhubung ke jaringan Wi-Fi tidak selalu berarti perangkat telah memiliki akses internet. Wi-Fi merupakan teknologi komunikasi nirkabel yang memungkinkan perangkat terhubung ke jaringan lokal melalui gelombang radio. Agar perangkat dapat mengakses internet, jaringan lokal harus memiliki jalur koneksi ke penyedia layanan internet dan konfigurasi jaringan yang sesuai. Teknisi memeriksa router, access point, modem, serta konfigurasi IP pada perangkat siswa. Ia juga memeriksa apakah gateway dan DNS dapat digunakan dengan benar. Dari pemeriksaan tersebut ditemukan bahwa access point masih berfungsi dan perangkat telah memperoleh alamat IP lokal, tetapi koneksi router menuju penyedia layanan internet mengalami gangguan. Akibatnya, perangkat tetap dapat berkomunikasi dengan beberapa perangkat lokal, tetapi tidak dapat membuka website di luar jaringan sekolah. Guru menjelaskan bahwa ikon Wi-Fi hanya menunjukkan status koneksi nirkabel, bukan jaminan bahwa internet tersedia. Untuk memastikan penyebab gangguan, teknisi dapat menguji koneksi ke gateway lokal, memeriksa koneksi ke alamat IP publik, dan menguji resolusi nama domain menggunakan DNS. Setelah koneksi penyedia layanan diperbaiki, perangkat siswa kembali dapat mengakses internet. Guru kemudian meminta siswa mengidentifikasi perbedaan fungsi Wi-Fi, router, access point, dan layanan internet. Pemahaman tersebut diperlukan agar pengguna dapat melakukan pemeriksaan awal ketika mengalami gangguan koneksi. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah alasan paling tepat mengapa perangkat siswa tetap terhubung ke Wi-Fi tetapi tidak dapat membuka website di internet!",
+      "embed_html": "",
+      "options": [
+        "Karena Wi-Fi hanya dapat digunakan untuk membuka file gambar dan tidak mendukung website.",
+        "Karena browser tidak dapat bekerja apabila perangkat menggunakan koneksi nirkabel.",
+        "Karena alamat IP lokal secara otomatis menghapus seluruh koneksi internet.",
+        "Karena access point tidak memiliki fungsi menghubungkan perangkat ke jaringan lokal.",
+        "Karena koneksi Wi-Fi ke jaringan lokal tersedia, tetapi jalur router menuju penyedia layanan internet mengalami gangguan."
+      ],
+      "answer": 4
+    },
+    {
+      "q": "Narasi: Seorang siswa diminta mengevaluasi penggunaan teknologi cloud computing dalam pengembangan website sekolah. Selama ini, file website disimpan pada satu komputer di laboratorium dan hanya dapat diakses ketika komputer tersebut dinyalakan serta terhubung ke jaringan. Guru menjelaskan bahwa cloud computing memungkinkan pengguna memanfaatkan sumber daya komputasi melalui jaringan internet tanpa harus mengelola seluruh perangkat fisik sendiri. Dalam pengembangan website, layanan cloud dapat menyediakan penyimpanan file, server virtual, basis data, dan berbagai layanan pendukung lainnya. Dengan menggunakan layanan tersebut, sekolah dapat mengembangkan website yang dapat diakses dari berbagai lokasi selama layanan dan koneksi internet tersedia. Siswa mempelajari tiga model layanan cloud yang umum digunakan, yaitu Infrastructure as a Service (IaaS), Platform as a Service (PaaS), dan Software as a Service (SaaS). IaaS menyediakan sumber daya infrastruktur seperti mesin virtual, penyimpanan, dan jaringan. PaaS menyediakan platform untuk mengembangkan serta menjalankan aplikasi tanpa harus mengelola seluruh infrastruktur dasar. SaaS menyediakan perangkat lunak siap digunakan melalui internet. Guru memberikan contoh bahwa layanan penyimpanan daring dan aplikasi pengolah dokumen berbasis web dapat termasuk layanan SaaS. Dalam diskusi, siswa juga mengetahui bahwa penggunaan cloud memiliki beberapa keuntungan, seperti kemudahan akses, fleksibilitas sumber daya, dan kolaborasi. Namun, sekolah tetap perlu mempertimbangkan keamanan data, pengaturan hak akses, biaya berlangganan, ketergantungan terhadap koneksi internet, serta kebijakan penyedia layanan. Setelah mempelajari materi tersebut, siswa diminta menentukan layanan yang paling sesuai untuk mengembangkan dan menjalankan website sekolah. Ia menyimpulkan bahwa pemilihan layanan cloud harus disesuaikan dengan kebutuhan pengelolaan server, kemampuan teknis pengembang, dan anggaran sekolah. Pertanyaan (KKO: Mengevaluasi/C5): Berdasarkan narasi tersebut, evaluasilah pilihan layanan cloud yang paling sesuai apabila sekolah ingin mengembangkan website tanpa harus mengelola sendiri seluruh infrastruktur server!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan SaaS untuk mengelola seluruh perangkat keras server secara mandiri.",
+        "Menggunakan PaaS karena menyediakan lingkungan pengembangan dan menjalankan aplikasi tanpa mengharuskan sekolah mengelola seluruh infrastruktur dasar.",
+        "Menggunakan IaaS karena sekolah tidak perlu mengatur mesin virtual, sistem operasi, maupun jaringan.",
+        "Menggunakan layanan email biasa karena seluruh website dapat dijalankan melalui kotak masuk email.",
+        "Tidak menggunakan cloud karena website hanya dapat berjalan pada komputer lokal."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Text Soal",
+      "embed_html": "",
+      "options": [
+        "Option 1 (A)",
+        "Option 2 (B)",
+        "Option 3 (C)",
+        "Option 4 (D)",
+        "Option 5 (E)"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Seorang siswa membuat halaman website yang berisi informasi kegiatan sekolah. Ia menuliskan judul halaman, paragraf pengantar, dan daftar kegiatan menggunakan HTML. Namun, ketika file dibuka melalui browser, beberapa bagian tidak tampil sesuai dengan rancangan yang diharapkan. Guru kemudian meminta siswa memeriksa struktur dasar dokumen HTML. Dalam pembelajaran, siswa mengetahui bahwa dokumen HTML umumnya diawali dengan deklarasi DOCTYPE yang menunjukkan bahwa dokumen menggunakan standar HTML5. Elemen html menjadi elemen akar yang membungkus seluruh dokumen. Di dalamnya terdapat elemen head yang memuat informasi mengenai dokumen, seperti judul halaman melalui elemen title, pengaturan karakter, dan tautan menuju file CSS eksternal. Sementara itu, elemen body berisi konten yang akan ditampilkan pada halaman browser, seperti judul, paragraf, gambar, tabel, dan formulir. Guru menunjukkan contoh kode yang benar dan meminta siswa mengidentifikasi fungsi setiap elemen. Siswa juga mempelajari bahwa sebagian besar elemen HTML memiliki tag pembuka dan tag penutup. Misalnya, elemen p digunakan untuk membentuk paragraf dengan tag pembuka dan penutup. Kesalahan dalam penempatan elemen dapat menyebabkan struktur dokumen tidak sesuai dengan standar yang diharapkan. Dalam kegiatan praktik, siswa membuat halaman dengan judul tab browser menggunakan title, kemudian menampilkan judul utama menggunakan h1 di dalam body. Ia juga menambahkan paragraf menggunakan p. Guru menjelaskan bahwa title dan h1 mempunyai fungsi berbeda meskipun keduanya sama-sama berkaitan dengan judul. Title digunakan sebagai judul dokumen yang umumnya ditampilkan pada tab browser, sedangkan h1 merupakan judul utama konten halaman. Setelah memperbaiki struktur, siswa dapat menampilkan halaman dengan lebih baik. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah susunan elemen HTML5 yang benar untuk membentuk dokumen dengan informasi halaman dan konten yang dapat ditampilkan browser!",
+      "embed_html": "",
+      "options": [
+        "DOCTYPE, html, head, body, dengan title berada di dalam head dan konten utama berada di dalam body.",
+        "DOCTYPE, body, title, html, head, dengan seluruh informasi dokumen berada di luar html.",
+        "html, body, head, DOCTYPE, dengan judul tab ditulis di dalam paragraf.",
+        "head, DOCTYPE, body, title, html, dengan semua elemen diletakkan secara bebas.",
+        "body, html, DOCTYPE, head, dengan seluruh konten ditulis di dalam title."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Dalam kegiatan praktik, siswa diminta membuat halaman artikel tentang perkembangan komputer. Artikel tersebut memiliki judul utama, beberapa subjudul, dan paragraf penjelasan. Pada percobaan pertama, siswa menggunakan elemen h1 untuk seluruh judul dan paragraf. Akibatnya, susunan informasi sulit dibedakan karena tidak terdapat hierarki yang jelas. Guru menjelaskan bahwa HTML menyediakan elemen heading dari h1 sampai h6 untuk menunjukkan tingkat kepentingan dan hierarki judul. H1 umumnya digunakan sebagai judul utama halaman atau bagian utama, sedangkan h2 digunakan sebagai subjudul yang berada di bawah h1. H3 dapat digunakan sebagai subbagian dari h2 dan seterusnya. Elemen p digunakan untuk membentuk paragraf yang berisi penjelasan. Guru juga menjelaskan bahwa heading tidak seharusnya dipilih hanya berdasarkan ukuran huruf yang diinginkan. Pengaturan ukuran visual dapat dilakukan menggunakan CSS, sedangkan heading digunakan untuk menunjukkan struktur informasi. Struktur heading yang baik membantu pembaca memahami susunan artikel dan membantu teknologi pembaca layar mengenali hierarki konten. Siswa kemudian diminta membuat artikel dengan judul utama Perkembangan Komputer, subjudul Generasi Komputer, dan subbagian Generasi Pertama. Ia menggunakan h1 untuk judul utama, h2 untuk subjudul, h3 untuk subbagian, dan p untuk uraian penjelasan. Setelah diuji, artikel menjadi lebih terorganisasi. Guru meminta siswa tidak menggunakan heading secara acak karena hal tersebut dapat mengganggu struktur semantik dokumen. Penggunaan elemen yang sesuai membuat halaman lebih mudah dipahami oleh manusia maupun perangkat lunak yang membaca struktur HTML. Pertanyaan (KKO: Menganalisis/C4): Analisislah penggunaan elemen heading dan paragraf yang paling tepat untuk menyusun artikel sesuai hierarki informasi dalam narasi!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan h1 untuk semua paragraf agar seluruh teks memiliki tingkat kepentingan yang sama.",
+        "Menggunakan p untuk seluruh judul dan h6 untuk semua isi artikel.",
+        "Menggunakan h1 untuk judul utama, h2 untuk subjudul, h3 untuk subbagian, dan p untuk penjelasan.",
+        "Menggunakan div untuk seluruh teks karena heading tidak diperlukan dalam HTML.",
+        "Menggunakan h1 sampai h6 secara berurutan pada setiap kalimat tanpa memperhatikan struktur artikel."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Sebuah website sekolah menyediakan halaman informasi kegiatan yang dilengkapi menu navigasi. Pada bagian atas halaman terdapat menu Beranda, Profil, Akademik, dan Kontak. Siswa yang mengembangkan website tersebut awalnya menggunakan elemen p untuk menuliskan nama menu. Namun, ketika pengguna mengklik tulisan tersebut, tidak terjadi perpindahan halaman. Guru menjelaskan bahwa HTML memiliki elemen anchor atau a yang digunakan untuk membuat hyperlink. Elemen tersebut menggunakan atribut href untuk menentukan alamat tujuan tautan. Alamat tujuan dapat berupa halaman lain dalam website yang sama, halaman pada website eksternal, alamat email dengan skema mailto, atau bagian tertentu dalam dokumen menggunakan identitas elemen. Dalam praktiknya, siswa membuat tautan menuju halaman profil dengan href=\"profil.html\". Ia juga membuat tautan menuju website sekolah lain menggunakan alamat URL lengkap. Guru menjelaskan bahwa tautan perlu memiliki teks yang jelas agar pengguna memahami tujuan sebelum mengkliknya. Selain itu, tautan yang mengarah ke halaman eksternal dapat dibuka pada tab baru dengan atribut target=\"_blank\", tetapi pengembang perlu memperhatikan keamanan dan privasi ketika menggunakan fitur tersebut. Siswa juga mempelajari bahwa elemen button memiliki fungsi berbeda dengan anchor. Anchor digunakan untuk navigasi menuju sumber daya atau lokasi tertentu, sedangkan button digunakan untuk menjalankan suatu tindakan, misalnya mengirim formulir atau menjalankan fungsi JavaScript. Setelah memperbaiki menu navigasi, pengguna dapat berpindah ke halaman yang sesuai. Guru kemudian meminta siswa menjelaskan mengapa penggunaan elemen yang tepat dapat meningkatkan fungsi dan aksesibilitas website. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah kode HTML yang paling tepat untuk membuat menu navigasi menuju halaman profil sekolah!",
+      "embed_html": "",
+      "options": [
+        "<p href=\"profil.html\">Profil</p>",
+        "<button href=\"profil.html\">Profil</button>",
+        "<h1 link=\"profil.html\">Profil</h1>",
+        "<a href=\"profil.html\">Profil</a>",
+        "<img href=\"profil.html\" alt=\"Profil\">"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Narasi: Dalam sebuah proyek pembuatan website perpustakaan digital, siswa diminta menampilkan daftar buku yang tersedia. Informasi yang harus ditampilkan meliputi judul buku, nama penulis, kategori, dan tahun penerbitan. Pada percobaan pertama, siswa menuliskan seluruh informasi dalam paragraf panjang sehingga pengunjung kesulitan membandingkan buku. Guru kemudian memperkenalkan elemen list dalam HTML. Terdapat dua jenis daftar yang sering digunakan, yaitu unordered list dengan elemen ul dan ordered list dengan elemen ol. Unordered list digunakan untuk menampilkan daftar yang urutannya tidak menjadi prioritas, biasanya ditampilkan menggunakan simbol atau bullet. Ordered list digunakan ketika urutan item memiliki makna, misalnya langkah-langkah pendaftaran anggota perpustakaan. Setiap item daftar dituliskan menggunakan elemen li. Siswa kemudian membuat daftar kategori buku, seperti Teknologi, Sains, Sejarah, dan Sastra menggunakan ul. Untuk menjelaskan prosedur peminjaman buku, siswa menggunakan ol karena langkah-langkah harus diikuti secara berurutan. Guru juga menunjukkan bahwa daftar dapat dibuat bertingkat dengan menempatkan elemen ul atau ol di dalam li. Hal tersebut memungkinkan pengembang menyusun kategori dan subkategori. Setelah praktik dilakukan, siswa melihat bahwa informasi menjadi lebih terstruktur dan mudah dibaca. Guru menekankan bahwa pemilihan jenis daftar harus memperhatikan hubungan antarinformasi, bukan sekadar tampilan simbol. Jika urutan informasi penting, ordered list merupakan pilihan yang lebih tepat. Jika urutan tidak menentukan makna, unordered list dapat digunakan. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah pilihan elemen HTML yang paling tepat untuk menampilkan kategori buku dan langkah peminjaman secara berurutan!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan ol untuk kategori buku dan ul untuk langkah peminjaman karena simbol lebih penting daripada urutan.",
+        "Menggunakan ul untuk kategori buku dan ol untuk langkah peminjaman, dengan setiap item menggunakan li.",
+        "Menggunakan p untuk seluruh kategori dan h1 untuk setiap langkah peminjaman.",
+        "Menggunakan table untuk seluruh daftar karena elemen list tidak dapat memuat teks.",
+        "Menggunakan div tanpa elemen tambahan agar browser otomatis membuat nomor daftar."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Sebuah kelompok siswa membuat website dokumentasi kegiatan sekolah. Website tersebut harus menampilkan foto kegiatan, logo sekolah, dan ilustrasi pendukung. Pada awalnya, siswa menuliskan nama file gambar tanpa menggunakan elemen khusus sehingga browser tidak menampilkan gambar. Guru kemudian menjelaskan bahwa HTML menyediakan elemen img untuk menampilkan gambar. Elemen ini menggunakan atribut src untuk menentukan lokasi atau sumber gambar dan atribut alt untuk memberikan teks alternatif. Teks alternatif sangat penting ketika gambar tidak dapat dimuat atau ketika pengguna menggunakan pembaca layar. Guru juga menjelaskan bahwa atribut width dan height dapat digunakan untuk menentukan dimensi gambar, meskipun pengaturan visual lebih fleksibel jika dilakukan melalui CSS. Siswa kemudian mencoba memasukkan gambar dengan kode img src=\"foto-kegiatan.jpg\" alt=\"Kegiatan siswa di laboratorium\". Namun, gambar tidak muncul karena file sebenarnya berada di dalam folder images. Setelah jalur file diperbaiki menjadi images/foto-kegiatan.jpg, gambar dapat ditampilkan. Guru juga menjelaskan bahwa penggunaan gambar dari internet perlu memperhatikan hak cipta, izin penggunaan, dan keakuratan sumber. Dalam pengembangan website, gambar sebaiknya memiliki ukuran file yang sesuai agar tidak memperlambat waktu pemuatan halaman. Siswa kemudian mengompres beberapa gambar tanpa mengurangi kualitas visual secara berlebihan. Mereka juga menggunakan format gambar yang sesuai dengan kebutuhan website. Setelah semua gambar ditampilkan, guru meminta siswa mengevaluasi fungsi atribut src dan alt. Siswa memahami bahwa src menentukan lokasi file gambar, sedangkan alt memberikan informasi alternatif yang membantu aksesibilitas dan pemahaman konten. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah kode HTML yang paling tepat untuk menampilkan gambar kegiatan dengan jalur file dan teks alternatif yang benar!",
+      "embed_html": "",
+      "options": [
+        "<img src=\"images/foto-kegiatan.jpg\" alt=\"Kegiatan siswa di laboratorium\">",
+        "<image href=\"images/foto-kegiatan.jpg\">Kegiatan siswa</image>",
+        "<img alt=\"images/foto-kegiatan.jpg\" src=\"\">",
+        "<picture href=\"foto-kegiatan.jpg\">Kegiatan siswa</picture>",
+        "<a src=\"images/foto-kegiatan.jpg\">Kegiatan siswa</a>"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Dalam pembelajaran Informatika, siswa diminta membuat tabel jadwal pelajaran menggunakan HTML. Tabel harus memuat informasi hari, jam, mata pelajaran, dan nama guru. Pada percobaan awal, siswa menggunakan paragraf dan spasi untuk menyusun informasi agar terlihat seperti tabel. Namun, ketika halaman dibuka pada perangkat dengan ukuran layar berbeda, posisi informasi menjadi tidak beraturan. Guru menjelaskan bahwa HTML memiliki elemen table untuk membentuk data tabular. Elemen tr digunakan untuk membentuk baris tabel, sedangkan th digunakan untuk membuat sel judul kolom dan td digunakan untuk membuat sel data biasa. Pengembang juga dapat menggunakan thead untuk mengelompokkan bagian kepala tabel, tbody untuk bagian isi, dan tfoot untuk bagian penutup atau ringkasan. Guru menekankan bahwa tabel sebaiknya digunakan untuk data yang memiliki hubungan baris dan kolom, bukan untuk mengatur seluruh tata letak halaman. Siswa kemudian membuat tabel jadwal dengan empat kolom dan beberapa baris data. Ia menempatkan judul Hari, Jam, Mata Pelajaran, dan Guru menggunakan th di dalam baris pertama. Selanjutnya, data jadwal ditulis menggunakan td. Pada pengujian, siswa menemukan bahwa struktur tabel menjadi lebih jelas dan mudah dibaca. Guru juga menjelaskan bahwa atribut colspan dapat digunakan untuk menggabungkan beberapa kolom, sedangkan rowspan dapat digunakan untuk menggabungkan beberapa baris. Penggunaan atribut tersebut harus disesuaikan dengan struktur data agar tidak menyebabkan susunan tabel membingungkan. Siswa akhirnya memahami bahwa tabel HTML memiliki struktur khusus yang harus dibangun menggunakan elemen yang sesuai. Pertanyaan (KKO: Menganalisis/C4): Analisislah susunan elemen HTML yang paling tepat untuk membuat tabel jadwal pelajaran dengan judul kolom dan data yang terstruktur!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan div untuk setiap karakter dan p untuk membuat garis kolom.",
+        "Menggunakan ul untuk judul kolom dan ol untuk seluruh isi tabel.",
+        "Menggunakan td untuk semua bagian termasuk judul kolom tanpa memperhatikan struktur.",
+        "Menggunakan table, tr, th untuk judul kolom, dan td untuk data tabel.",
+        "Menggunakan h1 untuk baris dan h2 untuk setiap kolom tabel."
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Narasi: Sebuah sekolah membuat website pendaftaran anggota ekstrakurikuler. Formulir tersebut meminta nama lengkap, alamat email, nomor telepon, dan pilihan kegiatan. Pada tahap pengembangan, siswa menggunakan elemen input untuk menyediakan tempat memasukkan data. Guru menjelaskan bahwa atribut type menentukan jenis input yang digunakan. Misalnya, type=\"text\" digunakan untuk teks umum, type=\"email\" digunakan untuk alamat email, type=\"password\" digunakan untuk kata sandi, dan type=\"number\" digunakan untuk nilai numerik. Atribut name digunakan sebagai nama data ketika formulir dikirim, sedangkan atribut placeholder dapat memberikan petunjuk singkat pada kolom input. Untuk pilihan kegiatan, pengembang dapat menggunakan select dan option sehingga pengguna dapat memilih salah satu kategori yang tersedia. Elemen label digunakan untuk memberikan keterangan yang terhubung dengan kolom input. Guru juga menjelaskan bahwa atribut required dapat digunakan untuk menandai kolom yang wajib diisi. Namun, validasi HTML di sisi browser tetap perlu dilengkapi validasi pada server. Siswa kemudian membuat formulir dengan kolom nama, email, dan pilihan ekstrakurikuler. Setelah diuji, formulir dapat menerima data dengan lebih terstruktur. Guru menambahkan bahwa tombol submit digunakan untuk mengirimkan formulir sesuai pengaturan action dan method pada elemen form. Method GET umumnya digunakan ketika data menjadi bagian dari URL, sedangkan POST mengirimkan data pada bagian isi permintaan HTTP. Pemilihan metode harus disesuaikan dengan kebutuhan dan keamanan pengolahan data. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah rancangan elemen HTML yang paling sesuai untuk membuat formulir pendaftaran dengan nama, email, dan pilihan ekstrakurikuler!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan img untuk nama, table untuk email, dan h1 untuk pilihan ekstrakurikuler.",
+        "Menggunakan input type=\"password\" untuk seluruh kolom agar data lebih aman.",
+        "Menggunakan input type=\"text\" untuk nama, input type=\"email\" untuk email, serta select dan option untuk pilihan kegiatan.",
+        "Menggunakan textarea untuk semua kolom tanpa atribut name maupun label.",
+        "Menggunakan button sebagai tempat memasukkan seluruh informasi peserta."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Dalam pengembangan website sekolah, siswa diminta menambahkan video dokumentasi kegiatan dan audio rekaman wawancara. Sebelumnya, siswa hanya memasukkan tautan file video dan audio ke dalam paragraf sehingga pengguna harus mengunduh file terlebih dahulu untuk memutarnya. Guru memperkenalkan elemen multimedia HTML5, yaitu video dan audio. Elemen video dapat digunakan untuk menampilkan pemutar video langsung pada halaman web, sedangkan audio digunakan untuk menyediakan pemutar suara. Atribut controls memungkinkan browser menampilkan kontrol pemutaran seperti play, pause, volume, dan pengaturan posisi pemutaran. Atribut autoplay dapat meminta browser memulai pemutaran secara otomatis, tetapi kebijakan browser sering membatasi autoplay, terutama untuk media yang memiliki suara. Atribut muted dapat mengatur media dalam keadaan tanpa suara. Atribut loop digunakan agar media diputar kembali setelah selesai. Pengembang juga dapat menggunakan elemen source untuk menyediakan beberapa format file sehingga browser dapat memilih format yang didukung. Guru mengingatkan siswa agar memperhatikan ukuran file, format media, dan kebutuhan aksesibilitas. Untuk video, teks subtitle dapat disediakan melalui elemen track. Dalam praktiknya, siswa membuat video dokumentasi dengan kontrol pemutaran agar pengunjung dapat mengatur video sesuai kebutuhan. Ia juga menambahkan audio wawancara dengan kontrol pemutaran yang sama. Setelah pengujian, video dan audio dapat diputar langsung melalui browser tanpa harus mengunduhnya secara manual. Guru kemudian meminta siswa menentukan fungsi atribut controls dalam kedua elemen tersebut. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah fungsi penggunaan atribut controls pada elemen video dan audio HTML5!",
+      "embed_html": "",
+      "options": [
+        "Mengatur warna latar belakang video dan audio secara otomatis.",
+        "Mengubah seluruh file media menjadi format HTML sebelum ditampilkan.",
+        "Menghubungkan file video dengan basis data agar dapat disimpan secara permanen.",
+        "Mengatur ukuran file agar video dapat diputar tanpa koneksi internet.",
+        "Menampilkan kontrol pemutaran seperti play, pause, volume, dan pengaturan posisi media kepada pengguna."
+      ],
+      "answer": 4
+    },
+    {
+      "q": "Narasi: Seorang siswa membuat website berita sekolah yang memiliki bagian header, navigation, konten utama, artikel, informasi tambahan, dan footer. Pada awalnya, ia menggunakan elemen div untuk seluruh bagian halaman. Meskipun website dapat ditampilkan, struktur dokumennya kurang menggambarkan hubungan dan fungsi masing-masing bagian. Guru kemudian memperkenalkan semantic HTML, yaitu penggunaan elemen yang memberikan makna terhadap bagian dokumen. Elemen header digunakan untuk bagian pengantar atau kepala halaman maupun bagian tertentu. Elemen nav digunakan untuk kelompok tautan navigasi utama. Elemen main digunakan untuk konten utama dokumen, sedangkan article digunakan untuk konten mandiri seperti berita atau artikel. Elemen section dapat digunakan untuk mengelompokkan konten berdasarkan tema tertentu. Elemen aside dapat digunakan untuk informasi tambahan yang berkaitan dengan konten utama, sedangkan footer digunakan untuk informasi penutup seperti hak cipta dan kontak. Guru menjelaskan bahwa penggunaan semantic HTML dapat membantu mesin pencari dan teknologi pembaca layar memahami struktur halaman. Namun, elemen semantik tidak secara otomatis membuat website memiliki desain visual tertentu. Tampilan tetap perlu diatur menggunakan CSS. Siswa kemudian mengubah struktur halaman dengan menggunakan elemen yang sesuai. Ia menempatkan menu pada nav, berita utama pada article, dan informasi kontak pada footer. Hasilnya, struktur dokumen menjadi lebih mudah dipahami dan dipelihara. Guru meminta siswa membedakan elemen semantik dengan div yang bersifat umum. Div tetap berguna untuk pengelompokan elemen ketika tidak ada elemen semantik yang lebih sesuai. Pertanyaan (KKO: Mengevaluasi/C5): Evaluasilah keputusan penggunaan semantic HTML dibandingkan penggunaan div untuk seluruh bagian halaman berita sekolah!",
+      "embed_html": "",
+      "options": [
+        "Semantic HTML memberikan makna pada struktur konten sehingga membantu pemahaman dokumen, aksesibilitas, dan pengelolaan halaman.",
+        "Div selalu lebih baik karena memiliki fungsi khusus untuk navigasi, artikel, dan informasi tambahan.",
+        "Semantic HTML digunakan hanya untuk mengatur ukuran huruf dan warna halaman tanpa membutuhkan CSS.",
+        "Penggunaan semantic HTML menyebabkan seluruh konten website tidak dapat dibaca oleh browser.",
+        "Elemen semantic HTML hanya dapat digunakan untuk website berita dan tidak dapat digunakan pada website sekolah."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Sebuah sekolah mengembangkan formulir pendaftaran lomba secara daring. Formulir tersebut meminta peserta memasukkan nama, alamat email, dan jumlah anggota kelompok. Guru meminta siswa membuat formulir yang tidak hanya dapat menerima input, tetapi juga memberikan batasan awal terhadap data yang dimasukkan. Dalam HTML, atribut required dapat digunakan untuk menandai kolom yang wajib diisi. Atribut min dan max dapat membatasi nilai minimum dan maksimum pada input numerik. Atribut minlength dan maxlength dapat membatasi panjang teks. Sementara itu, atribut type dapat membantu browser mengenali jenis data yang diharapkan. Contohnya, type=\"email\" dapat membantu memeriksa format dasar alamat email. Siswa kemudian membuat input jumlah anggota dengan type=\"number\", min=\"1\", dan max=\"5\". Untuk nama peserta, ia menggunakan type=\"text\" dan required. Guru menjelaskan bahwa validasi HTML dapat memberikan pengalaman awal yang lebih baik kepada pengguna karena beberapa kesalahan dapat diketahui sebelum data dikirimkan. Namun, validasi tersebut tidak boleh dianggap sebagai perlindungan utama. Pengguna dapat memanipulasi permintaan atau mengubah kode pada browser, sehingga server harus melakukan validasi ulang. Selain itu, sistem perlu memastikan bahwa data yang masuk sesuai aturan bisnis yang berlaku. Dalam pengujian, siswa mencoba mengirimkan formulir tanpa mengisi nama dan memasukkan jumlah anggota di luar batas yang ditentukan. Browser memberikan peringatan dan mencegah beberapa pengiriman data yang tidak memenuhi aturan. Guru kemudian meminta siswa menjelaskan batasan validasi HTML dalam sistem pendaftaran. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah alasan validasi formulir HTML tetap harus dilengkapi pemeriksaan ulang pada sisi server!",
+      "embed_html": "",
+      "options": [
+        "Karena HTML tidak dapat menampilkan formulir apabila pengguna memasukkan data angka.",
+        "Karena seluruh atribut validasi HTML hanya berfungsi mengatur warna dan ukuran formulir.",
+        "Karena pengguna dapat memanipulasi permintaan dari sisi klien sehingga server tetap perlu memeriksa keabsahan data.",
+        "Karena server hanya dapat memproses formulir yang tidak menggunakan atribut required.",
+        "Karena validasi HTML selalu menyebabkan data tersimpan otomatis pada basis data."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Dalam proyek pembuatan website sekolah, seorang siswa ingin menghubungkan file HTML dengan file CSS eksternal agar tampilan seluruh halaman memiliki desain yang konsisten. Ia membuat dua file, yaitu index.html dan style.css. Pada awalnya, siswa menuliskan kode CSS langsung di dalam elemen body sehingga browser tidak menerapkan aturan desain dengan benar. Guru menjelaskan bahwa HTML menyediakan beberapa cara untuk menerapkan CSS. Cara pertama adalah inline CSS dengan menggunakan atribut style pada elemen HTML. Cara kedua adalah internal CSS dengan menuliskan aturan CSS di dalam elemen style yang biasanya ditempatkan pada bagian head. Cara ketiga adalah external CSS dengan menyimpan aturan desain pada file terpisah dan menghubungkannya menggunakan elemen link. Dalam praktik pengembangan website dengan banyak halaman, external CSS sering lebih mudah dikelola karena satu file dapat digunakan bersama oleh beberapa dokumen HTML. Siswa kemudian diminta menghubungkan style.css dengan index.html. Guru menjelaskan bahwa atribut rel digunakan untuk menunjukkan hubungan dokumen, sedangkan href menunjukkan lokasi file CSS. Jika jalur file salah, browser tidak dapat menemukan stylesheet sehingga halaman tetap tampil dengan gaya bawaan atau tanpa desain yang diharapkan. Siswa juga mempelajari bahwa penempatan file dan penulisan jalur relatif harus disesuaikan dengan struktur folder proyek. Setelah memperbaiki kode, tampilan halaman berhasil mengikuti aturan pada file CSS. Guru meminta siswa memilih cara penghubungan yang paling tepat untuk website sekolah yang memiliki banyak halaman dan menggunakan satu desain bersama. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah kode yang paling tepat untuk menghubungkan file style.css dengan dokumen HTML melalui external CSS!",
+      "embed_html": "",
+      "options": [
+        "<style src=\"style.css\"></style>",
+        "<link rel=\"stylesheet\" href=\"style.css\">",
+        "<css href=\"style.css\"></css>",
+        "<script src=\"style.css\"></script>",
+        "<a rel=\"stylesheet\">style.css</a>"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Sebuah sekolah membuat halaman pendaftaran kegiatan yang harus dapat digunakan oleh seluruh siswa, termasuk pengguna yang mengakses website melalui perangkat bantu pembaca layar. Dalam pengujian, ditemukan bahwa beberapa kolom formulir hanya menampilkan teks petunjuk di dalam input tanpa keterangan yang jelas ketika pengguna mengaktifkan pembaca layar. Guru menjelaskan bahwa aksesibilitas merupakan aspek penting dalam pengembangan website karena halaman harus dapat digunakan oleh sebanyak mungkin orang dengan kebutuhan dan kemampuan yang berbeda. HTML menyediakan elemen label yang dapat dihubungkan dengan input menggunakan atribut for dan id. Jika nilai for pada label sama dengan nilai id pada input, keduanya memiliki hubungan yang jelas. Selain itu, atribut alt pada gambar dapat memberikan deskripsi alternatif ketika gambar tidak dapat dilihat atau dimuat. Penggunaan elemen button untuk tindakan, anchor untuk navigasi, serta heading dengan hierarki yang benar juga membantu pengguna memahami halaman. Guru mengingatkan bahwa aksesibilitas tidak hanya bergantung pada HTML, tetapi juga dipengaruhi oleh CSS, JavaScript, kontras warna, navigasi keyboard, dan desain antarmuka. Siswa kemudian memperbaiki formulir dengan menambahkan label yang sesuai pada setiap kolom. Ia juga mengubah gambar dekoratif dan gambar informatif sesuai kebutuhan penggunaan teks alternatif. Setelah dilakukan pengujian, pengguna dapat memahami tujuan setiap kolom dengan lebih baik. Guru meminta siswa mengevaluasi alasan penggunaan label dan atribut alt dalam dokumen HTML. Pertanyaan (KKO: Mengevaluasi/C5): Evaluasilah tindakan paling tepat untuk meningkatkan aksesibilitas formulir dan gambar pada website berdasarkan narasi tersebut!",
+      "embed_html": "",
+      "options": [
+        "Menghapus seluruh label agar halaman memiliki tampilan lebih sederhana.",
+        "Menggunakan gambar sebagai pengganti seluruh teks formulir tanpa deskripsi tambahan.",
+        "Menggunakan elemen div untuk setiap input dan menghilangkan identitas elemen.",
+        "Menghubungkan label dengan input menggunakan for dan id serta memberikan teks alternatif yang sesuai pada gambar informatif.",
+        "Menggunakan warna yang berbeda untuk setiap input tanpa memberikan keterangan teks."
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Text Soal",
+      "embed_html": "",
+      "options": [
+        "Option 1 (A)",
+        "Option 2 (B)",
+        "Option 3 (C)",
+        "Option 4 (D)",
+        "Option 5 (E)"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Sebuah tim siswa membuat website profil sekolah menggunakan HTML. Ketika halaman pertama kali ditampilkan, seluruh informasi muncul dalam susunan sederhana dengan warna dan ukuran huruf bawaan browser. Guru meminta siswa meningkatkan kualitas visual website agar lebih menarik, konsisten, dan mudah digunakan. Siswa kemudian mempelajari CSS atau Cascading Style Sheets. CSS merupakan bahasa stylesheet yang digunakan untuk mengatur tampilan elemen HTML. CSS dapat mengatur warna teks, warna latar belakang, ukuran huruf, jenis font, jarak antarelemen, garis tepi, posisi, dan tata letak. Dalam sebuah aturan CSS terdapat selector yang digunakan untuk memilih elemen HTML, property yang menentukan aspek tampilan yang akan diubah, serta value yang menentukan nilai pengaturan. Sebagai contoh, aturan h1 memilih elemen h1 dan mengubah warna teksnya menjadi biru. Guru menjelaskan bahwa CSS tidak bertugas menyimpan data siswa maupun mengolah transaksi. CSS berfokus pada presentasi visual halaman. Siswa kemudian membuat file eksternal style.css dan menghubungkannya dengan dokumen HTML. Mereka mengatur tampilan header, menu navigasi, isi artikel, dan footer menggunakan aturan CSS yang berbeda. Untuk menjaga konsistensi, beberapa elemen menggunakan class yang sama sehingga satu aturan dapat diterapkan pada banyak bagian halaman. Guru juga menjelaskan bahwa penggunaan CSS memisahkan desain dari struktur dokumen sehingga perubahan tampilan dapat dilakukan tanpa harus mengubah isi HTML secara keseluruhan. Setelah desain selesai, siswa membandingkan tampilan sebelum dan sesudah CSS diterapkan. Mereka menemukan bahwa halaman lebih mudah dibaca dan memiliki identitas visual yang konsisten. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah peran utama CSS dalam pengembangan website dan hubungannya dengan HTML!",
+      "embed_html": "",
+      "options": [
+        "CSS berfungsi mengatur tampilan visual elemen HTML, sedangkan HTML membentuk struktur dan konten dokumen.",
+        "CSS digunakan untuk menyimpan seluruh data website, sedangkan HTML berfungsi sebagai server.",
+        "CSS digunakan untuk menerjemahkan domain menjadi alamat IP, sedangkan HTML mengatur jaringan internet.",
+        "CSS menggantikan HTML sehingga website tidak memerlukan struktur dokumen.",
+        "CSS berfungsi sebagai basis data yang menyimpan seluruh informasi pengguna website."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Dalam sebuah proyek website perpustakaan, siswa diminta mengatur warna judul, ukuran paragraf, dan jarak antarelemen. Ia mempelajari bahwa CSS memiliki berbagai jenis selector yang digunakan untuk memilih elemen HTML. Selector elemen digunakan berdasarkan nama tag, misalnya p untuk seluruh paragraf. Selector class menggunakan tanda titik sebelum nama class, misalnya .judul untuk memilih elemen yang memiliki class judul. Selector ID menggunakan tanda pagar sebelum identitas, misalnya #header untuk memilih elemen dengan ID header. Guru menjelaskan bahwa class dapat digunakan pada banyak elemen, sedangkan ID sebaiknya digunakan sebagai identitas unik dalam satu dokumen. Siswa kemudian membuat beberapa judul artikel yang menggunakan class yang sama agar tampilannya seragam. Ia juga memberikan ID pada bagian header utama. Dalam pengujian, siswa menuliskan selector .judul tetapi elemen HTML menggunakan id=\"judul\", sehingga aturan tersebut tidak diterapkan. Setelah diperiksa, ternyata perbedaan penggunaan titik dan pagar menjadi penyebabnya. Guru meminta siswa memahami hubungan selector dengan atribut class dan id. Ia menjelaskan bahwa kesalahan memilih selector dapat menyebabkan aturan CSS tidak bekerja sebagaimana mestinya. Siswa kemudian memperbaiki penulisan selector dan menguji kembali hasilnya melalui browser. Ia juga mempelajari bahwa aturan CSS dapat memiliki tingkat prioritas berbeda apabila terdapat beberapa aturan yang menargetkan elemen sama. Oleh karena itu, penggunaan selector harus direncanakan agar kode mudah dipahami dan tidak menghasilkan konflik aturan. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah selector CSS yang tepat untuk memilih elemen HTML dengan atribut class=\"judul\" dan id=\"header\"!",
+      "embed_html": "",
+      "options": [
+        "#judul dan .header",
+        "judul dan header",
+        ".judul dan #header",
+        "*judul dan *header",
+        "@judul dan @header"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Seorang siswa mengembangkan website informasi kegiatan sekolah. Ia ingin membuat judul utama berwarna putih, memiliki latar belakang biru, dan berada di tengah halaman. Pada percobaan pertama, ia hanya mengubah ukuran huruf menggunakan property font-size. Namun, hasilnya belum sesuai karena warna dan posisi teks masih menggunakan pengaturan bawaan. Guru menjelaskan bahwa CSS menyediakan berbagai property untuk mengatur aspek visual yang berbeda. Property color digunakan untuk mengatur warna teks, sedangkan background-color digunakan untuk mengatur warna latar belakang elemen. Property text-align digunakan untuk mengatur perataan teks, misalnya left, center, right, atau justify. Sementara itu, font-size digunakan untuk mengatur ukuran huruf. Guru meminta siswa tidak mencampuradukkan fungsi setiap property. Dalam CSS, satu selector dapat memiliki beberapa deklarasi yang dipisahkan dengan titik koma. Siswa kemudian membuat aturan CSS untuk elemen h1. Ia menggunakan color: white untuk warna teks, background-color: blue untuk warna latar, dan text-align: center untuk menempatkan teks di tengah. Hasilnya sesuai dengan rancangan. Guru juga menjelaskan bahwa warna dapat ditulis menggunakan nama warna, format hexadecimal, RGB, atau HSL. Pemilihan warna harus mempertimbangkan kontras agar teks tetap mudah dibaca. Siswa kemudian mencoba mengubah warna latar menjadi warna yang lebih gelap dan mempertahankan teks putih. Guru meminta siswa mengidentifikasi property yang berperan langsung dalam menghasilkan tampilan tersebut. Pertanyaan (KKO: Menganalisis/C4): Analisislah kombinasi property CSS yang paling tepat untuk menghasilkan judul berwarna putih, berlatar biru, dan teks rata tengah!",
+      "embed_html": "",
+      "options": [
+        "font-size, margin, dan padding",
+        "color, background-color, dan text-align",
+        "display, position, dan border",
+        "width, height, dan overflow",
+        "z-index, float, dan clear"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Dalam pembuatan website profil sekolah, siswa ingin memberikan jarak yang tepat pada setiap bagian halaman agar tampilan tidak terlihat terlalu padat. Ia mempelajari konsep box model dalam CSS. Menurut konsep tersebut, setiap elemen HTML dapat dipahami sebagai sebuah kotak yang memiliki beberapa bagian, yaitu content, padding, border, dan margin. Content merupakan area utama yang berisi teks, gambar, atau elemen lain. Padding adalah ruang di antara content dan border. Border merupakan garis tepi yang mengelilingi padding dan content. Margin adalah ruang di luar border yang digunakan untuk memberi jarak terhadap elemen lain. Guru memberikan contoh bahwa sebuah kotak informasi dapat memiliki padding 20 piksel agar teks tidak terlalu dekat dengan garis tepi. Kotak tersebut juga dapat memiliki border 1 piksel dan margin 15 piksel untuk memberikan jarak dari kotak lain. Siswa kemudian mencoba mengatur margin dan padding secara bergantian. Ia menemukan bahwa ketika padding diperbesar, ruang di dalam kotak bertambah, sedangkan ketika margin diperbesar, jarak antarkotak menjadi lebih besar. Guru menjelaskan bahwa pemahaman box model penting ketika pengembang mengatur ukuran dan posisi elemen. Pengembang juga perlu memahami property box-sizing karena pengaturan tersebut dapat memengaruhi perhitungan ukuran elemen. Dengan box-sizing: border-box, lebar dan tinggi yang ditentukan mencakup content, padding, serta border. Siswa kemudian membuat beberapa kartu informasi yang memiliki jarak dan ukuran konsisten. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah fungsi padding dan margin ketika siswa ingin mengatur jarak di dalam kotak dan jarak antarkotak!",
+      "embed_html": "",
+      "options": [
+        "Padding mengatur jarak di luar border, sedangkan margin mengatur jarak antara content dan border.",
+        "Padding digunakan untuk mengatur warna teks, sedangkan margin mengatur ukuran gambar.",
+        "Padding memberikan ruang antara content dan border, sedangkan margin memberikan ruang di luar border.",
+        "Padding dan margin memiliki fungsi yang sama sehingga tidak perlu dibedakan.",
+        "Padding digunakan untuk menghubungkan CSS dengan HTML, sedangkan margin menyimpan data website."
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Sebuah kelompok siswa membuat halaman website yang berisi beberapa kartu informasi ekstrakurikuler. Setiap kartu menampilkan nama kegiatan, gambar, deskripsi, dan tombol informasi lebih lanjut. Pada awalnya, seluruh kartu ditampilkan secara vertikal sehingga halaman menjadi sangat panjang. Guru kemudian memperkenalkan konsep CSS layout menggunakan Flexbox. Flexbox merupakan sistem tata letak satu dimensi yang dapat mengatur elemen dalam satu baris atau satu kolom. Untuk mengaktifkannya, pengembang menggunakan display: flex pada elemen induk atau container. Property justify-content digunakan untuk mengatur distribusi elemen sepanjang sumbu utama, sedangkan align-items digunakan untuk mengatur perataan pada sumbu silang. Property flex-direction dapat menentukan arah susunan elemen, seperti row atau column. Guru meminta siswa mencoba menampilkan empat kartu dalam satu baris dengan jarak yang seimbang. Siswa menggunakan display: flex dan justify-content untuk mengatur distribusi kartu. Ia kemudian menambahkan gap agar terdapat jarak antarkartu. Guru menjelaskan bahwa Flexbox sangat sesuai untuk mengatur navigasi, kelompok tombol, dan susunan kartu yang membutuhkan pengaturan satu dimensi. Jika jumlah ruang tidak mencukupi, flex-wrap dapat digunakan agar elemen berpindah ke baris berikutnya. Siswa kemudian menguji tampilan pada layar yang lebih kecil dan menemukan bahwa kartu perlu disusun ulang agar tetap nyaman dibaca. Ia menambahkan flex-wrap: wrap sehingga kartu dapat berpindah baris. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah kombinasi CSS yang paling tepat untuk menyusun kartu informasi secara fleksibel dalam satu baris dan memungkinkan perpindahan ke baris berikutnya!",
+      "embed_html": "",
+      "options": [
+        "display: block dan position: absolute",
+        "display: flex dan flex-wrap: wrap",
+        "display: none dan overflow: hidden",
+        "display: inline dan z-index: auto",
+        "float: none dan visibility: hidden"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Sebuah website sekolah memiliki halaman utama yang harus dapat dibuka dengan nyaman melalui komputer, tablet, dan smartphone. Pada tahap pengujian, pengembang menemukan bahwa halaman terlihat baik pada komputer tetapi mengalami masalah ketika dibuka melalui smartphone. Gambar menjadi terlalu besar, menu navigasi melebar ke luar layar, dan teks sulit dibaca. Guru menjelaskan konsep responsive web design, yaitu pendekatan desain yang memungkinkan tampilan website menyesuaikan ukuran layar dan karakteristik perangkat. CSS menyediakan media query yang dapat digunakan untuk menerapkan aturan tertentu berdasarkan kondisi perangkat atau viewport. Contohnya, pengembang dapat menerapkan aturan ketika lebar layar maksimal 600 piksel. Pada layar yang lebih besar, kartu informasi dapat ditampilkan dalam tiga kolom, sedangkan pada layar kecil susunannya dapat diubah menjadi satu kolom. Guru juga menjelaskan bahwa penggunaan satuan relatif seperti persen, rem, dan vw dapat membantu membuat tata letak lebih fleksibel. Gambar dapat menggunakan max-width: 100% agar tidak melampaui lebar container. Siswa kemudian membuat media query untuk mengubah arah menu navigasi ketika layar semakin kecil. Ia juga mengurangi jumlah kolom pada bagian daftar informasi. Setelah diuji, website dapat ditampilkan dengan lebih baik pada beberapa ukuran layar. Guru menekankan bahwa responsive design tidak hanya berarti mengecilkan ukuran seluruh elemen, tetapi juga menyesuaikan susunan dan prioritas informasi agar pengalaman pengguna tetap baik. Pertanyaan (KKO: Mengevaluasi/C5): Berdasarkan narasi tersebut, evaluasilah solusi CSS yang paling tepat untuk mengatasi masalah tampilan website pada smartphone!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan media query untuk menyesuaikan tata letak, ukuran elemen, dan jumlah kolom berdasarkan lebar layar.",
+        "Menghapus seluruh CSS agar browser mengatur tampilan secara otomatis tanpa rancangan.",
+        "Mengatur semua elemen menggunakan width: 1200px agar tampil sama pada seluruh perangkat.",
+        "Menggunakan position: absolute pada seluruh elemen agar tidak berubah posisi.",
+        "Mengubah seluruh gambar menjadi teks agar website tidak membutuhkan desain responsif."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Dalam praktik desain website, siswa diminta membuat tombol yang memiliki warna latar biru, teks putih, dan sudut sedikit melengkung. Ia menggunakan selector class bernama tombol-utama agar gaya yang sama dapat digunakan pada beberapa tombol. Guru menjelaskan bahwa CSS dapat menerapkan aturan desain berdasarkan class sehingga pengembang tidak perlu menuliskan aturan berulang kali. Siswa kemudian menambahkan padding untuk memperbesar area dalam tombol, border-radius untuk membuat sudut melengkung, dan cursor: pointer untuk memberikan petunjuk visual bahwa elemen dapat diklik. Ia juga menambahkan efek perubahan warna ketika pengguna mengarahkan kursor ke tombol. Guru memperkenalkan pseudo-class :hover yang digunakan untuk menerapkan gaya ketika elemen berada dalam kondisi diarahkan oleh pointer. Siswa mencoba mengubah background-color menjadi warna yang lebih gelap ketika tombol disentuh kursor. Setelah pengujian, tombol memberikan respons visual yang lebih jelas. Guru menjelaskan bahwa efek hover tidak selalu tersedia dengan cara yang sama pada perangkat layar sentuh sehingga pengembang tetap harus memastikan tombol dapat dikenali dan digunakan melalui berbagai perangkat. Selain itu, tombol harus memiliki kontras warna yang cukup agar teks mudah dibaca. Dalam evaluasi, siswa diminta membedakan fungsi class, border-radius, padding, dan pseudo-class hover. Ia menyadari bahwa setiap property memiliki tugas khusus dan harus dikombinasikan sesuai tujuan desain. Pertanyaan (KKO: Menganalisis/C4): Analisislah aturan CSS yang paling tepat untuk memberikan sudut melengkung dan perubahan warna ketika tombol diarahkan kursor!",
+      "embed_html": "",
+      "options": [
+        ".tombol-utama { border: hover; padding: pointer; }",
+        ".tombol-utama { color: radius; hover: blue; }",
+        ".tombol-utama { display: hover; background: pointer; }",
+        ".tombol-utama { border-radius: 8px; } .tombol-utama:hover { background-color: darkblue; }",
+        ".tombol-utama { position: hover; border-radius: pointer; }"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Narasi: Sebuah website sekolah memiliki beberapa bagian, seperti header, menu navigasi, konten utama, dan footer. Ketika siswa mengembangkan halaman tersebut, ia ingin mengatur posisi setiap elemen agar tersusun sesuai rancangan. Guru memperkenalkan property position dalam CSS. Property ini memiliki beberapa nilai, antara lain static, relative, absolute, fixed, dan sticky. Static merupakan posisi normal bawaan elemen dalam alur dokumen. Relative memungkinkan elemen digeser dari posisi normalnya tanpa menghilangkan ruang asalnya. Absolute memosisikan elemen berdasarkan containing block yang sesuai, biasanya elemen leluhur yang memiliki positioning tertentu. Fixed memosisikan elemen relatif terhadap viewport sehingga umumnya tetap berada pada posisi yang sama ketika halaman digulir. Sticky memungkinkan elemen berperilaku seperti elemen biasa hingga mencapai batas tertentu saat halaman digulir, kemudian menempel pada posisi yang ditentukan. Siswa diminta membuat menu navigasi yang tetap terlihat ketika pengguna menggulir halaman. Ia mempertimbangkan menggunakan fixed atau sticky. Guru menjelaskan bahwa pemilihan property harus disesuaikan dengan kebutuhan. Jika menu harus selalu menempel pada bagian atas viewport, fixed dapat digunakan. Jika menu harus mengikuti alur dokumen terlebih dahulu dan baru menempel setelah mencapai batas tertentu, sticky merupakan pilihan yang sesuai. Siswa kemudian menguji kedua pendekatan dan membandingkan perilakunya. Ia juga mempelajari bahwa elemen dengan position absolute dapat diposisikan berdasarkan elemen induk yang memiliki position relative. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah property position yang paling tepat apabila menu navigasi harus mengikuti alur dokumen terlebih dahulu kemudian menempel pada bagian atas saat halaman digulir!",
+      "embed_html": "",
+      "options": [
+        "static",
+        "absolute",
+        "sticky",
+        "relative",
+        "fixed"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Narasi: Dalam pembuatan website katalog produk, siswa ingin menampilkan beberapa kartu barang dalam susunan baris dan kolom. Setiap kartu memiliki ukuran yang konsisten, jarak yang teratur, serta dapat menyesuaikan jumlah kolom berdasarkan lebar layar. Guru menjelaskan bahwa CSS Grid merupakan sistem tata letak dua dimensi yang dapat mengatur baris dan kolom secara bersamaan. Untuk mengaktifkannya, pengembang menggunakan display: grid pada container. Property grid-template-columns digunakan untuk menentukan struktur kolom, sedangkan grid-template-rows digunakan untuk menentukan struktur baris. Property gap dapat mengatur jarak antarkolom dan antarbaris. Guru juga memperkenalkan unit fr yang digunakan untuk membagi ruang tersedia secara proporsional. Misalnya, grid-template-columns: repeat(3, 1fr) dapat membuat tiga kolom dengan lebar yang sama. Siswa kemudian membuat layout katalog dengan tiga kolom pada layar komputer. Ia menambahkan media query agar jumlah kolom berubah menjadi dua pada tablet dan satu pada smartphone. Guru menjelaskan bahwa Grid cocok untuk tata letak dua dimensi, sedangkan Flexbox lebih cocok ketika pengembang ingin mengatur susunan elemen dalam satu dimensi. Keduanya dapat digunakan bersama sesuai kebutuhan. Dalam pengujian, siswa menemukan bahwa penggunaan Grid membuat susunan kartu lebih mudah dikontrol karena baris dan kolom dapat diatur secara bersamaan. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah kode CSS yang paling tepat untuk membuat layout tiga kolom dengan lebar proporsional menggunakan CSS Grid!",
+      "embed_html": "",
+      "options": [
+        "display: grid; grid-template-columns: repeat(3, 1fr);",
+        "display: flex; grid-template-rows: none;",
+        "position: absolute; columns: 3px;",
+        "display: block; grid-template-columns: 1fr;",
+        "float: grid; width: 3fr;"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Narasi: Seorang siswa membuat website yang memiliki banyak komponen dengan gaya visual seragam. Ia ingin seluruh judul memiliki jenis huruf yang sama, seluruh paragraf memiliki ukuran yang konsisten, dan seluruh tombol memiliki warna yang seragam. Pada awalnya, siswa menuliskan aturan CSS yang sama pada setiap elemen secara berulang. Guru kemudian memperkenalkan penggunaan variabel CSS atau custom properties. Variabel CSS dapat didefinisikan menggunakan awalan dua tanda hubung, misalnya --warna-utama: blue. Variabel biasanya dideklarasikan pada selector :root agar dapat digunakan secara luas dalam dokumen. Untuk mengakses variabel, pengembang menggunakan fungsi var(), misalnya color: var(--warna-utama). Guru menjelaskan bahwa variabel CSS memudahkan pengelolaan tema dan konsistensi desain. Jika warna utama website berubah, pengembang cukup mengubah nilai variabel tanpa memperbaiki setiap aturan satu per satu. Siswa kemudian membuat variabel untuk warna utama, warna sekunder, ukuran font, dan jarak standar. Ia menerapkan variabel tersebut pada header, tombol, dan bagian artikel. Setelah dilakukan perubahan, seluruh komponen yang menggunakan variabel mengikuti nilai terbaru. Guru meminta siswa mengevaluasi keuntungan penggunaan variabel CSS dalam proyek yang memiliki banyak halaman. Ia menyimpulkan bahwa variabel membuat kode lebih mudah dipelihara, mengurangi pengulangan, dan membantu konsistensi tampilan. Pertanyaan (KKO: Mengevaluasi/C5): Evaluasilah manfaat paling tepat penggunaan custom properties CSS dalam pengembangan website sekolah yang memiliki banyak halaman dan komponen!",
+      "embed_html": "",
+      "options": [
+        "Variabel CSS digunakan untuk menggantikan seluruh elemen HTML sehingga struktur halaman tidak diperlukan.",
+        "Variabel CSS membuat website otomatis tersimpan ke dalam basis data.",
+        "Variabel CSS berfungsi menghubungkan browser dengan alamat IP server.",
+        "Variabel CSS membantu mengelola nilai desain secara terpusat sehingga perubahan tema dapat dilakukan lebih konsisten dan efisien.",
+        "Variabel CSS menghilangkan kebutuhan pengujian tampilan pada perangkat berbeda."
+      ],
+      "answer": 3
+    },
+    {
+      "q": "Narasi: Sebuah website sekolah memiliki teks berwarna abu-abu muda di atas latar belakang putih. Beberapa siswa mengeluhkan bahwa informasi sulit dibaca, terutama ketika menggunakan smartphone di luar ruangan. Guru kemudian menjelaskan konsep kontras warna dalam desain antarmuka. Kontras merupakan perbedaan visual antara elemen yang berdekatan, seperti warna teks dan latar belakang. Kontras yang baik membantu pengguna membedakan informasi dan membaca teks dengan lebih nyaman. Dalam pengembangan website, pemilihan warna harus mempertimbangkan aksesibilitas, termasuk pengguna dengan gangguan penglihatan warna. Pengembang tidak sebaiknya hanya menggunakan warna untuk menyampaikan informasi penting. Misalnya, pesan kesalahan pada formulir sebaiknya dilengkapi teks atau ikon, bukan hanya perubahan warna merah. Guru memperkenalkan pedoman WCAG yang menyediakan kriteria rasio kontras untuk teks. Untuk teks biasa pada tingkat AA, rasio kontras yang disarankan minimal 4,5:1, sedangkan teks besar minimal 3:1. Siswa kemudian membandingkan beberapa kombinasi warna dan memilih teks gelap di atas latar belakang terang. Mereka juga menguji ukuran huruf dan ketebalan font agar informasi lebih mudah dibaca. Setelah perubahan dilakukan, website menjadi lebih nyaman digunakan. Guru menjelaskan bahwa desain yang menarik tidak selalu berarti desain yang mudah diakses. Pengembang harus menyeimbangkan estetika dengan keterbacaan dan kemudahan penggunaan. Pertanyaan (KKO: Mengevaluasi/C5): Berdasarkan narasi tersebut, evaluasilah perbaikan desain yang paling tepat untuk meningkatkan keterbacaan teks dan aksesibilitas website sekolah!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan teks dengan warna yang hampir sama dengan latar belakang agar desain terlihat minimalis.",
+        "Memilih warna teks dan latar dengan kontras memadai, ukuran huruf terbaca, serta tidak mengandalkan warna sebagai satu-satunya penanda informasi.",
+        "Menghilangkan seluruh teks dan menggantinya dengan gambar tanpa deskripsi.",
+        "Menggunakan ukuran huruf sekecil mungkin agar lebih banyak informasi dapat ditampilkan.",
+        "Menggunakan warna berbeda untuk setiap huruf agar seluruh bagian tampak mencolok."
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Narasi: Seorang siswa membuat website yang memiliki beberapa komponen kartu informasi. Ia ingin memberikan efek perubahan tampilan secara halus ketika pengguna mengarahkan kursor ke kartu. Pada percobaan awal, perubahan warna dan ukuran kartu terjadi secara langsung sehingga tampilan terasa kaku. Guru memperkenalkan property transition dalam CSS. Transition memungkinkan perubahan nilai property berlangsung secara bertahap dalam jangka waktu tertentu. Property transition dapat mengatur property yang berubah, durasi perubahan, timing function, dan delay. Sebagai contoh, transition: background-color 0.3s ease dapat membuat perubahan warna latar berlangsung selama 0,3 detik dengan pola perubahan ease. Siswa kemudian menggunakan pseudo-class :hover untuk mengubah warna kartu ketika pointer diarahkan ke elemen. Ia juga mencoba transform: scale(1.03) untuk memberikan efek pembesaran ringan. Guru menjelaskan bahwa transition dan transform memiliki fungsi berbeda. Transition mengatur proses perubahan dari satu nilai ke nilai lain, sedangkan transform dapat mengubah bentuk, ukuran, rotasi, atau posisi visual elemen. Siswa kemudian menggabungkan keduanya agar kartu membesar sedikit secara halus ketika diarahkan kursor. Setelah pengujian, interaksi visual menjadi lebih nyaman. Guru mengingatkan bahwa efek animasi tidak boleh berlebihan karena dapat mengganggu pengguna. Pengembang juga sebaiknya mempertimbangkan preferensi pengguna yang mengurangi animasi melalui media query prefers-reduced-motion. Pertanyaan (KKO: Menganalisis/C4): Berdasarkan narasi tersebut, analisislah kombinasi CSS yang paling tepat untuk membuat kartu membesar sedikit secara halus ketika diarahkan kursor!",
+      "embed_html": "",
+      "options": [
+        "Menggunakan transition untuk mengatur perubahan bertahap dan transform: scale() untuk memperbesar kartu ketika hover.",
+        "Menggunakan display: none dan visibility: hidden agar kartu terlihat membesar.",
+        "Menggunakan border-collapse dan table-layout untuk mengatur animasi kartu.",
+        "Menggunakan font-style dan text-decoration untuk mengubah ukuran seluruh kartu.",
+        "Menggunakan position: static dan float untuk membuat efek transisi otomatis."
+      ],
+      "answer": 0
+    },
+    {
+      "q": "Kunci",
+      "embed_html": "",
+      "options": [
+        "No",
+        "Kunci",
+        "No",
+        "Kunci",
+        "No"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "A",
+      "embed_html": "",
+      "options": [
+        "11",
+        "A",
+        "21",
+        "E",
+        "31"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "B",
+      "embed_html": "",
+      "options": [
+        "12",
+        "E",
+        "22",
+        "A",
+        "32"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "C",
+      "embed_html": "",
+      "options": [
+        "13",
+        "B",
+        "23",
+        "C",
+        "33"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "B",
+      "embed_html": "",
+      "options": [
+        "14",
+        "A",
+        "24",
+        "B",
+        "34"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "D",
+      "embed_html": "",
+      "options": [
+        "15",
+        "C",
+        "25",
+        "D",
+        "35"
+      ],
+      "answer": 3
+    },
+    {
+      "q": "B",
+      "embed_html": "",
+      "options": [
+        "16",
+        "D",
+        "26",
+        "A",
+        "36"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "C",
+      "embed_html": "",
+      "options": [
+        "17",
+        "B",
+        "27",
+        "C",
+        "37"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "D",
+      "embed_html": "",
+      "options": [
+        "18",
+        "A",
+        "28",
+        "B",
+        "38"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "A",
+      "embed_html": "",
+      "options": [
+        "19",
+        "D",
+        "29",
+        "C",
+        "39"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "C",
+      "embed_html": "",
+      "options": [
+        "20",
+        "C",
+        "30",
+        "B",
+        "40"
+      ],
+      "answer": 1
+    }
+  ]
+}
